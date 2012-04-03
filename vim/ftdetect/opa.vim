@@ -1,0 +1,1 @@
+/opt/mlstate/share/opa/vim/ftdetect/opa.vim
