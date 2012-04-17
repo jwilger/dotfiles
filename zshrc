@@ -22,18 +22,15 @@ local git_stuffs="%{$fg_bold[magenta]%}"
 local punct="%{$fg_no_bold[yellow]%}"
 local revert="%{$fg_no_bold[default]%}"
 
-function current_project_info()
-{
-    if [[ ${CURRENT_PROJECT} != "" ]]; then
-      echo "${git_stuffs}$CURRENT_PROJECT${punct}:"
-    fi
-}
-
 function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 }
 
-RPS1=$'${user_and_host}%{%}%n %m:${whereami}%~%$((COLUMNS-12))(l.  %}. )%{%} $(current_project_info)%{\e[31m%}($(parse_git_branch))%{\e[0m%}'
+function display_rvm_info {
+  rvm current
+}
+
+RPS1=$'${user_and_host}%{%}%n %m:${whereami}%~%$((COLUMNS-12))(l.  %}. )%{%} $(display_rvm_info)%{\e[31m%}($(parse_git_branch))%{\e[0m%}'
 PS1="${line_num}[%h%1(j.%%%j.)%0(?..:%?)]%#${revert} "
 
 # rake autocompletion from:
