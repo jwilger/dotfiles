@@ -119,7 +119,7 @@ set shiftwidth=2
 set tabstop=2
 set softtabstop=2
 set smarttab
-set tw=80
+set tw=72
 set ai "Auto indent
 set si "Smart indet
 
@@ -292,9 +292,9 @@ autocmd FileType qf :map <buffer> <Enter> <Enter>zx
 """"""""""""""""""""""""""""""
 " => Text files
 """"""""""""""""""""""""""""""
-autocmd FileType text setlocal textwidth=78
+autocmd FileType text setlocal textwidth=72
 autocmd FileType text :set spl=en_us spell
-autocmd FileType gitcommit setlocal textwidth=78
+autocmd FileType gitcommit setlocal textwidth=72
 autocmd FileType gitcommit :set spl=en_us spell
 
 """"""""""""""""""""""""""""""
