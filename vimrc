@@ -171,7 +171,6 @@ endfunc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <silent> <leader><cr> :noh<cr>
 "Quickly open a scratch buffer
 map <leader>q :e ~/buffer<cr>
 
@@ -301,4 +300,8 @@ map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 map <leader>" cs'"
 map <leader>' cs"'
 
+" quickly enter vimgrep command
+map <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
 
+" clear search highlighting
+map <silent> <leader><cr> :noh<cr>
