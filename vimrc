@@ -172,16 +172,6 @@ endfunc
 " => Moving around, tabs and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <silent> <leader><cr> :noh<cr>
-
-" append a new blank line after the cursor and enter insert mode
-map <leader>cx a<cr><ESC>ko
-
-" insert a new blank line before the cursor and enter insert mode
-map <leader>x i<cr><ESC>ko
-
-" close the curly brace and be in insert mode on the line between them
-inoremap {<CR> {<CR>}<ESC>O
-
 "Quickly open a buffer for scripbble
 map <leader>q :e ~/buffer<cr>
 
@@ -199,12 +189,6 @@ map <leader>ba :1,300 bd!<cr>
 
 " Show buffer list (also mapped to "<leader>be", but this is easier to type
 map <leader>bb :BufExplorer<cr>
-
-" Tab configuration
-map <leader>tn :tabnew %<cr>
-map <leader>te :tabedit 
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove 
 
 " When pressing <leader>cd switch to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>
@@ -264,16 +248,6 @@ vnoremap $q <esc>`>a'<esc>`<i'<esc>
 vnoremap $e <esc>`>a"<esc>`<i"<esc>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Moving lines up and down
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <C-j> :m+<CR>k==j==^
-nnoremap <C-k> :m-2<CR>j==k==^
-inoremap <C-j> <Esc>:m+<CR>k==j==gi
-inoremap <C-k> <Esc>:m-2<CR>j==k==gi
-vnoremap <C-j> :m'>+<CR>gv
-vnoremap <C-k> :m-2<CR>gv
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Cope
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Do :help cope if you are unsure what cope is. It's super useful!
@@ -321,40 +295,4 @@ map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 map <leader>" cs'"
 map <leader>' cs"'
 
-" ConqueTerm Stuff
-autocmd FileType conque_term :set bufhidden=delete
-"autocmd FileType conque_term :au BufDelete <buffer> :call QuitTest()
-map <F5> :execute 'ConqueTermVSplit zsh'<CR>
 
-function! QuitTest()
-  try
-    let term = conque_term#get_instance()
-    call term.close()
-  endtry
-endfunction
-
-function! RunTest(focused)
-  let filename = expand("%")
-  let lineno = line(".")
-
-  if filename =~ ".feature$"
-    if a:focused == 1
-      let term_command = "cucumber " . filename . ":" . lineno
-    else
-      let term_command = "cucumber " . filename
-    endif
-  elseif filename =~ "_spec\.rb$"
-    if a:focused == 1
-      let term_command = "rspec " . filename . " -l " . lineno
-    else
-      let term_command = "rspec " . filename
-    endif
-  elseif filename =~ "\.rb$"
-    let term_command = "ruby " . filename
-  endif
-  let g:ConqueTerm_InsertOnEnter = 1
-  call conque_term#open(term_command, ["below split"])
-endfunction
-
-nnoremap <Leader>r :call RunTest(1)<CR>
-nnoremap <Leader>R :call RunTest(0)<CR>
