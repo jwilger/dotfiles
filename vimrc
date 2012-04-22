@@ -48,6 +48,7 @@ set numberwidth=4
 
 " open a new line without entering insert mode
 map <Enter> o<ESC>
+map <C-p> O<ESC>
 
 imap jj <Esc>
 imap hh =>
