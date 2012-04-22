@@ -61,6 +61,11 @@ set splitbelow splitright
 :noremap <leader>h :split^M^W^W<cr>
 :noremap <leader>w :wincmd w<cr>
 
+" In many terminal emulators the mouse works just fine, thus enable it.
+if has('mouse')
+  set mouse=a
+endif
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
