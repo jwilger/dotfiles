@@ -110,10 +110,6 @@ set ffs=unix,dos,mac "Default file types
 set nobackup
 set nowb
 set noswapfile
-" Don't allow write-quit command (without a pause, anyway), since 90% of the
-" time, it's not what I want to do
-noremap :wq :w
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
