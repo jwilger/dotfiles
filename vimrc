@@ -172,7 +172,7 @@ endfunc
 " => Moving around, tabs and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <silent> <leader><cr> :noh<cr>
-"Quickly open a buffer for scripbble
+"Quickly open a scratch buffer
 map <leader>q :e ~/buffer<cr>
 
 " Smart way to move btw. windows
@@ -284,14 +284,10 @@ compiler ruby         " Enable compiler support for ruby
 autocmd FileType ruby :set foldmethod=syntax
 autocmd FileType ruby :set foldlevel=1
 
-""""""""""""""""""""""""""""""
-" => Plug-Ins
-""""""""""""""""""""""""""""""
-
 " NERD_tree
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 
-" Surround
+" Switch between single and double quotes on string
 map <leader>" cs'"
 map <leader>' cs"'
 
