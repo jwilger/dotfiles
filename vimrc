@@ -57,8 +57,8 @@ set nowrap
 set linebreak  " Wrap at word
 set equalalways " Multiple windows, when created, are equal in size
 set splitbelow splitright
-:noremap <leader>v :vsp^M^W^W<cr>
-:noremap <leader>h :split^M^W^W<cr>
+:noremap <leader>v :vsp<cr>
+:noremap <leader>h :split<cr>
 :noremap <leader>w :wincmd w<cr>
 
 " In many terminal emulators the mouse works just fine, thus enable it.
