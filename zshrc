@@ -63,6 +63,7 @@ alias gci="git commit"
 alias gbr="git branch"
 alias grb="git rebase"
 alias grm="git rm"
+alias gg='git log --pretty=oneline --abbrev-commit --branches=* --graph --decorate --color'
 
 alias mkdir="mkdir -p"
 
