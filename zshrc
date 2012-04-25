@@ -69,6 +69,25 @@ alias mkdir="mkdir -p"
 
 alias tm="tmux"
 
+# Returns the name of the last (right-most) directory in the $PWD
+function last_dir_in_path {
+  local d
+  d=`pwd`
+  d=(${(s:/:)d})
+  echo $d[-1]
+}
+
+# Attempts to attach to a tmux session with a name matching
+# `last_dir_in_path`
+function tma {
+  tmux attach -t `last_dir_in_path`
+}
+
+# Creates a new tmux session where the name is `last_dir_in_path`
+function tmn {
+  tmux new -s `last_dir_in_path`
+}
+
 source ~/.zshrc.local
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
