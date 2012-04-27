@@ -85,7 +85,13 @@ function tma {
 
 # Creates a new tmux session where the name is `last_dir_in_path`
 function tmn {
-  tmux new -s `last_dir_in_path`
+  local dir
+  dir=`last_dir_in_path`
+  tmux new -d -s $dir -n vim
+  tmux send-keys -t $dir 'vim .' C-m
+  tmux new-window -n shell -t $dir
+  tmux select-window -t $dir:1
+  tmux attach -t $dir
 }
 
 source ~/.zshrc.local
