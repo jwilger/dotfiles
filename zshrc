@@ -67,6 +67,13 @@ alias gg='git log --pretty=oneline --abbrev-commit --branches=* --graph --decora
 
 alias mkdir="mkdir -p"
 
+# So that vim can use the system clipboard when run inside tmux
+# Note: as long as the reattach-to-user-namespace command is present,
+# this works whether inside tmux or not.
+if [ -f /usr/local/bin/reattach-to-user-namespace ]; then
+  alias vim='reattach-to-user-namespace vim'
+fi
+
 alias tm="tmux"
 
 # Returns the name of the last (right-most) directory in the $PWD
