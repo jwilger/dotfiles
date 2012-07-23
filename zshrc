@@ -97,7 +97,4 @@ function tmn {
   tmux attach -t $dir
 }
 
-eval "$(rbenv init -)"
-alias rh="rehash; rbenv rehash"
-
 source ~/.zshrc.local
