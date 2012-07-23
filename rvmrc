@@ -1,6 +1,0 @@
-export rvm_install_on_use_flag=1
-export rvm_make_flags="-j 3"
-export rvm_archflags="-arch x86_64"
-export rvm_project_rvmrc_default=1
-export rvm_path="/Users/jwilger/.rvm"
-export rvm_project_rvmrc=1

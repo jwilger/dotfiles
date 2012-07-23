@@ -21,9 +21,6 @@ task :update => [
   :vim,
   :vimrc,
   :zshrc,
-  :zlogin,
-  :zshenv,
-  :rvmrc,
   :bin
 ]
 
@@ -38,9 +35,6 @@ task :ssh => home('.ssh')
 task :vim => home('.vim')
 task :vimrc => home('.vimrc')
 task :zshrc => home('.zshrc')
-task :zlogin => home('.zlogin')
-task :zshenv => home('.zshenv')
-task :rvmrc => home('.rvmrc')
 task :bin => home('bin')
 
 file home('.autotest') do
@@ -86,18 +80,6 @@ end
 
 file home('.zshrc') do
   ln_s this('zshrc'), home('.zshrc')
-end
-
-file home('.zlogin') do
-  ln_s this('zlogin'), home('.zlogin')
-end
-
-file home('.zshenv') do
-  ln_s this('zlogin'), home('.zshenv')
-end
-
-file home('.rvmrc') do
-  ln_s this('rvmrc'), home('.rvmrc')
 end
 
 file home('bin') do

@@ -26,11 +26,7 @@ function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 }
 
-function display_rvm_info {
-  rvm current
-}
-
-RPS1=$'${user_and_host}%{%}%n %m:${whereami}%~%$((COLUMNS-12))(l.  %}. )%{%} $(display_rvm_info)%{\e[31m%}($(parse_git_branch))%{\e[0m%}'
+RPS1=$'${user_and_host}%{%}%n %m:${whereami}%~%$((COLUMNS-12))(l.  %}. )%{%} %{\e[31m%}($(parse_git_branch))%{\e[0m%}'
 PS1="${line_num}[%h%1(j.%%%j.)%0(?..:%?)]%#${revert} "
 
 # rake autocompletion from:
@@ -101,6 +97,7 @@ function tmn {
   tmux attach -t $dir
 }
 
-source ~/.zshrc.local
+eval "$(rbenv init -)"
+alias rh="rehash; rbenv rehash"
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+source ~/.zshrc.local

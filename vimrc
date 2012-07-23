@@ -11,7 +11,22 @@ set history=300
 set nocompatible
 filetype plugin on
 filetype indent on
-set autoread " re-read when file changed from the outside
+
+set autoread
+augroup checktime
+    au!
+    if !has("gui_running")
+        "silent! necessary otherwise throws errors when using command
+        "line window.
+        autocmd BufEnter        * silent! checktime
+        autocmd CursorHold      * silent! checktime
+        autocmd CursorHoldI     * silent! checktime
+        "these two _may_ slow things down. Remove if they do.
+        autocmd CursorMoved     * silent! checktime
+        autocmd CursorMovedI    * silent! checktime
+    endif
+augroup END
+
 let mapleader = ","
 let g:mapleader = ","
 
@@ -276,6 +291,7 @@ autocmd BufReadPost *
 " => Text files
 """"""""""""""""""""""""""""""
 autocmd FileType text setlocal textwidth=72
+autocmd FileType text setlocal nosi
 autocmd FileType text :set spl=en_us spell
 autocmd FileType gitcommit setlocal textwidth=72
 autocmd FileType gitcommit :set spl=en_us spell

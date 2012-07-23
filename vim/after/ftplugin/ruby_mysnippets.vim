@@ -64,6 +64,7 @@ Snippet asne assert_not_equal(<{unexpected}>, <{actual}>)<CR><{}>
 Snippet shr require File.expand_path(File.join(File.dirname(__FILE__), '..'<{}>, 'spec_helper'))<CR>
 Snippet de describe '<{description}>' do<CR>it 'should <{}>' do<CR><{}><CR>end<CR>end
 Snippet desct describe <{Type}> do<CR>it 'should <{}>' do<CR><{}><CR>end<CR>end
+Snippet cont context '<{description}>' do<CR><{}><CR>end
   
 Snippet b4 before do<CR><{}><CR>end
 Snippet b4s before(:each) do<CR><{}><CR>end
