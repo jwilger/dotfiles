@@ -1,0 +1,10 @@
+#!/usr/bin/env osascript
+on run argv
+  tell application "System Events"
+    tell current location of network preferences
+      set VPNNAME to item 1 of argv
+      set VPN to service VPNNAME 
+      if exists VPN then connect VPN
+    end tell
+  end tell
+end run

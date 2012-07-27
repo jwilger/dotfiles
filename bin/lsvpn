@@ -1,0 +1,16 @@
+#!/usr/bin/env zsh
+
+ifconfig | ack utun0
+if [[ $? -gt 0 ]]; then
+  vpn-connect "LSVPN"
+
+  until ifconfig | ack utun0;
+  do
+    sleep 1
+  done
+
+  flushcache
+  sleep 1
+  ping -t2 -c1 code.livingsocial.net
+fi
+exit 0
