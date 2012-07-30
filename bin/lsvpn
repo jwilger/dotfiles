@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-ifconfig | ack utun0
+ifconfig | ack "inet 192.168.2."
 if [[ $? -gt 0 ]]; then
   vpn-connect "LSVPN"
 
