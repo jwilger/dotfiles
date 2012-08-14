@@ -61,6 +61,10 @@ set t_vb=
 set nu " print line numbers in gutter
 set numberwidth=4
 
+" show trailing whitespace
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
+
 " open a new line without entering insert mode
 map <Enter> o<ESC>
 map <C-p> O<ESC>
