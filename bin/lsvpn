@@ -1,10 +1,11 @@
 #!/usr/bin/env zsh
+LS_VPN_SUBNET="inet 192.168.2."
 
-ifconfig | ack "inet 192.168.2."
+ifconfig | ack $LS_VPN_SUBNET
 if [[ $? -gt 0 ]]; then
   vpn-connect "LSVPN"
 
-  until ifconfig | ack utun0;
+  until ifconfig | ack $LS_VPN_SUBNET;
   do
     sleep 1
   done
