@@ -236,3 +236,10 @@ autocmd FileType html :set spl=en_us spell
 compiler ruby         " Enable compiler support for ruby
 autocmd FileType ruby :set foldmethod=syntax
 autocmd FileType ruby :set foldlevel=1
+
+" Allow for local customization, but don't error out if file is not
+" present
+try
+  source ~/.vimrc.local
+catch
+endtry
