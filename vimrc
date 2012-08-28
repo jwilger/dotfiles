@@ -110,3 +110,11 @@ catch
 endtry
 
 set ffs=unix,dos,mac "Default file types
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Files and backups
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Turn backup off, since most stuff is in SVN, git anyway...
+set nobackup
+set nowb
+set noswapfile
