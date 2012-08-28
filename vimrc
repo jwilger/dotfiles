@@ -207,3 +207,10 @@ function! CurDir()
   let curdir = substitute(getcwd(), '/Users/amir/', "~/", "g")
   return curdir
 endfunction
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Cope - for showing and navigating "errors"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <leader>cc :botright cope<cr>
+map <leader>n :cn<cr>
+map <leader>p :cp<cr>
