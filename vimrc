@@ -118,3 +118,15 @@ set ffs=unix,dos,mac "Default file types
 set nobackup
 set nowb
 set noswapfile
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Text, tab and indent related
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set expandtab
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
+set smarttab
+set tw=72
+set ai "Auto indent
+set si "Smart indet
