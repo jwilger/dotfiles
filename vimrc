@@ -65,6 +65,7 @@ set ignorecase " Ignore case when searching
 set smartcase " Ignore case when searching lowercase
 set hlsearch  " highlight search
 set incsearch  " incremental search, search as you type
+map <silent> <leader><cr> :noh<cr> " clear search highlighting
 set magic " make regular expressions behave sanely (i.e. "." matches any character vs. "\.")
 set showmatch "Show matching bracets when text indicator is over them
 set noerrorbells " No sound on errors
