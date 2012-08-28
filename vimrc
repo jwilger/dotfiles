@@ -182,3 +182,19 @@ try
   set stal=1
 catch
 endtry
+
+
+""""""""""""""""""""""""""""""
+" => Statusline
+""""""""""""""""""""""""""""""
+" Never hide the statusline
+set laststatus=2
+
+" Format the statusline
+set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
+
+
+function! CurDir()
+  let curdir = substitute(getcwd(), '/Users/amir/', "~/", "g")
+  return curdir
+endfunction
