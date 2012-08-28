@@ -91,3 +91,9 @@ set splitbelow splitright
 if has('mouse')
   set mouse=a
 endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Colors
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set t_Co=256
+set background=dark
