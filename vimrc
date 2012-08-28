@@ -214,3 +214,25 @@ endfunction
 map <leader>cc :botright cope<cr>
 map <leader>n :cn<cr>
 map <leader>p :cp<cr>
+
+""""""""""""""""""""""""""""""
+" => Text files
+""""""""""""""""""""""""""""""
+autocmd FileType text setlocal textwidth=72
+autocmd FileType text setlocal nosi
+autocmd FileType text :set spl=en_us spell
+autocmd FileType gitcommit setlocal textwidth=72
+autocmd FileType gitcommit setlocal nosi
+autocmd FileType gitcommit :set spl=en_us spell
+
+""""""""""""""""""""""""""""""
+" => HTML files
+""""""""""""""""""""""""""""""
+autocmd FileType html :set spl=en_us spell
+
+""""""""""""""""""""""""""""""
+" => Ruby files
+""""""""""""""""""""""""""""""
+compiler ruby         " Enable compiler support for ruby
+autocmd FileType ruby :set foldmethod=syntax
+autocmd FileType ruby :set foldlevel=1
