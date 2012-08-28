@@ -240,6 +240,11 @@ compiler ruby         " Enable compiler support for ruby
 autocmd FileType ruby :set foldmethod=syntax
 autocmd FileType ruby :set foldlevel=1
 
+""""""""""""""""""""""""""""""
+" => Plugin config
+""""""""""""""""""""""""""""""
+nnoremap <F5> :GundoToggle<CR>
+
 " Allow for local customization, but don't error out if file is not
 " present
 try
