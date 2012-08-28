@@ -97,3 +97,16 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set t_Co=256
 set background=dark
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Encoding and locale
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set encoding=utf8
+
+try
+  lang en_US
+catch
+endtry
+
+set ffs=unix,dos,mac "Default file types
