@@ -5,6 +5,8 @@
 " No reason to limit ourselves to vi compatibility
 set nocompatible
 
+runtime macros/matchit.vim
+
 " When vimrc is edited, reload it
 autocmd! bufwritepost .vimrc source ~/.vimrc
 
