@@ -45,8 +45,6 @@ set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
 
 set scrolloff=7 " n lines of context above and below the cursor
 set sidescrolloff=10
-set cursorline
-set cursorcolumn
 set wildmenu "Turn on WiLd menu
 set ruler " Always show current position
 set cmdheight=1 "The commandbar height
