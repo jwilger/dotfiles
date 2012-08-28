@@ -1,1 +1,0 @@
-/opt/mlstate/share/opa/vim/syntax/opa.vim
