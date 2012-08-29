@@ -10,6 +10,10 @@ runtime macros/matchit.vim
 " When vimrc is edited, reload it
 autocmd! bufwritepost .vimrc source ~/.vimrc
 
+" Change <leader>, because commas are easier to reach for than backslashes
+let mapleader = ","
+let g:mapleader = ","
+
 " Basic setup for pathogen
 call pathogen#infect()
 syntax on
@@ -43,10 +47,6 @@ autocmd BufReadPost *
   \ if line("'\"") > 1 && line("'\"") <= line("$") |
   \   exe "normal! g`\"" |
   \ endif
-
-" Change <leader>, because commas are easier to reach for than backslashes
-let mapleader = ","
-let g:mapleader = ","
 
 " Maintain some setup between sessions
 set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
@@ -82,7 +82,6 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 " open a new line without entering insert mode
 map <Enter> o<ESC>
-map <C-p> O<ESC>
 
 " The <ESC> key is too hard to reach for accurately on Apple keyboards
 imap jj <Esc>
