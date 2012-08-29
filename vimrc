@@ -244,6 +244,7 @@ autocmd FileType ruby :set foldlevel=1
 " => Plugin config
 """"""""""""""""""""""""""""""
 nnoremap <F5> :GundoToggle<CR>
+map <leader>d :NERDTree<CR>
 
 " Allow for local customization, but don't error out if file is not
 " present
