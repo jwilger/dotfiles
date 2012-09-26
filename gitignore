@@ -3,3 +3,4 @@
 .screenrc
 .rake_tasks
 .rbenv-version
+.rbenv-gemsets
