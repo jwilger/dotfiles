@@ -28,6 +28,7 @@ link_homedir_files %w(
   .irbrc
   .screenrc
   .tmux.conf
+  .urlview
   .vim
   .vimrc
   .zshrc
