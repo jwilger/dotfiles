@@ -1,0 +1,47 @@
+[general]
+ui = ttyui
+accounts = Gmail,LivingSocial
+maxsyncaccounts = 2
+pythonfile = ~/.offlineimap.py
+
+[Account Gmail]
+localrepository = Gmail-Local
+remoterepository = Gmail-Remote
+
+[Account LivingSocial]
+localrepository = LivingSocial-Local
+remoterepository = LivingSocial-Remote
+
+[Repository Gmail-Local]
+type = Maildir
+localfolders = ~/.mail/Gmail
+
+[Repository LivingSocial-Local]
+type = Maildir
+localfolders = ~/.mail/LivingSocial
+
+[Repository Gmail-Remote]
+type = Gmail
+remoteuser = johnwilger@gmail.com
+remotepasseval = get_keychain_pass(account="johnwilger@gmail.com", server="imap.gmail.com")
+realdelete = no
+postsynchook = notmuch new
+maxconnections = 1
+
+# This changes occasionally, offlineimap will give you the new value in
+# the error message reported.
+cert_fingerprint = 6d1b5b5ee0180ab493b71d3b94534b5ab937d042
+
+[Repository LivingSocial-Remote]
+type = Gmail
+remoteuser = john.wilger@hungrymachine.com
+remotepasseval = get_keychain_pass(account="john.wilger@hungrymachine.com", server="imap.gmail.com")
+realdelete = no
+postsynchook = notmuch new
+maxconnections = 1
+
+# This changes occasionally, offlineimap will give you the new value in
+# the error message reported.
+cert_fingerprint = 6d1b5b5ee0180ab493b71d3b94534b5ab937d042
+
+# vim: ft=cfg
