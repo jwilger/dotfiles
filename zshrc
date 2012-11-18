@@ -19,8 +19,8 @@ function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 }
 
-RPS1=$'%{\e[34m%}%{%}%n %m:%~%$((COLUMNS-12))(l.  %}. )%{%} %{\e[31m%}($(parse_git_branch))%{\e[0m%}'
-PS1=$'%{\e[32m%}[%h%1(j.%%%j.)%0(?..:%?)]%#%{\e[0m%} '
+RPS1=$'%{\e[32m%}%{%}%n %m:%~%$((COLUMNS-12))(l.  %}. )%{%} %{\e[31m%}($(parse_git_branch))%{\e[0m%}'
+PS1=$'\n\n\n%{\e[34m%}[%h%1(j.%%%j.)%0(?..:%?)]%#%{\e[0m%} '
 
 # rake autocompletion from:
 # http://weblog.rubyonrails.org/2006/3/9/fast-rake-task-completion-for-zsh
