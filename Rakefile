@@ -26,6 +26,8 @@ link_homedir_files %w(
   .gitconfig
   .gitignore
   .irbrc
+  .offlineimap.py
+  .offlineimaprc
   .screenrc
   .tmux.conf
   .urlview
