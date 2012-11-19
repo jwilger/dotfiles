@@ -7,10 +7,14 @@ pythonfile = ~/.offlineimap.py
 [Account Gmail]
 localrepository = Gmail-Local
 remoterepository = Gmail-Remote
+status_backend = sqlite
+postsynchook = notmuch new
 
 [Account LivingSocial]
 localrepository = LivingSocial-Local
 remoterepository = LivingSocial-Remote
+status_backend = sqlite
+postsynchook = notmuch new
 
 [Repository Gmail-Local]
 type = Maildir
@@ -39,7 +43,6 @@ type = Gmail
 remoteuser = johnwilger@gmail.com
 remotepasseval = get_keychain_pass(account="johnwilger@gmail.com", server="imap.gmail.com")
 realdelete = no
-postsynchook = notmuch new
 maxconnections = 1
 nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
                             '[Gmail]/Sent Mail': 'sent',
@@ -58,7 +61,6 @@ type = Gmail
 remoteuser = john.wilger@hungrymachine.com
 remotepasseval = get_keychain_pass(account="john.wilger@hungrymachine.com", server="imap.gmail.com")
 realdelete = no
-postsynchook = notmuch new
 maxconnections = 1
 nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
                             '[Gmail]/Sent Mail': 'sent',
