@@ -49,6 +49,7 @@ remoteuser = johnwilger@gmail.com
 remotepasseval = get_keychain_pass(account="johnwilger@gmail.com", server="imap.gmail.com")
 realdelete = no
 maxconnections = 1
+idlefolders = ['INBOX']
 nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
                             '[Gmail]/Sent Mail': 'sent',
                             '[Gmail]/Starred':   'flagged',
@@ -67,6 +68,7 @@ remoteuser = john.wilger@hungrymachine.com
 remotepasseval = get_keychain_pass(account="john.wilger@hungrymachine.com", server="imap.gmail.com")
 realdelete = no
 maxconnections = 1
+idlefolders = ['INBOX']
 nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
                             '[Gmail]/Sent Mail': 'sent',
                             '[Gmail]/Starred':   'flagged',
