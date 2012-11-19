@@ -77,8 +77,8 @@ bind index <space>  collapse-thread
 macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
 
 # Sync email
-macro index O "<shell-escape>offlineimap<enter>"           "run offlineimap to sync all mail"
-macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "run offlineimap to sync inbox"
+# macro index O "<shell-escape>offlineimap<enter>"           "run offlineimap to sync all mail"
+# macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "run offlineimap to sync inbox"
 
 # Saner copy/move dialogs
 macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
@@ -129,7 +129,7 @@ set reply_to                         # reply to Reply to: field
 set reverse_name                     # reply as whomever it was to
 set include                          # include message in replies
 set forward_quote                    # include message in forwards
-set editor = "vim"        # Use terminal Vim to compose email.
+set editor = "vim +:silent+?^$"      # Use terminal Vim to compose email.
 set sendmail_wait = 0
 unset record
 bind compose p postpone-message
@@ -141,7 +141,7 @@ bind editor ^T    complete
 bind index N search-opposite
 bind pager N search-opposite
 macro index a "<limit>all\n" "show all messages (undo limit)"
-# macro index S "<enter-command>unset wait_key<enter><shell-escape>mutt-notmuch-py ~/.mail/temporary/search<enter><change-folder-readonly>+temporary/search<enter>" "search mail (using notmuch)"
+macro index / "<enter-command>unset wait_key<enter><shell-escape>mutt-notmuch-py ~/.mail/temporary/search<enter><change-folder-readonly>+temporary/search<enter>" "search mail (using notmuch)"
 folder-hook Gmail/* source ~/.mutt/gmail.muttrc
 folder-hook LivingSocial/* source ~/.mutt/livingsocial.muttrc
 source $alias_file

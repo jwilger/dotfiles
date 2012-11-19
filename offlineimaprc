@@ -11,7 +11,7 @@ remoterepository = Gmail-Remote
 status_backend = sqlite
 postsynchook = notmuch new
 autorefresh = 5
-quick = 10
+# quick = 10
 
 [Account LivingSocial]
 localrepository = LivingSocial-Local
@@ -19,7 +19,7 @@ remoterepository = LivingSocial-Remote
 status_backend = sqlite
 postsynchook = notmuch new
 autorefresh = 5
-quick = 10
+# quick = 10
 
 [Repository Gmail-Local]
 type = Maildir
