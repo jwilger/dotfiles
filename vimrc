@@ -245,6 +245,8 @@ autocmd FileType ruby :set foldlevel=1
 nnoremap <F5> :GundoToggle<CR>
 map <leader>d :NERDTree<CR>
 
+imap hh =>
+
 " Allow for local customization, but don't error out if file is not
 " present
 try
