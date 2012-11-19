@@ -10,14 +10,14 @@ unset record
 set postponed = "+Gmail/drafts"
 set signature = ~/.mutt/gmail.sig
 
-macro index E \
+macro index ,/ \
     "<change-folder>+GMail/archive<enter><limit>~B " \
     "search everything"
 
-macro index D \
+macro index ,d \
     "<save-message>+GMail/trash<enter>" \
     "move message to the trash"
 
-macro index S \
+macro index ,! \
     "<save-message>+GMail/spam<enter>"  \
         "mark message as spam"
