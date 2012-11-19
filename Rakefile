@@ -26,6 +26,7 @@ link_homedir_files %w(
   .gitconfig
   .gitignore
   .irbrc
+  .msmtprc
   .offlineimap.py
   .offlineimaprc
   .screenrc
