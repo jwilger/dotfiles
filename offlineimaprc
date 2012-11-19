@@ -3,6 +3,7 @@ ui = ttyui
 accounts = Gmail,LivingSocial
 maxsyncaccounts = 2
 pythonfile = ~/.offlineimap.py
+socktimeout = 60
 
 [Account Gmail]
 localrepository = Gmail-Local
