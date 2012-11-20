@@ -54,7 +54,6 @@ mailboxes +Gmail \
           +LivingSocial/INBOX \
           +LivingSocial/drafts \
           +LivingSocial/flagged \
-          +temporary/search \
 
 # Index View Options ---------------------------------
 set date_format = "%m/%d"
@@ -141,7 +140,8 @@ bind editor ^T    complete
 bind index N search-opposite
 bind pager N search-opposite
 macro index a "<limit>all\n" "show all messages (undo limit)"
-macro index / "<enter-command>unset wait_key<enter><shell-escape>mutt-notmuch-py ~/.mail/temporary/search<enter><change-folder-readonly>+temporary/search<enter>" "search mail (using notmuch)"
+macro index / "<enter-command>unset wait_key<enter><shell-escape>mutt-notmuch-py<enter><change-folder-readonly>~/.cache/mutt_results<enter>" \
+          "search mail (using notmuch)"
 folder-hook Gmail/* source ~/.mutt/gmail.muttrc
 folder-hook LivingSocial/* source ~/.mutt/livingsocial.muttrc
 source $alias_file
