@@ -25,6 +25,7 @@ set thorough_search      # strip headers and eval mimes before searching
 set sidebar_delim   = '  │'
 set sidebar_visible = yes
 set sidebar_width   = 24
+set sidebar_folderindent = yes
 color sidebar_new color221 color233
 
 # Status Bar -----------------------------------------
