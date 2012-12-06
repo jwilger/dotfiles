@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+
+current_dir = ENV['PWD']
+custom_settings_file = File.join(current_dir, '.tmux-windows.yml')
+
+default_settings = {
+  'app_name' => File.basename(current_dir),
+  'additional_windows' => {
+    'vim' => 'vim .'
+  }
+}
+
+custom_settings = if File.exist?(custom_settings_file)
+                    require 'yaml'
+                    YAML.load_file(custom_settings_file)
+                  else
+                    {}
+                  end
+
+settings = default_settings.merge(custom_settings)
+
+`tmux rename-window #{settings['app_name']}-sh`
+
+settings['additional_windows'].each do |name, command|
+  `tmux new-window -n #{settings['app_name']}-#{name} "#{command}"`
+  `tmux prev`
+end
