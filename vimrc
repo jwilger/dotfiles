@@ -76,6 +76,9 @@ set t_vb=
 set nu " print line numbers in gutter
 set numberwidth=4
 
+"open most folds
+set foldlevelstart=100
+
 " show trailing whitespace
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
@@ -237,7 +240,6 @@ autocmd FileType html :set spl=en_us spell
 """"""""""""""""""""""""""""""
 compiler ruby         " Enable compiler support for ruby
 autocmd FileType ruby :set foldmethod=syntax
-autocmd FileType ruby :set foldlevel=1
 
 """"""""""""""""""""""""""""""
 " => Plugin config
