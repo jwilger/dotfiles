@@ -249,6 +249,9 @@ map <leader>d :NERDTree<CR>
 
 imap hh =>
 
+let g:pandoc_use_hard_wraps = 1
+let g:pandoc_auto_format = 1
+
 " Allow for local customization, but don't error out if file is not
 " present
 try
