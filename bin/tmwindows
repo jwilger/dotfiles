@@ -3,11 +3,13 @@
 current_dir = ENV['PWD']
 custom_settings_file = File.join(current_dir, '.tmux-windows.yml')
 
+default_editor = ENV['VISUAL'] || 'vim'
+
 default_settings = {
   'app_name' => File.basename(current_dir),
-  'additional_windows' => {
-    'vim' => 'vim .'
-  }
+  'additional_windows' => [
+    [default_editor, "#{default_editor} ."]
+  ]
 }
 
 custom_settings = if File.exist?(custom_settings_file)
