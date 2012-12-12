@@ -4,3 +4,4 @@
 .rake_tasks
 .rbenv-version
 .rbenv-gemsets
+.tmux-windows.yml
