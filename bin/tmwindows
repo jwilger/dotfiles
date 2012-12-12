@@ -24,5 +24,5 @@ settings = default_settings.merge(custom_settings)
 `tmux rename-window #{settings['app_name']}-sh`
 
 settings['additional_windows'].each do |name, command|
-  `tmux new-window -n #{settings['app_name']}-#{name} "#{command}"`
+  `tmux new-window -d -n #{settings['app_name']}-#{name} "#{command}"`
 end
