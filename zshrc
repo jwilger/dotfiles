@@ -83,10 +83,8 @@ function tma {
 function tmn {
   local dir
   dir=`last_dir_in_path`
-  tmux new -d -s $dir -n vim
-  tmux send-keys -t $dir 'vim .' C-m
-  tmux new-window -n shell -t $dir
-  tmux select-window -t $dir:1
+  tmux new -d -s $dir
+  tmux send-keys -t $dir 'tmwindows' C-m
   tmux attach -t $dir
 }
 
