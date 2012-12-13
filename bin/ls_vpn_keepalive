@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
 while true do
-  puts "#{Time.now}: #{`ping -c1 code.livingsocial.net`}"
+  puts "#{Time.now}: #{`nc -z code.livingsocial.net 80`}"
   sleep 60*9
 end
