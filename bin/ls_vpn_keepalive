@@ -2,5 +2,5 @@
 
 while true do
   puts "#{Time.now}: #{`nc -z code.livingsocial.net 80`}"
-  sleep 60*9
+  sleep 60
 end
