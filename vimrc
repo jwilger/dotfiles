@@ -75,6 +75,7 @@ set novisualbell
 set t_vb=
 set nu " print line numbers in gutter
 set numberwidth=4
+let &colorcolumn=join(range(81,999),",")
 
 "open most folds
 set foldlevelstart=100
@@ -223,23 +224,30 @@ map <leader>p :cp<cr>
 """"""""""""""""""""""""""""""
 " => Text files
 """"""""""""""""""""""""""""""
-autocmd FileType text setlocal textwidth=72
+autocmd FileType text setlocal textwidth=80
 autocmd FileType text setlocal nosi
 autocmd FileType text :set spl=en_us spell
-autocmd FileType gitcommit setlocal textwidth=72
+autocmd FileType gitcommit setlocal textwidth=80
 autocmd FileType gitcommit setlocal nosi
 autocmd FileType gitcommit :set spl=en_us spell
+
+""""""""""""""""""""""""""""""
+" => Vim files
+""""""""""""""""""""""""""""""
+autocmd FileType vim setlocal textwidth=80
 
 """"""""""""""""""""""""""""""
 " => HTML files
 """"""""""""""""""""""""""""""
 autocmd FileType html :set spl=en_us spell
+autocmd FileType html setlocal textwidth=80
 
 """"""""""""""""""""""""""""""
 " => Ruby files
 """"""""""""""""""""""""""""""
 compiler ruby         " Enable compiler support for ruby
 autocmd FileType ruby :set foldmethod=syntax
+autocmd FileType ruby setlocal textwidth=80
 
 """"""""""""""""""""""""""""""
 " => Plugin config
