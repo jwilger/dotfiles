@@ -53,6 +53,7 @@ alias gbr="git branch"
 alias grb="git rebase"
 alias grm="git rm"
 alias gg='git log --pretty=oneline --abbrev-commit --branches=* --graph --decorate --color'
+alias clean-branches="git branch | xargs -n 1 git branch -D"
 
 alias mkdir="mkdir -p"
 
