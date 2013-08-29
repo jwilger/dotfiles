@@ -89,4 +89,12 @@ function tmn {
   tmux attach -t $dir
 }
 
+for i in /usr/local/opt/vim/bin/*(N) /usr/local/opt/macvim/bin/*(N); do
+  i=$(basename $i)
+  alias "${i}"="env -u GEM_PATH -u GEM_HOME command ${i}"
+done
+
+export GIT_EDITOR="env -u GEM_PATH -u GEM_HOME vim +1"
+export EDITOR="env -u GEM_PATH -u GEM_HOME vim"
+
 source ~/.zshrc.local
