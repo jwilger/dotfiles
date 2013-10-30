@@ -1,18 +1,24 @@
 #!/usr/bin/env zsh
-LS_VPN_SUBNET="inet 192.168.2."
+LS_VPN_SUBNET="inet 172.21.34"
 
 ifconfig | ack $LS_VPN_SUBNET
 if [[ $? -gt 0 ]]; then
+  echo "Connecting to VPN..."
   vpn-connect "LSVPN"
 
+  echo "Checking that VPN connection is now active..."
   until ifconfig | ack $LS_VPN_SUBNET;
   do
+    echo "VPN connection link is not up. Sleeping..."
     sleep 1
   done
 
+  echo "VPN connection link is up. Flushing DNS..."
   flushcache
   sleep 1
-  ping -t2 -c1 code.livingsocial.net
+  echo "Checking communication over VPN..."
+  nc -z code.livingsocial.net 80
 fi
+echo "Running VPN keepalive script..."
 ls_vpn_keepalive
 exit 0
