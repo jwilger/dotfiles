@@ -41,3 +41,7 @@ link_homedir_files %w(
 
 link_file(File.expand_path(File.join('~', 'Dropbox', 'Personal', '.ssh')),
           home('.ssh'))
+
+task :default do
+  puts "You probably wanted `rake update`. There is no default task."
+end
