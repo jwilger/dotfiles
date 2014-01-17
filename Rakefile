@@ -38,3 +38,6 @@ link_homedir_files %w(
   .zshrc
   bin
 )
+
+link_file(File.expand_path(File.join('~', 'Dropbox', 'Personal', '.ssh')),
+          home('.ssh'))
