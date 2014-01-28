@@ -21,18 +21,10 @@ def link_homedir_files(files = [])
 end
 
 link_homedir_files %w(
-  .autotest
   .gemrc
   .gitconfig
   .gitignore
-  .irbrc
-  .msmtprc
-  .mutt
-  .offlineimap.py
-  .offlineimaprc
-  .screenrc
   .tmux.conf
-  .urlview
   .vim
   .vimrc
   .zshrc
