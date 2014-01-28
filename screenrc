@@ -1,5 +1,0 @@
-startup_message off
-setenv rvm_reload_flag 1
-defscrollback 10000
-caption always "%{= ..}%-w%{= BW}%n %t%{-}%+w %-= %{= dY}$SCREEN_SESSION_NAME%{-} - %{= dR}%l%{-} - %{= dG}%H%{-} - %D %d %M - %c"
-source "${PWD}/.screenrc"
