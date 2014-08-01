@@ -28,6 +28,7 @@ link_homedir_files %w(
   .vim
   .vimrc
   .zshrc
+  .dev_box
   bin
 )
 
