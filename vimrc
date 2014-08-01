@@ -252,6 +252,11 @@ compiler ruby         " Enable compiler support for ruby
 autocmd FileType ruby :set foldmethod=syntax
 autocmd FileType ruby setlocal textwidth=80
 
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" => Disables auto-indenting for the current file
+"""""""""""""""""""""""""""""""""""""""""""""""""
+:nnoremap <F8> :setl noai nocin nosi inde=<CR>
+
 """"""""""""""""""""""""""""""
 " => Plugin config
 """"""""""""""""""""""""""""""
