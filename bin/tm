@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+SESSION_NAME="$1"
+shift
+OTHER_ARGS="$*"
+
+tmux attach -t "$SESSION_NAME" $OTHER_ARGS || tmux new -s "$SESSION_NAME" $OTHER_ARGS

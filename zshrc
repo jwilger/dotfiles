@@ -64,8 +64,6 @@ if [ -f /usr/local/bin/reattach-to-user-namespace ]; then
   alias vim='reattach-to-user-namespace vim'
 fi
 
-alias tm="tmux"
-
 # Returns the name of the last (right-most) directory in the $PWD
 function last_dir_in_path {
   local d
