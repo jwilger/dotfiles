@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.AppleFileServer.plist
+launchctl load -w /System/Library/LaunchDaemons/com.apple.AppleFileServer.plist
+
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.screensharing.plist
+launchctl load -w /System/Library/LaunchDaemons/com.apple.screensharing.plist
