@@ -7,4 +7,4 @@ custom_recipes:
     jwilger
 
 nginx:
-  ringleader: true
+  ringleader: false
