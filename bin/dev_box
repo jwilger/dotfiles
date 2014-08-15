@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+cd ~/projects/dev_box
+vagrant "$@"
+cd -
