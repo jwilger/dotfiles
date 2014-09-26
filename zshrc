@@ -87,6 +87,8 @@ function tmn {
   tmux attach -t $dir
 }
 
-export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+  export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+fi
 
 source ~/.zshrc.local
