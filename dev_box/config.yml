@@ -8,3 +8,5 @@ custom_recipes:
 
 nginx:
   ringleader: false
+
+percent_of_cpus_for_vm: 75
