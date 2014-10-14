@@ -1,10 +1,11 @@
 vagrant_roles:
   -
-    finance
+    - finance
+    - qa
 
 custom_recipes:
   -
-    jwilger
+    - jwilger
 
 nginx:
   ringleader: false
