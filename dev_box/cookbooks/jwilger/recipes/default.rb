@@ -39,3 +39,7 @@ file "/home/vagrant/.zshrc.local" do
     source /etc/profile.d/rbenv.sh
   EOF
 end
+
+link '/usr/share/zoneinfo/PST8PDT' do
+  to '/etc/localtime'
+end
