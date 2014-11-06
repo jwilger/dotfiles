@@ -40,6 +40,6 @@ file "/home/vagrant/.zshrc.local" do
   EOF
 end
 
-link '/usr/share/zoneinfo/PST8PDT' do
-  to '/etc/localtime'
+link '/etc/localtime' do
+  to '/usr/share/zoneinfo/PST8PDT'
 end
