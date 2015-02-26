@@ -1,3 +1,5 @@
+suppress_print_configs: true
+
 vagrant_roles:
   - finance
 
