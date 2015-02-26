@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
 SESSION_NAME="$1"
+if [ -z "$SESSION_NAME" ]; then
+  SESSION_NAME=`basename $PWD`
+fi
 shift
 OTHER_ARGS="$*"
 
