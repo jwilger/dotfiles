@@ -4,6 +4,7 @@ vagrant_roles:
   - finance
 
 custom_recipes:
+  - merchant_messaging
   - jwilger
 
 nginx:
