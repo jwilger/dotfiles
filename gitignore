@@ -4,6 +4,7 @@
 .rake_tasks
 .rbenv-version
 .rbenv-gemsets
+.ruby-version
 .tmux-windows.yml
 .idea
 babysoft_qatests_failure_screenshots
