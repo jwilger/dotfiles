@@ -91,11 +91,9 @@ if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
   export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 fi
 
-unalias run-help
 autoload run-help
 HELPDIR=/usr/local/share/zsh/help
 
 fpath=(/usr/local/share/zsh-completions $fpath)
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source ~/.zshrc.local
