@@ -22,29 +22,6 @@ function parse_git_branch {
 RPS1=$'%{\e[32m%}%{%}%n %m:%~%$((COLUMNS-12))(l.  %}. )%{%} %{\e[31m%}($(parse_git_branch))%{\e[0m%}'
 PS1=$'\n\n\n%{\e[34m%}[%h%1(j.%%%j.)%0(?..:%?)]%#%{\e[0m%} '
 
-# rake autocompletion from:
-# http://weblog.rubyonrails.org/2006/3/9/fast-rake-task-completion-for-zsh
-_rake_does_task_list_need_generating () {
-  if [ ! -f .rake_tasks ]; then return 0;
-  else
-    accurate=$(stat -f%m .rake_tasks)
-    changed=$(stat -f%m Rakefile)
-    return $(expr $accurate '>=' $changed)
-  fi
-}
-
-_rake () {
-  if [ -f Rakefile ]; then
-    if _rake_does_task_list_need_generating; then
-      echo "\nGenerating .rake_tasks..." > /dev/stderr
-      rake --silent --tasks | cut -d " " -f 2 > .rake_tasks
-    fi
-    compadd `cat .rake_tasks`
-  fi
-}
-
-compdef _rake rake
-
 alias g="git"
 alias gco="git checkout"
 alias gst="git status"
