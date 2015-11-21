@@ -1,0 +1,33 @@
+#!/usr/bin/env ruby
+
+def run(command, failure_message: "Command failed!")
+  `#{command}`
+  result = $?.to_i
+  if result == 0
+    return true
+  else
+    puts failure_message
+    exit result
+  end
+end
+
+username = ARGV[0]
+
+if username.nil?
+  puts "Usage: pair_with LOGIN_USERNAME"
+  puts ""
+  STDERR.puts "pair_with: No LOGIN_USERNAME specified. Exiting"
+  exit 1
+end
+
+run "! ack '^#{username}' /etc/passwd", failure_message: "User already exists!"
+
+print "Enter the public SSH key for the user: "
+ssh_key = STDIN.gets.strip
+
+run "sudo useradd -s /usr/local/bin/wemux #{username}"
+run "sudo mkdir -p /home/#{username}/.ssh"
+run "echo \"#{ssh_key}\" > /tmp/#{username}-public-key"
+run "sudo mv /tmp/#{username}-public-key /home/#{username}/.ssh/authorized_keys"
+run "sudo chmod 0600 /home/#{username}/.ssh/authorized_keys"
+run "sudo chown -R #{username}:#{username} /home/#{username}"
