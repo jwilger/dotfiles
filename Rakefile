@@ -29,14 +29,9 @@ link_homedir_files %w(
   .vimrc
   .zshrc
   .dev_box
+  .ssh
   bin
 )
-
-dropbox_ssh_path = File.expand_path(File.join('~', 'Dropbox', 'Personal', '.ssh'))
-if File.exists?(dropbox_ssh_path)
-  link_file(dropbox_ssh_path, home('.ssh'))
-end
-link_file(this('sshrc'), home('.ssh', 'rc'))
 
 task :default do
   puts "You probably wanted `rake update`. There is no default task."
