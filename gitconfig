@@ -1,6 +1,7 @@
 [user]
 	name = John Wilger
-	email = johnwilger@gmail.com
+	email = john@johnwilger.com
+	signingkey = A0F8BC61
 [color]
 	diff = auto
 	status = auto
@@ -25,3 +26,5 @@
 	enabled = 1
 [core]
 	excludesfile = ~/.gitignore
+[commit]
+	gpgsign = true
