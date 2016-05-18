@@ -5,6 +5,10 @@
 " No reason to limit ourselves to vi compatibility
 set nocompatible
 
+" For goodness sake, disable modelines, kthxbye!
+:set modelines=0
+:set nomodeline
+
 runtime macros/matchit.vim
 
 " When vimrc is edited, reload it
