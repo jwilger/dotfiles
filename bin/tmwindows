@@ -9,23 +9,18 @@ The format of the configuration file is as follows:
   ----
   app_name: {my_app}
   additional_windows:
-    - - {window name suffix}
-      - {window command}
-    - - {window name suffix}
-      - {window command}
+    {window_suffix_a}: {window_command}
+    {window_suffix_b}: {window_command}
 
-Replace "{window name suffix}" with a nickname for the window and
+Replace "{window_suffix_X}" with a nickname for the window and
 "{window command}" with a shell command to run in that window. A concrete example:
 
   ----
   app_name: todos
   additional_windows:
-    - - vim
-      - vim .
-    - - server
-      - rails s
-    - - logs
-      - tail -f log/*
+    vim: vim .
+    server: rails s
+    logs: tail -f log/*
 
 When you want to start work on the todos project, you start your tmux
 session and change into the root directory of the project containing the
@@ -54,9 +49,9 @@ default_editor = ENV['VISUAL'] || 'vim'
 
 default_settings = {
   'app_name' => File.basename(current_dir),
-  'additional_windows' => [
-    [default_editor, "#{default_editor} ."]
-  ]
+  'additional_windows' => {
+    default_editor => "%s ." % default_editor
+  }
 }
 
 custom_settings = if File.exist?(custom_settings_file)
