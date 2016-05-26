@@ -101,6 +101,20 @@ set showcmd " Defaults to on for vim anyway, but just in case
 set nowrap
 set linebreak " Wrap at word
 
+" No arrow keys in insert, normal, or visual mode
+inoremap  <Up>     <NOP>
+inoremap  <Down>   <NOP>
+inoremap  <Left>   <NOP>
+inoremap  <Right>  <NOP>
+nnoremap   <Up>     <NOP>
+nnoremap   <Down>   <NOP>
+nnoremap   <Left>   <NOP>
+nnoremap   <Right>  <NOP>
+vnoremap   <Up>     <NOP>
+vnoremap   <Down>   <NOP>
+vnoremap   <Left>   <NOP>
+vnoremap   <Right>  <NOP>
+
 " Make dealing with split windows a little easier
 set equalalways " Vertical and horizontal splits default to equal sizes when created
 set splitbelow splitright
