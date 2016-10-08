@@ -81,7 +81,7 @@ set nu " print line numbers in gutter
 set numberwidth=4
 
 if exists("&colorcolumn")
-  let &colorcolumn=join(range(81,999),",")
+  let &colorcolumn=join(range(81,82),",")
 endif
 
 "open most folds
