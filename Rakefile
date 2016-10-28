@@ -10,7 +10,7 @@ def link_file(source, destination)
   file destination do
     ln_s source, destination
   end
-  task :update => destination
+  task update: destination
 end
 
 def link_homedir_files(files = [])
@@ -21,12 +21,11 @@ def link_homedir_files(files = [])
 end
 
 link_homedir_files %w(
+  .spacemacs
   .gemrc
   .gitconfig
   .gitignore
   .tmux.conf
-  .vim
-  .vimrc
   .zshrc
   .dev_box
   .ssh
@@ -34,5 +33,5 @@ link_homedir_files %w(
 )
 
 task :default do
-  puts "You probably wanted `rake update`. There is no default task."
+  puts 'You probably wanted `rake update`. There is no default task.'
 end
