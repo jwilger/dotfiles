@@ -1,4 +1,4 @@
-export VISUAL=vim
+export VISUAL=emacs
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
