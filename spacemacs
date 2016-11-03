@@ -313,6 +313,7 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   ;; Set escape keybinding to "jk"
   (setq-default evil-escape-key-sequence "jk")
+  (spacemacs/toggle-centered-point-globally-on)
   (add-hook 'evil-insert-state-exit-hook 'indent-according-to-mode)
 
   ;; Code folding
