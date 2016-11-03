@@ -15,6 +15,7 @@
 [merge]
 	tool = vimdiff
 	summary = true
+	conflictStyle = diff3
 [push]
 	default = current
 [branch]
@@ -25,4 +26,5 @@
 	enabled = 1
 [core]
 	excludesfile = ~/.gitignore
+	editor = emacsclient
 [commit]
