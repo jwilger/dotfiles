@@ -332,6 +332,8 @@ you should place your code here."
   (global-set-key (kbd "C-c h <right>") 'hs-show-block)
   (global-set-key (kbd "C-c h <up>") 'hs-hide-level)
 
+  (display-time-mode 1)
+
   ;; Set default to a transparent background
   (spacemacs/toggle-transparency)
 
