@@ -337,6 +337,7 @@ you should place your code here."
 
   ;; Bind DEL in Normal mode to remove search highlighting
   (define-key evil-normal-state-map (kbd "DEL") 'evil-search-highlight-persist-remove-all)
+  (setq-default magit-clone-set-remote.pushDefault t)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
