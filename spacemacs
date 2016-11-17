@@ -41,9 +41,11 @@ values."
      auto-completion
      emacs-lisp
      git
+     github
      html
      javascript
      (ruby :variables
+           ruby-enable-ruby-on-rails-support t
            ruby-test-runner 'rspec
            ruby-enable-enh-ruby-mode t)
      ruby-on-rails
@@ -56,7 +58,7 @@ values."
      spell-checking
      syntax-checking
      version-control
-     gnus
+     evil-commentary
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -264,7 +266,7 @@ values."
    dotspacemacs-line-numbers t
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
-   dotspacemacs-folding-method 'evil
+   dotspacemacs-folding-method 'origami
    ;; If non-nil smartparens-strict-mode will be enabled in programming modes.
    ;; (default nil)
    dotspacemacs-smartparens-strict-mode t
@@ -313,7 +315,7 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   ;; Set escape keybinding to "jk"
   (setq-default evil-escape-key-sequence "jk")
-  (spacemacs/toggle-centered-point-globally-on)
+  (setq scroll-margin 10)
   (add-hook 'evil-insert-state-exit-hook 'indent-according-to-mode)
 
   ;; Code folding
