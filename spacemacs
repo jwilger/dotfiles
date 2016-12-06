@@ -66,7 +66,10 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages
+   '(
+     key-chord
+     )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -317,6 +320,10 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   ;; Set escape keybinding to "jk"
   (setq-default evil-escape-key-sequence "jk")
+  (key-chord-mode 1)
+  (key-chord-define-global "hr" "=> ")
+  (key-chord-define-global "''" "\"")
+  (key-chord-define-global "ii" "|> ")
   (setq scroll-margin 10)
   (add-hook 'evil-insert-state-exit-hook 'indent-according-to-mode)
 
