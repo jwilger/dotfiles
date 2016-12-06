@@ -239,7 +239,7 @@ values."
    dotspacemacs-loading-progress-bar t
    ;; If non nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
-   dotspacemacs-fullscreen-at-startup t
+   dotspacemacs-fullscreen-at-startup nil
    ;; If non nil `spacemacs/toggle-fullscreen' will not use native fullscreen.
    ;; Use to disable fullscreen animations in OSX. (default nil)
    dotspacemacs-fullscreen-use-non-native nil
@@ -346,7 +346,7 @@ you should place your code here."
   (display-time-mode 1)
 
   ;; Set default to a transparent background
-  (spacemacs/toggle-transparency)
+  ;; (spacemacs/toggle-transparency)
 
   ;; Bind DEL in Normal mode to remove search highlighting
   (define-key evil-normal-state-map (kbd "DEL") 'evil-search-highlight-persist-remove-all)
