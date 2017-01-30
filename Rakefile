@@ -21,6 +21,7 @@ def link_homedir_files(files = [])
 end
 
 link_homedir_files %w(
+  .profile
   .spacemacs
   .gemrc
   .gitconfig

@@ -1,4 +1,3 @@
-export VISUAL=emacs
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
@@ -10,8 +9,6 @@ promptinit
 prompt oliver
 autoload -U compinit
 compinit
-path=(~/bin /usr/local/bin /usr/local/sbin /opt/local/bin /opt/local/sbin /usr/bin /usr/sbin /bin /sbin)
-cdpath=(. ~ ~/projects)
 
 bindkey -v
 
@@ -33,13 +30,6 @@ alias gg='git log --pretty=oneline --abbrev-commit --branches=* --graph --decora
 alias clean-branches="git branch | xargs -n 1 git branch -D"
 
 alias mkdir="mkdir -p"
-
-# So that vim can use the system clipboard when run inside tmux
-# Note: as long as the reattach-to-user-namespace command is present,
-# this works whether inside tmux or not.
-if [ -f /usr/local/bin/reattach-to-user-namespace ]; then
-  alias vim='reattach-to-user-namespace vim'
-fi
 
 # Returns the name of the last (right-most) directory in the $PWD
 function last_dir_in_path {
