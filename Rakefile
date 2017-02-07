@@ -30,6 +30,7 @@ link_homedir_files %w(
   .zshrc
   .dev_box
   .ssh
+  .fonts
   bin
 )
 
