@@ -1,4 +1,3 @@
 set -a
 VISUAL=emacs
-PATH="$HOME/bin:$HOME/.rbenv/bin:$PATH"
-export PATH=$HOME/node_modules/tern/bin:$PATH
+PATH="./bin:$HOME/.local/bin:$HOME/node_modules/tern/bin:$HOME/bin:$HOME/.rbenv/bin:$PATH"
