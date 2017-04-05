@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+while true; do
+    if test "$(qdbus org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.GetActive)" == "true"; then
+        xdotool key F2
+    fi
+    sleep 0.1
+done
