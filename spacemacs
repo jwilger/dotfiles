@@ -40,6 +40,7 @@ values."
      ;; ----------------------------------------------------------------
      helm
      auto-completion
+     better-defaults
      emacs-lisp
      git
      github
@@ -47,8 +48,7 @@ values."
      javascript
      (ruby :variables
            ruby-enable-ruby-on-rails-support t
-           ruby-test-runner 'rspec
-           ruby-enable-enh-ruby-mode t)
+           ruby-test-runner 'rspec)
      ruby-on-rails
      yaml
      markdown
@@ -63,6 +63,8 @@ values."
      erlang
      elixir
      floobits
+     colors
+     themes-megapack
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -147,8 +149,11 @@ values."
    ;; with 2 themes variants, one dark and one light)
    ;;dotspacemacs-themes '(spacemacs-dark
    ;;                      spacemacs-light)
-   dotspacemacs-themes '(spacemacs-dark
-                         spacemacs-light)
+   dotspacemacs-themes '(monokai
+                         solarized-light
+                         leuven
+                         zenburn
+                         solarized-dark)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
@@ -157,7 +162,7 @@ values."
                                :size 14
                                :weight normal
                                :width normal
-                               :powerline-scale 1.1)
+                               :powerline-scale 1.0)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The key used for Emacs commands (M-x) (after pressing on the leader key).
@@ -267,8 +272,18 @@ values."
    ;; scrolling overrides the default behavior of Emacs which recenters point
    ;; when it reaches the top or bottom of the screen. (default t)
    dotspacemacs-smooth-scrolling t
-   ;; If non nil line numbers are turned on in all `prog-mode' and `text-mode'
-   ;; derivatives. If set to `relative', also turns on relative line numbers.
+   ;; Control line numbers activation.
+   ;; If set to `t' or `relative' line numbers are turned on in all `prog-mode' and
+   ;; `text-mode' derivatives. If set to `relative', line numbers are relative.
+   ;; This variable can also be set to a property list for finer control:
+   ;; '(:relative nil
+   ;;   :disabled-for-modes dired-mode
+   ;;                       doc-view-mode
+   ;;                       markdown-mode
+   ;;                       org-mode
+   ;;                       pdf-view-mode
+   ;;                       text-mode
+   ;;   :size-limit-kb 1000)
    ;; (default nil)
    dotspacemacs-line-numbers t
    ;; Code folding method. Possible values are `evil' and `origami'.
@@ -326,12 +341,19 @@ you should place your code here."
   (key-chord-define-global "hr" "=> ")
   (key-chord-define-global "''" "\"")
   (key-chord-define-global "ii" "|> ")
+  (key-chord-define-global "fp" "-> ")
   (setq scroll-margin 10)
   (add-hook 'evil-insert-state-exit-hook 'indent-according-to-mode)
 
   ;; Code folding
   (add-hook 'ruby-mode-hook
             (lambda () (hs-minor-mode)))
+
+  (defun my-web-mode-hook ()
+    "Hooks for Web mode"
+    (setq web-mode-markup-indent-offset 2)
+    )
+  (add-hook 'web-mode-hook 'my-web-mode-hook)
 
   (display-time-mode 1)
 
@@ -341,6 +363,10 @@ you should place your code here."
   ;; Bind DEL in Normal mode to remove search highlighting
   (define-key evil-normal-state-map (kbd "DEL") 'evil-search-highlight-persist-remove-all)
   (setq-default magit-clone-set-remote.pushDefault t)
+
+  ;; Switching projects in projectile opens the project dir instead of finding a file
+  (setq projectile-switch-project-action 'projectile-dired)
+  (setq projectile-enable-caching nil)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -352,7 +378,7 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(safe-local-variable-values
    (quote
-    ((flycheck-disabled-checkers . ruby-rubocop)
+    ((setq default-directory "/home/jwilger/projects/rainmaker/hawthorne/")
      (elixir-enable-compilation-checking . t)
      (elixir-enable-compilation-checking)))))
 (custom-set-faces
@@ -360,4 +386,4 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((((class color) (min-colors 257)) (:foreground "#F8F8F2" :background "#272822")) (((class color) (min-colors 89)) (:foreground "#F5F5F5" :background "#1B1E1C")))))
