@@ -22,6 +22,7 @@ end
 
 link_homedir_files %w(
   .profile
+  .emacs.d
   .spacemacs
   .gemrc
   .gitconfig
@@ -34,6 +35,9 @@ link_homedir_files %w(
   bin
 )
 
-task :default do
-  puts 'You probably wanted `rake update`. There is no default task.'
+task :update_submodules do
+  `git submodule init`
+  `git submodule update`
 end
+
+task default: [:update_submodules, :update]
