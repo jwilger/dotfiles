@@ -367,11 +367,36 @@ you should place your code here."
 
   ;; Bind DEL in Normal mode to remove search highlighting
   (define-key evil-normal-state-map (kbd "DEL") 'evil-search-highlight-persist-remove-all)
+
   (setq-default magit-clone-set-remote.pushDefault t)
 
   ;; Switching projects in projectile opens the project dir instead of finding a file
   (setq projectile-switch-project-action 'projectile-dired)
   (setq projectile-enable-caching nil)
+
+  ;; Set Ivy completion to use fuzzy matching for file names
+  (setq ivy-re-builders-alist
+        '((read-file-name-internal . ivy--regex-fuzzy)
+          (t . ivy--regex-plus)))
+  (require 'seeing-is-believing)
+  (add-hook 'ruby-mode-hook 'seeing-is-believing)
+
+  (defun runruby ()
+    (interactive)
+    ;; (when (and (buffer-modified-p)
+    ;;            (y-or-n-p (format "Save file %s? " (buffer-file-name))))
+    ;;   (save-buffer))
+    (save-buffer)
+    (with-output-to-temp-buffer "*runruby*"
+      (shell-command (concat "ruby"
+                             " "
+                             (expand-file-name (buffer-file-name)))
+                     "*runruby*"
+                     "*Messages*")
+      ;  (pop-to-buffer "*runruby*")
+      ))
+  (define-key evil-normal-state-map (kbd ",rrr") 'runruby)
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
