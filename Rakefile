@@ -21,17 +21,18 @@ def link_homedir_files(files = [])
 end
 
 link_homedir_files %w(
-  .profile
+  .dev_box
   .emacs.d
-  .spacemacs
+  .fonts
   .gemrc
   .gitconfig
   .gitignore
-  .tmux.conf
-  .zshrc
-  .dev_box
+  .spacemacs
   .ssh
-  .fonts
+  .tmux.conf
+  .zprofile
+  .zshenv
+  .zshrc
   bin
 )
 
