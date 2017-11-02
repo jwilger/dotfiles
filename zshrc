@@ -31,6 +31,14 @@ alias clean-branches="git branch | xargs -n 1 git branch -D"
 
 alias mkdir="mkdir -p"
 
+alias be="bundle exec"
+alias brake="bundle exec rake"
+
+alias vi=nvim
+alias vim=nvim
+export VIMCONFIG=~/.config/nvim
+export VIMDATA=~/.local/share/nvim
+
 # Returns the name of the last (right-most) directory in the $PWD
 function last_dir_in_path {
   local d
