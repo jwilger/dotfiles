@@ -31,6 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     helm
      csv
      sql
      ;; ----------------------------------------------------------------
@@ -64,7 +65,6 @@ values."
      floobits
      colors
      themes-megapack
-     ivy
      jekyll
      )
    ;; List of additional packages that will be installed without being
@@ -375,10 +375,6 @@ you should place your code here."
   (setq projectile-switch-project-action 'projectile-dired)
   (setq projectile-enable-caching nil)
 
-  ;; Set Ivy completion to use fuzzy matching for file names
-  (setq ivy-re-builders-alist
-        '((read-file-name-internal . ivy--regex-fuzzy)
-          (t . ivy--regex-plus)))
   (require 'seeing-is-believing)
   (add-hook 'ruby-mode-hook 'seeing-is-believing)
 
