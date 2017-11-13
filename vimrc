@@ -160,6 +160,101 @@ set complete+=kspell
 " Always use vertical diffs
 set diffopt+=vertical
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => VIM user interface
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set scrolloff=7 " n lines of context above and below the cursor
+set sidescrolloff=10
+set ruler " Always show current position
+set cmdheight=1 "The commandbar height
+set hid "Change buffer without saving
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+set ignorecase " Ignore case when searching 
+set smartcase " Ignore case when searching lowercase
+set hlsearch  " highlight search
+set incsearch  " incremental search, search as you type
+map <silent> <leader><cr> :noh<cr> " clear search highlighting
+set magic " make regular expressions behave sanely (i.e. "." matches any character vs. "\.")
+set showmatch "Show matching bracets when text indicator is over them
+set noerrorbells " No sound on errors
+set novisualbell
+set t_vb=
+set nu " print line numbers in gutter
+set foldlevelstart=100
+
+" open a new line without entering insert mode
+map <Enter> o<ESC>
+
+" The <ESC> key is too hard to reach for accurately on Apple keyboards
+imap jk <Esc>
+
+set nowrap
+set linebreak " Wrap at word
+
+" Make dealing with split windows a little easier
+set equalalways " Vertical and horizontal splits default to equal sizes when created
+set splitbelow splitright
+:noremap <leader>v :vsp<cr> " Quick access to vertical splits
+:noremap <leader>h :split<cr> " Quick access to horizontal splits
+:noremap <leader>w :wincmd w<cr> " Cycle through windows
+
+colorscheme solarized8_dark
+
+" Close the current buffer
+map <leader>bd :Bclose<cr>
+
+" Close all the buffers
+map <leader>ba :1,300 bd!<cr>
+
+" Show buffer list (also mapped to "<leader>be", but this is easier to type
+map <leader>bb :BufExplorer<cr>
+
+" When pressing <leader>cd switch to the directory of the open buffer
+map <leader>cd :cd %:p:h<cr>
+
+
+command! Bclose call <SID>BufcloseCloseIt()
+function! <SID>BufcloseCloseIt()
+  let l:currentBufNum = bufnr("%")
+  let l:alternateBufNum = bufnr("#")
+
+  if buflisted(l:alternateBufNum)
+    buffer #
+  else
+    bnext
+  endif
+
+  if bufnr("%") == l:currentBufNum
+    new
+  endif
+
+  if buflisted(l:currentBufNum)
+    execute("bdelete! ".l:currentBufNum)
+  endif
+endfunction
+
+" Specify the behavior when switching between buffers 
+try
+  set switchbuf=usetab
+  set stal=1
+catch
+endtry
+
+map <leader>d :NERDTreeToggle<cr>
+
+let g:rspec_command = "Dispatch rspec {spec}"
+
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
+let g:ale_sign_column_always = 1
+nmap <silent> <Leader>ep <Plug>(ale_previous_wrap)
+nmap <silent> <Leader>en <Plug>(ale_next_wrap)
+
 " Local config
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local

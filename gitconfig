@@ -1,9 +1,16 @@
+[user]
+  name = John Wilger
+  email = john@johnwilger.com
 [init]
   templatedir = ~/.git_template
 [push]
   default = current
 [color]
   ui = auto
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
 [alias]
   aa = add --all
   ap = add --patch
@@ -25,3 +32,9 @@
   autosquash = true
 [include]
   path = ~/.gitconfig.local
+[branch]
+  autosetuprebase = always
+[github]
+  user = jwilger
+[rerere]
+  enabled = 1
