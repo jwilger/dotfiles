@@ -1,3 +1,5 @@
+SILENCE_RBENV_DEPRECATION=1
+
 # load custom executable functions
 for function in ~/.zsh/functions/*; do
   source $function
@@ -41,8 +43,12 @@ _load_settings() {
 }
 _load_settings "$HOME/.zsh/configs"
 
+eval "$(rbenv init -)"
+
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
+
+
