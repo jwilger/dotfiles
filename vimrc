@@ -123,13 +123,6 @@ nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
-" vim-test mappings
-nnoremap <silent> <Leader>t :TestFile<CR>
-nnoremap <silent> <Leader>s :TestNearest<CR>
-nnoremap <silent> <Leader>l :TestLast<CR>
-nnoremap <silent> <Leader>a :TestSuite<CR>
-nnoremap <silent> <Leader>gt :TestVisit<CR>
-
 " Run commands that require an interactive shell
 nnoremap <Leader>r :RunInInteractiveShell<space>
 
@@ -200,8 +193,6 @@ set splitbelow splitright
 :noremap <leader>h :split<cr> " Quick access to horizontal splits
 :noremap <leader>w :wincmd w<cr> " Cycle through windows
 
-colorscheme solarized8_dark
-
 " Close the current buffer
 map <leader>bd :Bclose<cr>
 
@@ -244,6 +235,13 @@ endtry
 
 map <leader>d :NERDTreeToggle<cr>
 
+" " vim-test mappings
+" nnoremap <silent> <Leader>t :TestFile<CR>
+" nnoremap <silent> <Leader>s :TestNearest<CR>
+" nnoremap <silent> <Leader>l :TestLast<CR>
+" nnoremap <silent> <Leader>a :TestSuite<CR>
+" nnoremap <silent> <Leader>gt :TestVisit<CR>
+
 let g:rspec_command = "Dispatch rspec {spec}"
 
 map <Leader>t :call RunCurrentSpecFile()<CR>
@@ -254,6 +252,9 @@ map <Leader>a :call RunAllSpecs()<CR>
 let g:ale_sign_column_always = 1
 nmap <silent> <Leader>ep <Plug>(ale_previous_wrap)
 nmap <silent> <Leader>en <Plug>(ale_next_wrap)
+
+set background=dark
+colorscheme solarized
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")

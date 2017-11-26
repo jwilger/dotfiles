@@ -7,10 +7,12 @@ alias v="$VISUAL"
 
 # Bundler
 alias b="bundle"
+alias be="bundle exec"
 
 # Rails
 alias migrate="rake db:migrate db:rollback && rake db:migrate db:test:prepare"
 alias s="rspec"
+alias update="bundle && rake db:reset && rake db:migrate && rake script_runner:execute"
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
@@ -20,6 +22,7 @@ alias g="git"
 alias gci="git commit"
 alias gco="git checkout"
 alias gst="git status"
+alias gbr="git branch"
 
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
