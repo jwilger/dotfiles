@@ -1,0 +1,71 @@
+#!/usr/bin/env ruby
+
+help_text = <<EOF
+
+Creates new windows in the current tmux session set up to work on your project.
+
+The format of the configuration file is as follows:
+
+  ----
+  app_name: {my_app}
+  additional_windows:
+    {window_suffix_a}: {window_command}
+    {window_suffix_b}: {window_command}
+
+Replace "{window_suffix_X}" with a nickname for the window and
+"{window command}" with a shell command to run in that window. A concrete
+example:
+
+  ----
+  app_name: todos
+  additional_windows:
+    vim: vim .
+    server: rails s
+    logs: tail -f log/*
+
+When you want to start work on the todos project, you start your tmux
+session and change into the root directory of the project containing the
+above configuration file and then run this command. This will cause the
+current shell window to be renamed to "todos-sh" and it will create a
+new window named "todos-vim" running "vim .", a new window named
+"todos-server" running "rails s", and a new window names "todos-logs"
+running "tail -f log/*".
+
+If no `.tmux-windows.yml` file is present in $PWD, it will by default
+set "app_name" to the name of the current directory and will create a
+window with your preferred editor open on the current directory (taken
+from the $VISUAL environment variable).
+
+EOF
+
+if ARGV[0] =~ /^--?h(elp)?$/
+  puts help_text
+  exit
+end
+
+current_dir = ENV['PWD']
+custom_settings_file = File.join(current_dir, '.tmux-windows.yml')
+
+default_editor = ENV['VISUAL'] || 'vim'
+
+default_settings = {
+  'app_name' => File.basename(current_dir),
+  'additional_windows' => {
+    default_editor => "%s ." % default_editor
+  }
+}
+
+custom_settings = if File.exist?(custom_settings_file)
+                    require 'yaml'
+                    YAML.load_file(custom_settings_file)
+                  else
+                    {}
+                  end
+
+settings = default_settings.merge(custom_settings)
+
+`tmux rename-window #{settings['app_name']}-sh`
+
+settings['additional_windows'].each do |name, command|
+  `tmux new-window -d -n #{settings['app_name']}-#{name} "#{command}"`
+end
