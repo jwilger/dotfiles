@@ -123,9 +123,6 @@ nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
-" Run commands that require an interactive shell
-nnoremap <Leader>r :RunInInteractiveShell<space>
-
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
 
@@ -138,10 +135,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
-
-" Move between linting errors
-nnoremap ]r :ALENextWrap<CR>
-nnoremap [r :ALEPreviousWrap<CR>
 
 " Set spellfile to location that is guaranteed to exist, can be symlinked to
 " Dropbox or kept in Git and managed outside of thoughtbot/dotfiles using rcm.
@@ -193,38 +186,11 @@ set splitbelow splitright
 :noremap <leader>h :split<cr> " Quick access to horizontal splits
 :noremap <leader>w :wincmd w<cr> " Cycle through windows
 
-" Close the current buffer
-map <leader>bd :Bclose<cr>
-
-" Close all the buffers
-map <leader>ba :1,300 bd!<cr>
-
 " Show buffer list (also mapped to "<leader>be", but this is easier to type
 map <leader>bb :BufExplorer<cr>
 
 " When pressing <leader>cd switch to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>
-
-
-command! Bclose call <SID>BufcloseCloseIt()
-function! <SID>BufcloseCloseIt()
-  let l:currentBufNum = bufnr("%")
-  let l:alternateBufNum = bufnr("#")
-
-  if buflisted(l:alternateBufNum)
-    buffer #
-  else
-    bnext
-  endif
-
-  if bufnr("%") == l:currentBufNum
-    new
-  endif
-
-  if buflisted(l:currentBufNum)
-    execute("bdelete! ".l:currentBufNum)
-  endif
-endfunction
 
 " Specify the behavior when switching between buffers 
 try
@@ -235,28 +201,24 @@ endtry
 
 map <leader>d :NERDTreeToggle<cr>
 
-" " vim-test mappings
-" nnoremap <silent> <Leader>t :TestFile<CR>
-" nnoremap <silent> <Leader>s :TestNearest<CR>
-" nnoremap <silent> <Leader>l :TestLast<CR>
-" nnoremap <silent> <Leader>a :TestSuite<CR>
-" nnoremap <silent> <Leader>gt :TestVisit<CR>
-
-let g:rspec_command = "Dispatch rspec {spec}"
-
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
-
 let g:ale_sign_column_always = 1
-nmap <silent> <Leader>ep <Plug>(ale_previous_wrap)
-nmap <silent> <Leader>en <Plug>(ale_next_wrap)
+" Move between linting errors
+nnoremap ]r :ALENextWrap<CR>
+nnoremap [r :ALEPreviousWrap<CR>
+
+nnoremap <F8> :Dispatch<CR>
+
+let g:gutentags_cache_dir = '~/.tags_cache'
+let g:alchemist_tag_disable = 1
+let g:deoplete#enable_at_startup = 1
+
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
+
+let test#strategy = "dispatch"
 
 set background=dark
 colorscheme solarized
-
-" Local config
-if filereadable($HOME . "/.vimrc.local")
-  source ~/.vimrc.local
-endif
