@@ -14,12 +14,15 @@ let g:has_async = v:version >= 800 || has('nvim')
 
 call plug#begin('~/.vim/bundle')
 Plug 'Shougo/deoplete.nvim'
+Plug 'Valloric/ListToggle' "toggle quick and location lists
+Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'andyl/vim-projectionist-elixir'
 Plug 'c-brenn/phoenix.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'janko-m/vim-test'
 Plug 'jlanzarotta/bufexplorer'
+Plug 'jreybert/vimagit'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
@@ -31,7 +34,6 @@ Plug 'tpope/vim-commentary' "toggle comment lines with gc
 Plug 'tpope/vim-dispatch' "tmux/vim integration
 Plug 'tpope/vim-endwise' "auto-insert closing 'end' statements
 Plug 'tpope/vim-eunuch' "Unix file manipulation like :Delete or :Move
-Plug 'tpope/vim-flagship' "statusline/tabline stuff
 Plug 'tpope/vim-projectionist' "project config
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
@@ -40,5 +42,7 @@ Plug 'tpope/vim-repeat' "enable . repeating of plugin commands
 Plug 'tpope/vim-sleuth' "autodetect tab/indent settings
 Plug 'tpope/vim-surround' "enable cs for change surround
 Plug 'tpope/vim-unimpaired' "lots of toggles prefixed with [ and ]
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
 call plug#end()
