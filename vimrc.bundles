@@ -13,42 +13,32 @@ command!  -nargs=1 UnPlug call s:UnPlug(<args>)
 let g:has_async = v:version >= 800 || has('nvim')
 
 call plug#begin('~/.vim/bundle')
-
-" Define bundles via Github repos
-Plug 'christoomey/vim-run-interactive'
+Plug 'Shougo/deoplete.nvim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'andyl/vim-projectionist-elixir'
+Plug 'c-brenn/phoenix.vim'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'elixir-lang/vim-elixir'
-Plug 'fatih/vim-go'
 Plug 'janko-m/vim-test'
-Plug 'kchmck/vim-coffee-script'
-Plug 'pangloss/vim-javascript'
-Plug 'pbrisbin/vim-mkdir'
-Plug 'slim-template/vim-slim'
-Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-projectionist'
+Plug 'jlanzarotta/bufexplorer'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'sheerun/vim-polyglot'
+Plug 'slashmili/alchemist.vim'
+Plug 'tpope/vim-bundler' "Ruby Bundler support
+Plug 'tpope/vim-commentary' "toggle comment lines with gc
+Plug 'tpope/vim-dispatch' "tmux/vim integration
+Plug 'tpope/vim-endwise' "auto-insert closing 'end' statements
+Plug 'tpope/vim-eunuch' "Unix file manipulation like :Delete or :Move
+Plug 'tpope/vim-flagship' "statusline/tabline stuff
+Plug 'tpope/vim-projectionist' "project config
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-rhubarb'
-Plug 'tpope/vim-surround'
-Plug 'vim-ruby/vim-ruby'
-Plug 'vim-scripts/tComment'
-Plug 'altercation/vim-colors-solarized'
-Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
-Plug 'jlanzarotta/bufexplorer'
-Plug 'ngmy/vim-rubocop'
-Plug 'thoughtbot/vim-rspec'
-
-if g:has_async
-  Plug 'w0rp/ale'
-endif
-
-if filereadable(expand("~/.vimrc.bundles.local"))
-  source ~/.vimrc.bundles.local
-endif
-
+Plug 'tpope/vim-rbenv'
+Plug 'tpope/vim-repeat' "enable . repeating of plugin commands
+Plug 'tpope/vim-sleuth' "autodetect tab/indent settings
+Plug 'tpope/vim-surround' "enable cs for change surround
+Plug 'tpope/vim-unimpaired' "lots of toggles prefixed with [ and ]
+Plug 'w0rp/ale'
 call plug#end()
