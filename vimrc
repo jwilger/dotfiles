@@ -1,6 +1,9 @@
 " Leader
 let mapleader = " "
 
+let g:loaded_netrw       = 1
+let g:loaded_netrwPlugin = 1
+
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
 set nowritebackup
@@ -44,18 +47,6 @@ augroup vimrcEx
   autocmd BufRead,BufNewFile Appraisals set filetype=ruby
   autocmd BufRead,BufNewFile *.md set filetype=markdown
   autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
-
-  " ALE linting events
-  if g:has_async
-    set updatetime=1000
-    let g:ale_lint_on_text_changed = 0
-    autocmd CursorHold * call ale#Lint()
-    autocmd CursorHoldI * call ale#Lint()
-    autocmd InsertEnter * call ale#Lint()
-    autocmd InsertLeave * call ale#Lint()
-  else
-    echoerr "The thoughtbot dotfiles require NeoVim or Vim 8"
-  endif
 augroup END
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
@@ -157,7 +148,7 @@ set cmdheight=1 "The commandbar height
 set hid "Change buffer without saving
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
-set ignorecase " Ignore case when searching 
+set ignorecase " Ignore case when searching
 set smartcase " Ignore case when searching lowercase
 set hlsearch  " highlight search
 set incsearch  " incremental search, search as you type
@@ -172,6 +163,9 @@ set foldlevelstart=100
 
 " open a new line without entering insert mode
 map <Enter> o<ESC>
+" In the quickfix window, <CR> is used to jump to the error under the
+" cursor, so undefine the mapping there.
+autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 
 " The <ESC> key is too hard to reach for accurately on Apple keyboards
 imap jk <Esc>
@@ -192,7 +186,7 @@ map <leader>bb :BufExplorer<cr>
 " When pressing <leader>cd switch to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>
 
-" Specify the behavior when switching between buffers 
+" Specify the behavior when switching between buffers
 try
   set switchbuf=usetab
   set stal=1
@@ -201,15 +195,29 @@ endtry
 
 map <leader>d :NERDTreeToggle<cr>
 
-let g:ale_sign_column_always = 1
-" Move between linting errors
-nnoremap ]r :ALENextWrap<CR>
-nnoremap [r :ALEPreviousWrap<CR>
+augroup ale
+  autocmd!
+  " ALE linting events
+  set updatetime=1000
+  let g:ale_lint_on_text_changed = 0
+  let g:ale_sign_column_always = 1
+  let g:alchemist_tag_disable = 1
+  autocmd CursorHold * call ale#Lint()
+  autocmd CursorHoldI * call ale#Lint()
+  autocmd InsertEnter * call ale#Lint()
+  autocmd InsertLeave * call ale#Lint()
+
+  " Move between linting errors
+  nnoremap ]r :ALENextWrap<CR>
+  nnoremap [r :ALEPreviousWrap<CR>
+augroup END
+
+let g:lt_location_list_toggle_map = '<leader>ol'
+let g:lt_quickfix_list_toggle_map = '<leader>oq'
 
 nnoremap <F8> :Dispatch<CR>
 
 let g:gutentags_cache_dir = '~/.tags_cache'
-let g:alchemist_tag_disable = 1
 let g:deoplete#enable_at_startup = 1
 
 nmap <silent> <leader>t :TestNearest<CR>
