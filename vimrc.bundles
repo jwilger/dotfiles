@@ -24,6 +24,7 @@ Plug 'janko-m/vim-test'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'jreybert/vimagit'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'ngmy/vim-rubocop'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
