@@ -49,6 +49,12 @@ augroup vimrcEx
   autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
 augroup END
 
+augroup vimrcElixir
+  autocmd!
+  autocmd FileType elixir nmap <buffer> <leader>mdo :Dispatch! mix docs && open doc/index.html<CR>
+  autocmd FileType elixir nmap <buffer> <leader>mdd :Dispatch! mix docs<CR>
+augroup END
+
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes.
 let g:is_posix = 1
@@ -202,6 +208,9 @@ augroup ale
   let g:ale_lint_on_text_changed = 0
   let g:ale_sign_column_always = 1
   let g:alchemist_tag_disable = 1
+  let g:ale_linters = {
+        \'elixir': ['credo'],
+        \}
   autocmd CursorHold * call ale#Lint()
   autocmd CursorHoldI * call ale#Lint()
   autocmd InsertEnter * call ale#Lint()
@@ -225,6 +234,9 @@ nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
+
+nmap <leader>gi :MagitOnly<CR>
+nmap <leader>gp :Dispatch git push --quiet<CR>
 
 let test#strategy = "dispatch"
 
