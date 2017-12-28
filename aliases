@@ -23,6 +23,8 @@ alias gci="git commit"
 alias gco="git checkout"
 alias gst="git status"
 alias gbr="git branch"
+alias grb="git rebase"
+alias clean-branches="git branch | xargs -n 1 git branch -D"
 
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
