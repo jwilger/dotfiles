@@ -238,7 +238,10 @@ nmap <silent> <leader>g :TestVisit<CR>
 nmap <leader>gi :MagitOnly<CR>
 nmap <leader>gp :Dispatch git push --quiet<CR>
 
-let test#strategy = "dispatch"
+nmap <leader>ss :e ~/vim-scratch<CR>
+
+let g:test#strategy = "dispatch"
+let g:test#elixir#mix#executable = 'nanobox run mix'
 
 set background=dark
 colorscheme solarized
