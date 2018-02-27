@@ -1,6 +1,7 @@
 [user]
   name = John Wilger
   email = john@johnwilger.com
+	signingKey = 27BB1B382259A46047A67A982F703BC256593614
 [init]
   templatedir = ~/.git_template
 [push]
@@ -26,6 +27,7 @@
   ff = only
 [commit]
   template = ~/.gitmessage
+	gpgsign = true
 [fetch]
   prune = true
 [rebase]
