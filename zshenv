@@ -28,3 +28,6 @@ fi
 
 unset _old_path
 export GPG_TTY=$(tty)
+
+export GOOGLE_CLIENT_ID="147210546569-71tl7qrf5obmvufj030lsqiih0obhfr8.apps.googleusercontent.com"
+export GOOGLE_CLIENT_SECRET="yOJScuBop0jB0YPRjGdNxOkb"

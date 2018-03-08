@@ -46,6 +46,8 @@ _load_settings "$HOME/.zsh/configs"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+export GH_REPO_TOKEN="jwilger:ac73a1f227335b2d3dc6bd7ee902129fc53c08dc"
+
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 

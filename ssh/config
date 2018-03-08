@@ -1,10 +1,6 @@
 Host *.local
   ForwardAgent yes
-Host *.lsdev.co
-  User vagrant
-  ForwardAgent yes
-  Port 2223
-Host lsdev.co
+Host fidev.net
   User vagrant
   ForwardAgent yes
   Port 2222
