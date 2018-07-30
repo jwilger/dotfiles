@@ -1,3 +1,8 @@
+" Fix stupid deprecation warning. See https://github.com/vim/vim/issues/3117
+if has('python3')
+  silent! python3 1
+endif
+
 " Leader
 let mapleader = " "
 
@@ -181,6 +186,8 @@ autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 
 " The <ESC> key is too hard to reach for accurately on Apple keyboards
 imap jk <Esc>
+
+imap fp \|>
 
 set nowrap
 set linebreak " Wrap at word

@@ -27,5 +27,9 @@ alias gbr="git branch"
 alias grb="git rebase"
 alias clean-branches="git branch | xargs -n 1 git branch -D"
 
+# EverFi
+alias eserve="bundle exec foreman start -f Procfile.dev -m=\"all=1,webpack=0\""
+alias ebuildclient="npm install && bundle exec rake react_on_rails:assets:webpack"
+
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
