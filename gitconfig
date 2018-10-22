@@ -1,7 +1,7 @@
 [user]
   name = John Wilger
   email = john@johnwilger.com
-	signingKey = 27BB1B382259A46047A67A982F703BC256593614
+	signingkey = E91B096FAB1E0684
 [init]
   templatedir = ~/.git_template
 [push]

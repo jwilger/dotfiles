@@ -43,6 +43,8 @@ _load_settings() {
 }
 _load_settings "$HOME/.zsh/configs"
 
+export PATH="$HOME/.local/bin:$PATH"
+
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="./bundle/bin:$PATH"
