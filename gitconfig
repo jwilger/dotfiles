@@ -35,7 +35,8 @@
 [include]
   path = ~/.gitconfig.local
 [branch]
-  autosetuprebase = always
+	autoSetupRebase = always
+	autoSetupMerge = true
 [github]
   user = jwilger
 [rerere]
