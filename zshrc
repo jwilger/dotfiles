@@ -1,5 +1,3 @@
-SILENCE_RBENV_DEPRECATION=1
-
 # load custom executable functions
 for function in ~/.zsh/functions/*; do
   source $function
@@ -45,15 +43,8 @@ _load_settings "$HOME/.zsh/configs"
 
 export PATH="$HOME/.local/bin:$PATH"
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-export PATH="./bundle/bin:$PATH"
-
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
