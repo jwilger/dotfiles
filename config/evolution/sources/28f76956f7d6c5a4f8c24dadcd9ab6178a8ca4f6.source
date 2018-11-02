@@ -1,0 +1,28 @@
+[Data Source]
+DisplayName=jwilger@everfi.com
+Enabled=true
+Parent=031d3c4733582090c18ab9bb249679b52cc4abfb
+
+[Mail Composition]
+Bcc=
+Cc=
+DraftsFolder=folder://local/Drafts
+ReplyStyle=default
+SignImip=true
+TemplatesFolder=
+StartBottom=inconsistent
+TopSignature=inconsistent
+
+[Mail Identity]
+Address=jwilger@everfi.com
+Aliases=
+Name=
+Organization=
+ReplyTo=
+SignatureUid=none
+
+[Mail Submission]
+SentFolder=folder://local/Sent
+TransportUid=3a411bf4862d60c3608e6c8c420e48185f211e86
+RepliesToOriginFolder=false
+UseSentFolder=true

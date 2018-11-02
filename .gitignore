@@ -2,3 +2,6 @@
 vim/bundle/
 ssh/known_hosts.old
 ssh/ssh_auth_sock
+config/nvim/pack/minpac/start/*
+config/google-chrome
+config/**/*.log
