@@ -125,11 +125,11 @@ inoremap <S-Tab> <c-n>
 " Switch between the last two files
 nnoremap <Leader><Leader> <c-^>
 
-" Get off my lawn
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
+" " Get off my lawn
+" nnoremap <Left> :echoe "Use h"<CR>
+" nnoremap <Right> :echoe "Use l"<CR>
+" nnoremap <Up> :echoe "Use k"<CR>
+" nnoremap <Down> :echoe "Use j"<CR>
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
@@ -189,7 +189,15 @@ imap jk <Esc>
 
 imap fp \|>
 
-set nowrap
+imap spp ->
+
+imap gpp ->(ಠ) { ಠ }
+
+imap hr =>
+
+set wrap
+set breakindent
+set sbr=»\|\ 
 set linebreak " Wrap at word
 
 " Make dealing with split windows a little easier
