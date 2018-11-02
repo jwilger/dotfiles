@@ -1,4 +1,0 @@
-[submodule "config/nvim/pack/minpac/opt/minpac"]
-	path = config/nvim/pack/minpac/opt/minpac
-	url = https://github.com/k-takata/minpac.git
-	branch = master
