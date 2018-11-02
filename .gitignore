@@ -1,2 +1,4 @@
 !bin
 vim/bundle/
+ssh/known_hosts.old
+ssh/ssh_auth_sock
