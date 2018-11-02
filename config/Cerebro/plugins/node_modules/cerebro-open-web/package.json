@@ -1,0 +1,46 @@
+{
+  "name": "cerebro-open-web",
+  "version": "1.0.0",
+  "description": "Plugin for cerebro app that shows small url previews",
+  "license": "MIT",
+  "repository": "KELiON/cerebro-open-web",
+  "author": {
+    "name": "Alexandr Subbotin",
+    "email": "kelionweb@gmail.com",
+    "url": "asubbotin.ru"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "build": "webpack && babili dist -d dist --compact --no-comments",
+    "debug": "./scripts/debug",
+    "debug:windows": "scripts\\debug.bat",
+    "test": "mocha --compilers js:babel-core/register --require ./test/setup.js",
+    "prepublish": "rimraf ./dist && npm run build"
+  },
+  "main": "dist/index.js",
+  "keywords": [
+    "cerebro",
+    "cerebro-extracted-plugin",
+    "url",
+    "preview"
+  ],
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^6.2.8",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-react-jsx": "^6.8.0",
+    "babili": "0.0.9",
+    "cerebro-tools": "^0.1.0",
+    "chai": "^3.5.0",
+    "css-loader": "^0.26.0",
+    "mocha": "^3.3.0",
+    "react": "^15.4.1",
+    "rimraf": "^2.6.1",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "2.1.0-beta.27"
+  }
+}

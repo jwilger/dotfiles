@@ -1,0 +1,53 @@
+[Data Source]
+DisplayName=jwilger@everfi.com
+Enabled=true
+Parent=031d3c4733582090c18ab9bb249679b52cc4abfb
+
+[Offline]
+StaySynchronized=false
+
+[Authentication]
+Host=imap.gmail.com
+Method=XOAUTH2
+Port=993
+ProxyUid=system-proxy
+RememberPassword=true
+User=jwilger@everfi.com
+CredentialName=
+
+[Mail Account]
+BackendName=imapx
+IdentityUid=28f76956f7d6c5a4f8c24dadcd9ab6178a8ca4f6
+ArchiveFolder=
+NeedsInitialSetup=true
+
+[Security]
+Method=ssl-on-alternate-port
+
+[Imapx Backend]
+FilterInbox=true
+StoreChangesInterval=3
+LimitByAge=false
+LimitUnit=years
+LimitValue=1
+UseMultiFetch=false
+CheckAll=false
+CheckSubscribed=false
+ConcurrentConnections=3
+FetchOrder=ascending
+FilterAll=false
+FilterJunk=false
+FilterJunkInbox=false
+Namespace=
+RealJunkPath=
+RealTrashPath=
+ShellCommand=ssh -C -l %u %h exec /usr/sbin/imapd
+UseIdle=false
+UseNamespace=false
+UseQresync=false
+UseRealJunkPath=false
+UseRealTrashPath=false
+UseShellCommand=false
+UseSubscriptions=false
+IgnoreOtherUsersNamespace=false
+IgnoreSharedFoldersNamespace=false

@@ -1,0 +1,28 @@
+[Data Source]
+DisplayName=john@johnwilger.com
+Enabled=true
+Parent=24f232e88875cfd74db509b94f9aceff2534b6ab
+
+[Mail Composition]
+Bcc=
+Cc=
+DraftsFolder=folder://local/Drafts
+ReplyStyle=default
+SignImip=true
+TemplatesFolder=
+StartBottom=inconsistent
+TopSignature=inconsistent
+
+[Mail Identity]
+Address=john@johnwilger.com
+Aliases=
+Name=
+Organization=
+ReplyTo=
+SignatureUid=none
+
+[Mail Submission]
+SentFolder=folder://local/Sent
+TransportUid=f937d406307aad69168ef23c638762c7d03244f0
+RepliesToOriginFolder=false
+UseSentFolder=true

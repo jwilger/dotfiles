@@ -1,0 +1,42 @@
+[Data Source]
+DisplayName=john@johnwilger.com
+Enabled=true
+Parent=
+
+[GNOME Online Accounts]
+AccountId=account_1540225466_0
+CalendarUrl=https://apidata.googleusercontent.com/caldav/v2/john@johnwilger.com/user
+ContactsUrl=https://www.googleapis.com/.well-known/carddav
+Name=
+Address=john@johnwilger.com
+
+[Collection]
+BackendName=google
+CalendarEnabled=true
+ContactsEnabled=true
+Identity=john@johnwilger.com
+MailEnabled=true
+CalendarUrl=
+ContactsUrl=
+
+[WebDAV Backend]
+AvoidIfmatch=false
+CalendarAutoSchedule=false
+Color=
+DisplayName=
+EmailAddress=
+ResourcePath=
+ResourceQuery=
+SslTrust=
+
+[Authentication]
+Host=
+Method=OAuth2
+Port=0
+ProxyUid=system-proxy
+RememberPassword=true
+User=
+CredentialName=
+
+[Security]
+Method=none

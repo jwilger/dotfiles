@@ -1,0 +1,721 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root>
+  <News>
+    <Article id="0">
+      <Requirements>
+        <MinVersion>559</MinVersion>
+        <MaxVersion>1</MaxVersion>
+      </Requirements>
+      <Ticker>News Feed</Ticker>
+      <Title>Welcome to the News Feed</Title>
+      <Date>05/06/15</Date>
+      <Content>
+				Welcome to the News Feed. Obsidian and the Pillars of Eternity team will be using the News Feed to give you information about Kickstarter updates and new patches.
+			</Content>
+    </Article>
+    <Article id="1">
+      <Requirements>
+        <MinVersion>565</MinVersion>
+        <MaxVersion>1</MaxVersion>
+      </Requirements>
+      <Ticker>Patch 1.05</Ticker>
+      <Title>Patch 1.05 Live</Title>
+      <Date>05/06/15</Date>
+      <Content>
+				The 1.05 Patch is now live.
+
+				1.05 includes many bug fixes and quite a few new, community-requested features.
+
+				Check out the full patch notes [url=http://forums.obsidian.net/blog/7/entry-183-patch-notes-105-in-progress/]here[/url].
+			</Content>
+    </Article>
+    <Article id="2">
+      <Requirements>
+        <MinVersion>565</MinVersion>
+        <MaxVersion>1</MaxVersion>
+      </Requirements>
+      <Ticker>Patch 1.06 Beta</Ticker>
+      <Title>Patch 1.06 Beta Live</Title>
+      <Date>05/22/15</Date>
+      <Content>
+				The 1.06 patch beta is now live on Steam. It has a few major fixes in it, so check it out if you get a chance.
+
+				Instructions for joining the beta can be found [url=http://forums.obsidian.net/topic/76849-patch-betas-on-steam/]here[/url].
+
+				Check out the full patch notes [url=http://forums.obsidian.net/blog/7/entry-184-patch-notes-106-in-progress/]here[/url].
+			</Content>
+    </Article>
+    <Article id="3">
+      <Requirements>
+        <MinVersion>565</MinVersion>
+        <MaxVersion>1</MaxVersion>
+      </Requirements>
+      <Ticker>Pillars of Eternity Card Game</Ticker>
+      <Title>Pillars of Eternity: Lords of the Eastern Reach Kickstarter</Title>
+      <Date>05/28/15</Date>
+      <Content>
+				Hello, backers. Obsidian has some very exciting news! Today marks the first day of a brand new Kickstarter for the Pillars of Eternity card game, Lords of the Eastern Reach.
+
+				Lords of the Eastern Reach is a strategic card game of adventure and empire building based on Pillars of Eternity. You must protect and build a city. Hire heroes and troops for defense or to delve into dangerous dungeons for loot and glory. Build towers, blacksmiths and other buildings to gain the advantage and go for the win.
+
+				If you would like to back and get your hands on your own copy, head over to the game's [url=https://www.kickstarter.com/projects/2081578473/pillars-of-eternity-lords-of-the-eastern-reach-car/]Kickstarter page[/url] and donate.
+			</Content>
+    </Article>
+    <Article id="4">
+      <Requirements>
+        <MinVersion>559</MinVersion>
+        <MaxVersion>1</MaxVersion>
+      </Requirements>
+      <Ticker>Patch 1.06</Ticker>
+      <Title>Patch 1.06 is Live</Title>
+      <Date>05/28/15</Date>
+      <Content>
+				The 1.06 Patch is now live.
+
+				1.06 includes many bug fixes - including fixes for some people that were getting crashes on start up and others that were seeing asset streaming problems due to some network adapters.
+
+				Check out the full patch notes [url=http://forums.obsidian.net/blog/7/entry-184-update-notes-106-in-progress/]here[/url].
+			</Content>
+    </Article>
+    <Article id="5">
+      <Requirements>
+        <MinVersion>617</MinVersion>
+        <MaxVersion>
+        </MaxVersion>
+      </Requirements>
+      <Ticker>Update 2.0 Features</Ticker>
+      <Title>New Features in 2.0</Title>
+      <Date>06/24/15</Date>
+      <Content>
+				Update 2.0 will introduce some awesome new features for Pillars of Eternity users such as improved AI, individual stealth, UI improvements, and more bug fixes!
+
+				Check out the video of the new features [url=https://www.youtube.com/watch?v=I0GvsA6exuY]here[/url].
+			</Content>
+    </Article>
+    <Article id="6">
+      <Requirements>
+        <MinVersion>617</MinVersion>
+        <MaxVersion>1</MaxVersion>
+      </Requirements>
+      <Ticker>Update 2.0 Beta</Ticker>
+      <Title>Update 2.0 Beta Live on Steam</Title>
+      <Date>08/05/15</Date>
+      <Content>
+				The Update 2.0 Beta is now live on Steam! If you would like to experience the new features and improvements, check out how [url=http://forums.obsidian.net/topic/80953-update-20-beta-is-live/]here[/url].
+			</Content>
+    </Article>
+    <Article id="7">
+      <Requirements>
+        <MinVersion>706</MinVersion>
+        <MaxVersion>1</MaxVersion>
+      </Requirements>
+      <Ticker>IMPORTANT: Change to Auto-attack</Ticker>
+      <Title>A change to auto-attack and how to fix it.</Title>
+      <Date>08/25/15</Date>
+      <Content>
+				In 2.00 we have made a change to auto-attacking so it is more integrated in our new AI system. One of the consequences of this is that your party members may not be auto-attacking until you set their AI to do so.
+
+				You can set your party member AI to perform in the previous manner by selecting a party member and right-clicking on their [url=http://media.obsidian.net/eternity/media/news/action-bar.jpg]AI icon in the action bar[/url]. Once the AI package menu appears you will want to set the [url=http://media.obsidian.net/eternity/media/news/package-options.jpg]Class Behavior to "None" and Auto-attack to "Defend Self."[/url]
+
+				To tell if your party member's AI is active just look at their AI icon. If the icon is highlighted, it means that their AI is active.
+			</Content>
+    </Article>
+    <Article id="8">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>1</MaxVersion>
+      </Requirements>
+      <Ticker>2.01 Beta on Steam</Ticker>
+      <Title>2.01 Beta is now live on Steam.</Title>
+      <Date>08/31/15</Date>
+      <Content>
+				Our 2.01 update now has its beta live on Steam. You can find the latest Update notes [url=http://forums.obsidian.net/blog/7/entry-187-update-notes-201/]here[/url]. If you would like to get into the beta, but are unsure of how to do so, check out [url=http://forums.obsidian.net/topic/76849-patch-betas-on-steam/]these instructions[/url].
+
+				Some major fixes include:
+				•Party members will now default to AI: On and Instruction Set: None.
+				•Many optimizations to save/load and area transitions performance. Some users are reporting a 20% decrease in load times.
+				•Blurry text in UI has been fixed.
+				•Problems with the stash not properly containing items that have been looted is now fixed.
+			</Content>
+    </Article>
+    <Article id="9">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>1</MaxVersion>
+      </Requirements>
+      <Ticker>2.01 Now Live</Ticker>
+      <Title>2.01 is now live.</Title>
+      <Date>09/02/15</Date>
+      <Content>
+				Hey, everyone. Update 2.01 is now live on Steam. Within a day it should also be live on GOG and Origin.
+
+				We are currently working to make DVD patches for 2.01, as well. We hope to have those up by the end of the week, but that could slip into next week.
+
+				If you would like to see the latest patch notes, please go [url=http://forums.obsidian.net/blog/7/entry-187-update-notes-201/]here[/url].
+
+				Here is a quick run down of some major fixes:
+				•Party members will now default to AI: On and Instruction Set: None.
+				•Many optimizations to save/load and area transitions performance. Some users are reporting a 20% decrease in load times.
+				•Blurry text in UI has been fixed.
+				•Problems with the stash not properly containing items that have been looted is now fixed.
+			</Content>
+    </Article>
+    <Article id="10">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>
+        </MaxVersion>
+      </Requirements>
+      <Ticker>2.03 Now Live</Ticker>
+      <Title>2.03 is now live.</Title>
+      <Date>11/02/15</Date>
+      <Content>
+				Hey, everyone. Update 2.03 is now live on Steam, GOG and Origin.
+
+				If you would like to see the latest patch notes, please go [url=http://forums.obsidian.net/blog/7/entry-189-update-notes-203/]here[/url].
+
+				Here is a quick run down of some major fixes:
+				    -Fixed an issue that was causing certain quests to take experience instead of granting it.
+					-Fixed a problem with chanters not being able to set their chants properly after they have retrained.
+					-Fixed an issue where retraining was allowing characters to obtain unlimited skill points.
+					-Using store filters now only shows the appropriate items instead of graying out other items in the store panel.
+					-Fixed multiple issues with the stronghold and how it interacted with DLC content.
+					-Fixed an issue that caused the main character to lose his or her background shortly after character creation.
+			</Content>
+    </Article>
+    <Article id="11">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>
+        </MaxVersion>
+      </Requirements>
+      <Ticker>Pillars of Eternity Soundtrack Now Available!</Ticker>
+      <Title>Pillars of Eternity Soundtrack is Out Now On iTunes and Amazon!</Title>
+      <Date>12/03/15</Date>
+      <Content>
+				Hey, everyone! If don't have the Pillars of Eternity soundtrack, you can now get it on [url=https://itunes.apple.com/us/album/pillars-eternity-official/id1050278148]iTunes[/url], [url=http://www.amazon.com/Pillars-Eternity-Official-Soundtrack-Justin/dp/B016RLV270/?tag=obsidiaentert-20]Amazon[/url], Google Play and Spotify!
+			</Content>
+    </Article>
+    <Article id="12">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>
+        </MaxVersion>
+      </Requirements>
+      <Ticker>Pillars of Eternity: The White March Part 2 Now Available!</Ticker>
+      <Title>Pillars of Eternity: The White March Part 2 is Out Now!</Title>
+      <Date>02/16/16</Date>
+      <Content>
+				Hey, everyone! The second part of the White March expansion is out now along with the 3.0 update on Steam, GOG and Origin.
+
+				Check out the [url=http://forums.obsidian.net/blog/7/entry-190-update-notes-300/]patch notes[/url] for the new features and changes that have gone into the game with the 3.0 update.
+
+				Here is a quick run down of just some of the new features:
+					-New content for the Stronghold that has you, as lord or lady of Caed Nua, decide the fate of your vassals and send your companions on new and exciting adventures.
+					-There is also a new quest line that allows you to defend your claim to Caed Nua.
+					-Knockout Injuries have been added as an option for those that want it. Injuries are added to characters that are knocked out in battle and are only removed by resting.
+					-Story Time mode has been added. This difficulty setting is for people that want to experience the Pillars of Eternity story without having to build a party of adventurers focused on combat.
+			</Content>
+    </Article>
+    <Article id="13">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>
+        </MaxVersion>
+      </Requirements>
+      <Ticker>Pillars of Eternity II: Deadfire is Live Now on Fig!</Ticker>
+      <Title>Pillars of Eternity II: Deadfire is Live Now on Fig!</Title>
+      <Date>01/26/17</Date>
+      <Content>
+				Obsidian Entertainment proudly presents the sequel to Pillars of Eternity, Pillars of Eternity II: Deadfire.
+
+				With Pillars II, we are improving upon the rich narrative, beautiful environments, and tactical combat that made Pillars of Eternity one of the highest-rated PC games of all time. Support the project on Fig where you’ll not only be able to get the Backer exclusive collector’s edition of Pillars of Eternity II: Deadfire, but also have the chance to invest in the game and share in the success of Obsidian’s first sequel.
+
+				[url=https://www.fig.co/campaigns/deadfire?utm_source=Obsidian&amp;utm_campaign=CF17&amp;utm_medium=ingame]Hunt a god. Save your soul.[/url]
+			</Content>
+    </Article>
+    <Article id="14">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>
+        </MaxVersion>
+      </Requirements>
+      <Ticker>We've Passed $2 Million and Details on Multiclassing!</Ticker>
+      <Title>We've Passed $2 Million and Details on Multiclassing!</Title>
+      <Date>02/02/17</Date>
+      <Content>
+				Greetings! A huge thank you to everyone who has supported the [url=https://www.fig.co/campaigns/deadfire?utm_source=Obsidian&amp;utm_campaign=CF17&amp;utm_medium=ingame]Fig campaign[/url] for Pillars of Eternity II: Deadfire. Because of you we have now reached $2 million in a week's time with no sign of stopping. This is helping us to make Deadfire a better game for you all. And we can't wait for you to get your hands on it.
+
+				We also wanted to share with you a video that Pillars II Game Director, Josh Sawyer, put together that [url=https://www.youtube.com/watch?v=SpKyazh8mUI]explains how multiclassing will work[/url] in Pillars of Eternity II: Deadfire. 
+
+				From all of us here at Obsidian, to all of you who have shown your support: thank you. You are incredible.
+			</Content>
+    </Article>
+    <Article id="15">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>
+        </MaxVersion>
+      </Requirements>
+      <Ticker>We're on a boat!</Ticker>
+      <Title>Travel the Deadfire in Style in Your Own Boat</Title>
+      <Date>02/22/17</Date>
+      <Content>
+				As we close in on the final two days of our [url=https://www.fig.co/campaigns/deadfire?utm_source=Obsidian&amp;utm_campaign=CF17&amp;utm_medium=ingame]Fig campaign[/url] we are very excited to share with you campaign Update 16. In [url=https://www.fig.co/campaigns/deadfire?update=277#updates]this update[/url], we show off how you'll get around in the Deadfire - in your own personal, upgradeable ship!
+
+				But wait, there's more! We also show off the concept for the Od Nua statue that will come in the Collector's Edition of the game as well reveal our $5 million stretch goal!
+			</Content>
+    </Article>
+    <Article id="16">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>
+        </MaxVersion>
+      </Requirements>
+      <Ticker>The Last 24 Hours!</Ticker>
+      <Title>We Are Now in the Last 24 Hours of the Deadfire Fig Campaign!</Title>
+      <Date>02/23/17</Date>
+      <Content>
+				We're nearing the final stretch! [url=https://www.fig.co/campaigns/deadfire?utm_source=Obsidian&amp;utm_campaign=CF17&amp;utm_medium=ingame]The Deadfire campaign[/url] is in it's last day. Thank you all for the support!
+
+				In the latest [url=https://www.fig.co/campaigns/deadfire?update=278#updates]update[/url], we showed off our $4.25 million stretch goal of a talking soulbound weapon and shed some light on Ydwin, who would grow from a sidekick to a fully fledged companion if we hit $5 million. With 24 hours left and support coming in regularly, we think we can get to that $5 million stretch goal!
+			</Content>
+    </Article>
+    <Article id="17">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>
+        </MaxVersion>
+      </Requirements>
+      <Ticker>Missed the Deadfire Campaign? Slacker Backer is Open!</Ticker>
+      <Title>Missed the Deadfire Campaign? Slacker Backer is Open!</Title>
+      <Date>03/9/17</Date>
+      <Content>
+				Thanks to all of you, we have been able to fund [url=https://www.fig.co/campaigns/deadfire?utm_source=Obsidian&amp;utm_campaign=CF17&amp;utm_medium=ingame]Pillars of Eternity II: Deadfire[/url] at 400% of our initial goal. Thank you all so much!
+
+				If you didn't get a chance to pledge support for Deadfire during the campaign, you can do so over on our [url=http://eternity.obsidian.net/backer]Backer Portal[/url]. Any pledges that are made there will count toward our stretch goals. So far we have reached a total of $4.6 million in funding thanks to the Slacker Backer efforts! Fishing and sea monsters could be on their way soon.
+
+				Though be warned, the window for Slacker Backer pledges is limited, so support while you can!
+			</Content>
+    </Article>
+    <Article id="18">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>
+        </MaxVersion>
+      </Requirements>
+      <Ticker>Last Month in the Deadfire. Vol. One!</Ticker>
+      <Title>What's Been Happening with Pillars II in the Past Month?</Title>
+      <Date>04/6/17</Date>
+      <Content>
+				March brought some pretty awesome news to those following the Pillars of Eternity II: Deadfire [url=https://www.fig.co/campaigns/deadfire?utm_source=Obsidian&amp;utm_campaign=CF17&amp;utm_medium=ingame]Fig campaign[/url] and we're here to bring the highlights to you!
+
+				- First up, if you haven't had the chance to pledge for Deadfire, you can do so either as a Slacker Backer on [url=https://www.fig.co/campaigns/deadfire?utm_source=Obsidian&amp;utm_campaign=CF17&amp;utm_medium=ingame]Fig[/url] or over on our [url=http://eternity.obsidian.net/backer]Eternity Backer Portal[/url]
+
+				- Over in [url=https://www.fig.co/campaigns/deadfire?update=291#updates]Update #23[/url] we dived into the lore behind one of the creatures you'll find in the Deadfire, the naga!
+
+				- We discussed the state of the project and where each department currently is with their work on Deadfire in [url=https://www.fig.co/campaigns/deadfire?update=298#updates]Update #24[/url].
+
+				- The Eternity Backer Portal opened up to allow you manage your pledge and we put all of the information in [url=https://www.fig.co/campaigns/deadfire?update=303#updates]Update #25[/url] to help you get your pledge all set as well as set up [url=https://www.fig.co/campaigns/deadfire?update=304#updates]Update #26[/url] to answer frequently asked questions about the Backer Portal.
+
+				- Then finally, we took a deep dive into the factions of the Deadfire (part 1!) with [url=https://www.fig.co/campaigns/deadfire?update=311#updates]Update #28[/url], the Príncipi and the Huana.
+
+				That's a ton of great information on Pillars of Eternity II: Deadfire and it's only one month out from the campaign ending. By this time next month, we'll have more to share with you. Until then, thank you all for your support. You are all incredible!
+			</Content>
+    </Article>
+    <Article id="19">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>
+        </MaxVersion>
+      </Requirements>
+      <Ticker>Pillars of Eternity II: Deadfire Update 35 - The E3 Wrap-Up</Ticker>
+      <Title>Pillars of Eternity II: Deadfire Gets Shown Off at E3!</Title>
+      <Date>06/21/17</Date>
+      <Content>
+				Last week at E3 2017, we were able to show off Pillars of Eternity II: Deadfire gameplay to journalist and answer their questions for the first time since the game has been announced.
+				
+				You can head on over to our [url=http://forums.obsidian.net/topic/92912-update-35-the-e3-2017-wrap-up]forums[/url] to see the full list of articles and coverage that came out of E3 while also getting a look at an awesome [url=https://www.youtube.com/watch?v=eebUV7hJswk]extended gameplay video[/url] that we got to show over at the IGN Live stage!
+
+				Be sure to check back next week when Deadfire Executive Producer, Adam Brennecke, will be describing all of the features that we're showing off in the IGN video in more detail!
+			</Content>
+    </Article>
+    <Article id="20">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>
+        </MaxVersion>
+      </Requirements>
+      <Ticker>Pillars of Eternity II: Deadfire Update 36 is Now Live!</Ticker>
+      <Title>Pillars of Eternity II: Deadfire Update 36 is Now Live!</Title>
+      <Date>06/27/17</Date>
+      <Content>
+				As promised we're [url=http://forums.obsidian.net/topic/93022-update-36-deep-diving-into-the-e3-video]back this week[/url] to dive into the video that we showed off on the IGN Live stage at E3 2017. Deadfire Executive Producer, Adam Brennecke, walks us [url=https://www.youtube.com/watch?v=_Es15qyjoJ8]through the video[/url] and goes into detail on some of the new things being shown off.
+				
+				We're also happy to announce that the next Pillars of Eternity II: Deadfire Twitch Q&amp;A stream will take place on July 12th at 4:00PM PST/1:00AM CEST over on our [url=https://www.twitch.tv/obsidian]Twitch channel[/url]. Be sure to ask your questions in the [url=http://forums.obsidian.net/topic/93020-deadfire-qa-twitch-stream-july-12th]Q&amp;A thread[/url] on the forum so we can answer them during the stream. Until next time, everyone!
+			</Content>
+    </Article>
+    <Article id="21">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>
+        </MaxVersion>
+      </Requirements>
+      <Ticker>Last Chance to Save 33% on Pathfinder Adventures!</Ticker>
+      <Title>Last Chance to Save 33% on Pathfinder Adventures!</Title>
+      <Date>7/3/17</Date>
+      <Content>
+				Greetings, citzens of Eora! We wanted to share with you this special offer for [url=https://www.youtube.com/watch?v=2uBFv-TUABY]Pathfinder Adventures![/url] As a thanks for supporting our games, we're giving all of our fans a summer gift. Anyone with an [url=https://pathfinder.obsidian.net/steam-promo]Obsidian.net[/url] account gets a Steam coupon for 10% off Pathfinder Adventures, our award-winning tactical-card RPG!
+
+				Fans also get three exclusive Obsidian-themed cards, including Eder and Pallegina from Pillars of Eternity II: Deadfire!
+
+				On top of that, the Steam Summer Sale happening right now gives an additional 25% off Pathfinder Adventures, for a total of 33% off when you use the coupon. The sale ends July 5th - so don't wait!
+			</Content>
+    </Article>
+    <Article id="22">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>
+        </MaxVersion>
+      </Requirements>
+      <Ticker>Pillars of Eternity II: Deadfire Update 37 is Now Live!</Ticker>
+      <Title>Pillars of Eternity II: Deadfire Update 37 is Now Live!</Title>
+      <Date>7/10/17</Date>
+      <Content>
+				Hello awesome Pillars of Eternity fans! The latest Pillars of Eternity II: Deadfire update is [url=http://forums.obsidian.net/topic/93175-update-37-from-the-feed-of-the-director-part-ii]now live![/url] In this update we have another "From the Feed of the Director" where we [url=https://www.youtube.com/watch?v=kSMfksPeZ84]take a look[/url] at some of the videos that Game Director, Josh Sawyer, has been putting up on his social media accounts.
+
+				We also want to remind you all that we'll be doing a Deadfire Twitch Q&amp;A stream tomorrow, July 12th, at 4:00PM PST/1:00AM CEST over on our [url=https://www.twitch.tv/obsidian]Twitch channel[/url]. Hope to see you all there!
+			</Content>
+    </Article>
+    <Article id="23">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>
+        </MaxVersion>
+      </Requirements>
+      <Ticker>Last Chance to Save 10% on Pathfinder Adventures on Steam!</Ticker>
+      <Title>Last Chance to Save 10% on Pathfinder Adventures on Steam!</Title>
+      <Date>7/27/17</Date>
+      <Content>
+				Greetings, adventurers! Reminder: next Monday is your last chance to save 10% and get a bunch of free goodies for our card-based RPG Pathfinder Adventures on Steam. If you haven't already, go register a free [url=https://pathfinder.obsidian.net/steam-promo]Obsidian.net account[/url] and claim your rewards.
+
+				If you have -- use your coupon before it's too late to save 10% and get exclusive Eder and Pallegina cards in Pathfinder Adventures!
+			</Content>
+    </Article>
+    <Article id="24">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>
+        </MaxVersion>
+      </Requirements>
+      <Ticker>Pillars of Eternity II: Deadfire Update 38 is Now Live!</Ticker>
+      <Title>Pillars of Eternity II: Deadfire Update 38 is Now Live!</Title>
+      <Date>7/31/17</Date>
+      <Content>
+				Hello citizens of Eora! The latest update for Pillars of Eternity II: Deadfire is [url=http://forums.obsidian.net/topic/93369-update-38-exploring-neketaka]now live[/url]! In this update we are joined by Bobby Null, Lead Designer on Deadfire, as he takes us [url=https://www.youtube.com/watch?v=5HAqsnDeOIc]on a tour[/url] of the big city, Neketaka.
+
+				We also have a special treat from a very talented group named [url=https://travelersvgm.bandcamp.com]The Travelers[/url], who do a cover of "[url=https://www.youtube.com/watch?v=Cw84aO9P5mw]Oldsong[/url]" from Pillars of Eternity 1. Be sure to join the conversation over on [url=http://forums.obsidian.net/forum/123-pillars-of-eternity-ii-deadfire-announcements-and-news]our forums[/url], and we'll be back in a few weeks with update 39!
+			</Content>
+    </Article>
+    <Article id="25">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>
+        </MaxVersion>
+      </Requirements>
+      <Ticker>Pillars of Eternity II: Deadfire Update 39 is Now Live!</Ticker>
+      <Title>Pillars of Eternity II: Deadfire Update 39 is Now Live!</Title>
+      <Date>8/15/17</Date>
+      <Content>
+				Hello everyone! We're back with another Pillars of Eternity II: Deadfire update! In [url=http://forums.obsidian.net/topic/93510-update-39-from-the-feed-of-the-director-part-iii]Update 39[/url], we are diving once more into the social media feed of Game Director, Josh Sawyer. But that's not all! This time we're also diving into our internal development blog to bring you some awesome in-progress footage of Deadfire.
+
+				Be sure to check out [url=https://www.youtube.com/watch?v=tQHKc1FQfbE]the video[/url] and let us know what you think by joining in on the conversation over on our forums. We'll be back in a few weeks for Update 40 where Josh will be walking us through the multiclassing and subclassing system in Pillars II!
+			</Content>
+    </Article>
+    <Article id="26">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>
+        </MaxVersion>
+      </Requirements>
+      <Ticker>Tyranny DLC, Bastard's Wound, Coming September 7th!</Ticker>
+      <Title>Tyranny DLC, Bastard's Wound, Coming September 7th!</Title>
+      <Date>8/23/17</Date>
+      <Content>
+				Good news, everyone! Fans of Tyranny, our cRPG that takes place in a world where evil has already won the great battle, will soon get to expand on their journey. [url=https://www.youtube.com/watch?v=b3TzucxIBnE]The Bastard's Wound DLC[/url] will be coming out on September 7th!
+
+				Explore a new region of the game and take on a host of new quests, including quests for some of your companions. Pre-orders [url=https://www.paradoxplaza.com/tyranny---bastards-wound/TYTY01ESK0000002-MASTER.html]available now[/url]. Hail, Kyros.
+			</Content>
+    </Article>
+    <Article id="27">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>
+        </MaxVersion>
+      </Requirements>
+      <Ticker>Pillars of Eternity II: Deadfire Update 40 is Now Live!</Ticker>
+      <Title>Pillars of Eternity II: Deadfire Update 40 is Now Live!</Title>
+      <Date>9/20/17</Date>
+      <Content>
+				Greetings citizens of Eora! We are very happy to announce that Update 40 for Pillars of Eternity II: Deadfire is [url=https://forums.obsidian.net/topic/93848-update-40-multiclassing-part-ii]now live[/url]. Join Game Director, Josh Sawyer, as he [url=https://www.youtube.com/watch?v=dk0wIKSWIWY]goes over[/url] how multiclassing works in the game. For an extra special treat, you get a glimpse into character creation for Deadfire. Enjoy!
+			</Content>
+    </Article>
+    <Article id="28">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>
+        </MaxVersion>
+      </Requirements>
+      <Ticker>Help Us Make the DLC For Our Games Better!</Ticker>
+      <Title>Help Us Make the DLC For Our Games Better!</Title>
+      <Date>10/2/17</Date>
+      <Content>
+				Greetings, citizens of Eora! We've put together a [url=https://www.surveymonkey.com/r/OEIDLCSurvey1]short survey[/url] to help make the DLC in our games even better. It won't take much of your time at all and your input will help us greatly!
+			</Content>
+    </Article>
+    <Article id="29">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>
+        </MaxVersion>
+      </Requirements>
+      <Ticker>Pillars of Eternity II: Deadfire Update 41 is Now Live!</Ticker>
+      <Title>Pillars of Eternity II: Deadfire Update 41 is Now Live!</Title>
+      <Date>10/23/17</Date>
+      <Content>
+				Hello everyone! We are happy to present to you the [url=https://forums.obsidian.net/topic/94142-update-41-from-the-feed-of-the-director-part-iv/]latest update[/url] for Pillars of Eternity II: Deadfire! From the Feed of the Director Part IV [url=https://www.youtube.com/watch?v=64U0n2SaNmI]takes a look[/url] into the sidekicks, some new animations, and gives a sneak peak at some of our physical items that Backers can get with their pledges.
+				
+				Reminder! Pledges for Pillars of Eternity II: Deadfire close October 31st, so be sure to [url=http://eternity.obsidian.net/backer]get those pledges[/url] or upgrades in by then!
+			</Content>
+    </Article>
+    <Article id="30">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>
+        </MaxVersion>
+      </Requirements>
+      <Ticker>Pillars of Eternity II: Deadfire Backer Beta Now Live!</Ticker>
+      <Title>Pillars of Eternity II: Deadfire Backer Beta Now Live!</Title>
+      <Date>11/15/17</Date>
+      <Content>
+				Good news, citizens of Eora! The Backer Beta for Pillars of Eternity II: Deadfire is [url=https://forums.obsidian.net/topic/94331-update-42-the-backer-beta-is-live]now live[/url]! If you pledged to a tier that had Backer Beta access or added it to your order as an addon, you can now get it from the [url=https://eternity.obsidian.net/account/products]Products Tab[/url] of your Account Profile. If you didn't get the Backer Beta for Deadfire, you can still [url=https://eternity.obsidian.net/backer/pledges]add it to your pledge[/url] over on the Backer Portal.
+
+				Be sure to head over to the [url=https://forums.obsidian.net/forum/126-pillars-of-eternity-ii-deadfire-backer-beta]Backer Beta forum[/url] and let us know your feedback on the beta to help improve Deadfire!
+
+				We also want to let you know that today marks the release of the [url=https://forums.obsidian.net/topic/94341-pillars-of-eternity-definitive-edition-available-now]Pillars of Eternity: Definitive Edition[/url]! If you own the base game and both White March expansions, you are automatically upgraded to the Definitive Edition of the game. Along with that we have also released a new free DLC for Pillars of Eternity: [url=https://forums.obsidian.net/topic/94328-pillars-of-eternity-patch-307-the-deadfire-pack-is-now-live]The Deadfire Pack[/url]! Get new items and portraits that are inspired by the upcoming Pillars of Eternity II: Deadfire as a thank you for all of the support you have given ovver the years. Thank you all!
+			</Content>
+    </Article>
+    <Article id="31">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>
+        </MaxVersion>
+      </Requirements>
+      <Ticker>Pillars of Eternity II: Deadfire Backer Update 43 Now Live!</Ticker>
+      <Title>Pillars of Eternity II: Deadfire Backer Update 43 Now Live!</Title>
+      <Date>12/22/17</Date>
+      <Content>
+				Seasons greetings, Watchers! As the holidays approach, it's time to take stock, look back, and be amazed at the awesome year we've had making Pillars of Eternity II: Deadfire and [url=https://www.youtube.com/watch?v=36oY8b3lkt0]sharing it with you all[/url].
+
+				We're also very happy to announce that we are re-opening physical orders for a limited time! From now until January 5th, if you wanted to order or [url=http://eternity.obsidian.net/backer]upgrade to a physical edition[/url] of Pillars of Eternity II: Deadfire, you can do so. After that, they'll be gone for good!
+
+				Be sure to [url=https://forums.obsidian.net/topic/95285-update-43-the-year-in-review]head to our forums[/url] and join in on the conversation on Backer Update 43.
+			</Content>
+    </Article>
+    <Article id="32">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>
+        </MaxVersion>
+      </Requirements>
+      <Ticker>Pillars of Eternity II: Deadfire Pre-Orders Now Live, Date Announced!</Ticker>
+      <Title>Pillars of Eternity II: Deadfire Pre-Orders Now Live, Date Announced!</Title>
+      <Date>1/25/18</Date>
+      <Content>
+				Hello Watchers! It's with great joy that we get to announce that Pillars of Eternity II: Deadfire will be launching on April 3rd, 2018! Along with that announcement comes the opening of pre-orders.
+
+				There are three versions available for pre-order: the Standard Edition, the Digital Deluxe Edition, and the Obsidian Edition. Pre-orders are available through [url=https://eternity.obsidian.net/buy]Obsidian.net[/url], [url=https://www.gog.com/game/pillars_of_eternity_ii_deadfire]GOG.com[/url], and [url=http://store.steampowered.com/app/560130/Pillars_of_Eternity_II_Deadfire]Steam[/url].
+
+				Physical editions will also be available through all major gaming retail stores. Pre-ordering now will get you the Captian's Footlocker, which will start you off with two special in-game items and an in-game pet. For more information on the various editions of Deadfire, [url=https://eternity.obsidian.net/buy]head on over[/url] to our site!
+			</Content>
+    </Article>
+    <Article id="33">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>
+        </MaxVersion>
+      </Requirements>
+      <Ticker>Pillars of Eternity II: Deadfire Backer Update 44 Now Live!</Ticker>
+      <Title>Pillars of Eternity II: Deadfire Backer Update 44 Now Live!</Title>
+      <Date>2/02/18</Date>
+      <Content>
+				Greetings Watchers! We're happy to bring to you [url=https://youtu.be/iFpzTTlTsV0]Backer Update 44[/url] for Pillars of Eternity II: Deadfire. [url=https://forums.obsidian.net/topic/95892-update-44-making-pillars-ii-gorgeous/]In this update[/url], we take a look into what has been done to make Pillars II gorgeous.
+
+				We're also happy to announce that if you backed the game, you can now [url=http://eternity.obsidian.net/account/products]access your key[/url] for either Steam or GOG.com and get the game added to your library!
+			</Content>
+    </Article>
+    <Article id="34">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>
+        </MaxVersion>
+      </Requirements>
+      <Ticker>Pillars of Eternity II: Deadfire Backer Update 45 Now Live!</Ticker>
+      <Title>Pillars of Eternity II: Deadfire Backer Update 45 Now Live!</Title>
+      <Date>2/23/18</Date>
+      <Content>
+				Ahoy Watchers! It's [url=https://www.youtube.com/watch?v=oj4DNZ-eqZ8]time to set sail[/url] and learn about how ships will work in Pillars of Eternity II: Deadfire! Josh and Katrina join us to go over ship-to-ship combat, crew management, encounters in the open world, and ship customization.
+
+				For more information on what the ship system will bring to Deadfire, [url=https://forums.obsidian.net/topic/96258-update-45-sailing-the-deadfire-archipelago/]head to the forum[/url] for the full update and dive into the press coverage that Deadfire has received in the last month!
+			</Content>
+    </Article>
+    <Article id="35">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>
+        </MaxVersion>
+      </Requirements>
+      <Ticker>The Cast of Critical Role Joins Deadfire!</Ticker>
+      <Title>The Cast of Critical Role Joins Deadfire!</Title>
+      <Date>4/10/18</Date>
+      <Content>
+				Exciting news, Watchers! Today we are happy to [url=http://eternity.obsidian.net/news/critical-role-and-obsidian-entertainment-announce-partnership-for-pillars-of-eternity-ii-deadfire]announce a partnership[/url] with the entire cast of Critical Role! Everyone in the cast will be joining DM and veteran voice actor, Matthew Mercer, in Pillars of Eternity II: Deadfire. They'll be playing key roles in the game and help to bring the world of Pillars II to life.
+
+				With this partnership we are also bringing a free DLC to Deadfire that will allow players and fans of Critical Role to have character voice sets and player portraits based on the characters the Critical Role cast made popular during their Vox Machina campaign.
+			</Content>
+    </Article>
+    <Article id="36">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>
+        </MaxVersion>
+      </Requirements>
+      <Ticker>Announcing the Seafarer's Scavenger Hunt!</Ticker>
+      <Title>Announcing the Seafarer's Scavenger Hunt!</Title>
+      <Date>4/11/18</Date>
+      <Content>
+				We are happy to bring to you the [url=http://eternity.obsidian.net/news/critical-role-and-obsidian-entertainment-announce-partnership-for-pillars-of-eternity-ii-deadfire]Explorer's Society Scavenger Hunt[/url]. The hunt encourages all Pillars of Eternity II: Deadfire fans to search for secret codes that have been hidden in a variety of online and printed promotional assets for Pillars II.
+
+				Be sure to [url=https://eternity.obsidian.net/scavenger]sign up[/url] and begin the hunt!
+			</Content>
+    </Article>
+    <Article id="37">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>
+        </MaxVersion>
+      </Requirements>
+      <Ticker>Pillars of Eternity II: Deadfire Backer Update 46 Now Live!</Ticker>
+      <Title>Pillars of Eternity II: Deadfire Backer Update 46 Now Live!</Title>
+      <Date>4/30/18</Date>
+      <Content>
+				With just a touch over a week away from the launch of Pillars of Eternity II: Deadfire, we're here [url=https://www.youtube.com/watch?v=9Fdjvx1fMa8]to show off[/url] some of the fun features and mechanics that our developers have found during their playthroughs of the game. [url=https://forums.obsidian.net/topic/97082-update-46-developer-playthrough-highlights/]Head to the forums[/url] for the full update and various announcements!
+			</Content>
+    </Article>
+    <Article id="38">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>
+        </MaxVersion>
+      </Requirements>
+      <Ticker>Last Chance to Pre-Order Pillars of Eternity II: Deadfire!</Ticker>
+      <Title>Last Chance to Pre-Order Pillars of Eternity II: Deadfire!</Title>
+      <Date>5/07/18</Date>
+      <Content>
+				Greetings, Watchers! The last chance to [url=https://store.steampowered.com/app/560130/Pillars_of_Eternity_II_Deadfire]pre-order[/url] Pillars of Eternity II: Deadfire and get the Captain's Footlocker is upon us! Explore the Deadfire like a true captain when Pillars II releases on May 8th with this unique item set.
+			</Content>
+    </Article>
+    <Article id="39">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>
+        </MaxVersion>
+      </Requirements>
+      <Ticker>Pillars of Eternity II: Deadfire Available Now!</Ticker>
+      <Title>Pillars of Eternity II: Deadfire Available Now!</Title>
+      <Date>5/08/18</Date>
+      <Content>
+				Hello citizens of Eora! Pillars of Eternity II: Deadfire is [url=http://eternity.obsidian.net/buy]available now[/url]! Import your completed save game from Pillars of Eternity and continue your Watcher's adventure on land and sea in the massive Deadfire Archipelago.
+			</Content>
+    </Article>
+    <Article id="40">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>
+        </MaxVersion>
+      </Requirements>
+      <Ticker>Pillars of Eternity II: Deadfire Receives Critical Acclaim!</Ticker>
+      <Title>Pillars of Eternity II: Deadfire Receives Critical Acclaim!</Title>
+      <Date>5/10/18</Date>
+      <Content>
+				The reviews are in and the [url=http://eternity.obsidian.net/news/pillars-of-eternity-ii-deadfire-review-roundup]critics are loving[/url] Pillars of Eternity II: Deadfire! Get your copy today on [url=http://store.steampowered.com/app/560130/Pillars_of_Eternity_II_Deadfire/]Steam[/url], [url=http://www.gog.com/game/pillars_of_eternity_ii_deadfire]GOG.com[/url], [url=http://eternity.obsidian.net/buy]Obsidian.net[/url], or [url=http://versusevil.com/games/pillars-of-eternity-ii-deadfire/]VersusEvil.com[/url].
+			</Content>
+    </Article>
+    <Article id="41">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>
+        </MaxVersion>
+      </Requirements>
+      <Ticker>Deadfire Backer Update 48 is Now Live!</Ticker>
+      <Title>Deadfire Backer Update 48 is Now Live!</Title>
+      <Date>5/24/18</Date>
+      <Content>
+				The Deadfire team is hard at work on improving and adding new features to Pillars of Eternity II: Deadfire and Executive Producer, Adam Brennecke, is [url=https://forums.obsidian.net/topic/100797-update-48-whats-next/]here to tell us[/url] what is planned for the big update that will arrive in early June!
+				
+				We're also excited to announce that the next free DLC, Rum Runner's Pack, is available now! Get a new sidekick, a new drunk player pose, and some new alcohols for your adventures into the Deadfire.
+			</Content>
+    </Article>
+    <Article id="42">
+      <Requirements>
+        <MinVersion>
+        </MinVersion>
+        <MaxVersion>
+        </MaxVersion>
+      </Requirements>
+      <Ticker>Deadfire Backer Update 50 is Now Live!</Ticker>
+      <Title>Deadfire Backer Update 50 is Now Live!</Title>
+      <Date>6/21/18</Date>
+      <Content>
+				The latest Backer Update for Pillars of Eternity II: Deadfire [/url=https://forums.obsidian.net/topic/102735-update-50-new-patch-and-whats-coming-in-july/]is out now[/url]! In this update we go over a new patch (1.1.1), preview the 1.2 patch that is coming in early July, show of the new free DLC, the Scalawags Pack, and give an update on physical Backer rewards.
+			</Content>
+    </Article>
+  </News>
+  <LastRefresh>10/26/2018 1:38:25 PM</LastRefresh>
+  <ReadArticleIDs></ReadArticleIDs>
+  <Language>en</Language>
+</Root>

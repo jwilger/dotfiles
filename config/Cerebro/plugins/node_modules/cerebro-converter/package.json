@@ -1,0 +1,32 @@
+{
+  "name": "cerebro-converter",
+  "version": "1.0.9",
+  "description": "Cerebro plugin for converting units and currencies",
+  "license": "MIT",
+  "repository": "KELiON/cerebro-converter",
+  "author": {
+    "name": "Alexandr Subbotin",
+    "email": "kelionweb@gmail.com",
+    "url": "asubbotin.ru"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "start": "cerebro-scripts start",
+    "build": "cerebro-scripts build",
+    "test": "cerebro-scripts test",
+    "prepublish": "rimraf ./dist && npm run build"
+  },
+  "main": "dist/index.js",
+  "keywords": [
+    "cerebro",
+    "cerebro-extracted-plugin",
+    "converter",
+    "units"
+  ],
+  "devDependencies": {
+    "cerebro-scripts": "^0.0.24",
+    "rimraf": "^2.6.1"
+  }
+}
