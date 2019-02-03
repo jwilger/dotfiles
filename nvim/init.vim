@@ -300,12 +300,12 @@ nmap <Bslash> :Ag<Space>
 nmap <Bslash><Bslash> :AgAdd<Space>
 
 set background=dark
-colorscheme slate
+colorscheme solarized
 AirlineTheme alduin
 
 highlight SpellCap ctermbg=NONE cterm=underline
 highlight Search ctermfg=0 ctermbg=2
-highlight ColorColumn ctermbg=4
+highlight ColorColumn ctermbg=18
 highlight VertSplit cterm=NONE ctermbg=NONE
 
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
