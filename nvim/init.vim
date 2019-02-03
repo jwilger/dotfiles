@@ -97,6 +97,11 @@ augroup vimrcElixir
   autocmd FileType elixir nmap <buffer> <leader>mdd :Dispatch! mix docs<CR>
 augroup END
 
+augroup vimrcQf
+  autocmd!
+  autocmd FileType qf set wrap
+augroup END
+
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes.
 let g:is_posix = 1
