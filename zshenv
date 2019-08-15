@@ -29,3 +29,6 @@ fi
 unset _old_path
 
 export GPG_TTY=$(tty)
+
+# Used to set UID for Docker
+export CURRENT_UID=$(id -u):$(id -g)

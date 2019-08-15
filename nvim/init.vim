@@ -7,7 +7,7 @@ call minpac#init()
 command! PackUpdate call minpac#update()
 command! PackClean call minpac#clean()
 
-call minpac#add('tpope/vim-commentary')
+call minpac#add('Numkil/ag.nvim')
 call minpac#add('Shougo/deoplete.nvim')
 call minpac#add('Valloric/ListToggle') "toggle quick and location lists
 call minpac#add('airblade/vim-gitgutter')
@@ -15,10 +15,12 @@ call minpac#add('altercation/vim-colors-solarized')
 call minpac#add('andyl/vim-projectionist-elixir')
 call minpac#add('c-brenn/phoenix.vim')
 call minpac#add('ctrlpvim/ctrlp.vim')
-call minpac#add('Numkil/ag.nvim')
+call minpac#add('elmcast/elm-vim')
 call minpac#add('janko-m/vim-test')
 call minpac#add('jlanzarotta/bufexplorer')
 call minpac#add('jreybert/vimagit')
+call minpac#add('kburdett/vim-nuuid')
+call minpac#add('mhinz/vim-mix-format')
 call minpac#add('ngmy/vim-rubocop')
 call minpac#add('roxma/nvim-yarp')
 call minpac#add('roxma/vim-hug-neovim-rpc')
@@ -26,6 +28,7 @@ call minpac#add('scrooloose/nerdtree', {'on': 'NERDTreeToggle'})
 call minpac#add('sheerun/vim-polyglot')
 call minpac#add('slashmili/alchemist.vim')
 call minpac#add('tpope/vim-bundler') "Ruby Bundler support
+call minpac#add('tpope/vim-commentary')
 call minpac#add('tpope/vim-commentary') "toggle comment lines with gc
 call minpac#add('tpope/vim-dispatch') "tmux/vim integration
 call minpac#add('tpope/vim-endwise') "auto-insert closing 'end' statements
@@ -141,8 +144,8 @@ if executable('ag')
   endif
 endif
 
-" Make it obvious where 80 characters is
-set textwidth=80
+" Make it obvious where 98 characters is
+set textwidth=98
 set colorcolumn=+1
 
 " Numbers
@@ -229,7 +232,8 @@ autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 " The <ESC> key is too hard to reach for accurately on Apple keyboards
 imap jk <Esc>
 
-imap fp \|>
+imap fpp \|>
+imap bpp <\|
 
 set nowrap
 set linebreak " Wrap at word
@@ -276,6 +280,10 @@ augroup ale
   nnoremap [r :ALEPreviousWrap<CR>
 augroup END
 
+augroup filetypedetect
+  au BufRead,BufNewFile *.avsc setfiletype json
+augroup END
+
 let g:lt_location_list_toggle_map = '<leader>ol'
 let g:lt_quickfix_list_toggle_map = '<leader>oq'
 
@@ -295,7 +303,7 @@ nmap <leader>gp :Dispatch git push --quiet<CR>
 nmap <leader>ss :e ~/vim-scratch<CR>
 
 let g:test#strategy = "dispatch"
-let g:test#elixir#mix#executable = 'nanobox run mix'
+let g:mix_format_on_save = 1
 
 let g:ag_working_path_mode="r"
 
@@ -303,6 +311,8 @@ nmap <leader>oq :QToggle<CR>
 
 nmap <Bslash> :Ag<Space>
 nmap <Bslash><Bslash> :AgAdd<Space>
+
+let g:nuuid_iabbrev = 1
 
 highlight SpellCap ctermbg=NONE cterm=underline
 highlight Search ctermfg=0 ctermbg=2

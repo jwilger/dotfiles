@@ -24,6 +24,7 @@
   autocrlf = input
 [merge]
   ff = only
+	tool = vimdiff
 [commit]
   template = ~/.gitmessage
 [fetch]
