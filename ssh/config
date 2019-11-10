@@ -1,14 +1,19 @@
-Host *.local
+Host gregor
   ForwardAgent yes
-Host fidev.net
-  User vagrant
+  HostName gregor.valhalla.local
+  GSSAPIAuthentication no
+  GSSAPIDelegateCredentials yes
+  LocalForward 8080 localhost:80
+
+Host ned
   ForwardAgent yes
-  Port 2222
-  UserKnownHostsFile /dev/null
-  StrictHostKeyChecking no
-Host dev.johnwilger.com
-  User vagrant
+  HostName ned.valhalla.local
+  GSSAPIAuthentication no
+  GSSAPIDelegateCredentials yes
+
+Host remote-gregor
   ForwardAgent yes
-  Port 2222
-  UserKnownHostsFile /dev/null
-  StrictHostKeyChecking no
+  HostName jwilger.ddns.net
+  GSSAPIAuthentication no
+  GSSAPIDelegateCredentials yes
+  LocalForward 8080 localhost:80
