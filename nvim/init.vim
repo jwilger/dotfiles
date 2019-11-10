@@ -41,6 +41,7 @@ call minpac#add('tpope/vim-repeat') "enable . repeating of plugin commands
 call minpac#add('tpope/vim-sleuth') "autodetect tab/indent settings
 call minpac#add('tpope/vim-surround') "enable cs for change surround
 call minpac#add('tpope/vim-unimpaired') "lots of toggles prefixed with [ and ]
+call minpac#add('vim-latex/vim-latex')
 call minpac#add('vim-airline/vim-airline')
 call minpac#add('vim-airline/vim-airline-themes')
 call minpac#add('w0rp/ale')
@@ -313,6 +314,10 @@ nmap <Bslash> :Ag<Space>
 nmap <Bslash><Bslash> :AgAdd<Space>
 
 let g:nuuid_iabbrev = 1
+
+" LaTeX stuff
+
+let g:Tex_DefaultTargetFormat = "pdf"
 
 highlight SpellCap ctermbg=NONE cterm=underline
 highlight Search ctermfg=0 ctermbg=2
