@@ -184,6 +184,11 @@ let g:html_indent_tags = 'li\|p'
 set splitbelow
 set splitright
 
+" vim-latex
+" redef C-j to C-g
+imap <C-g> <Plug>IMAP_JumpForward
+nmap <C-g> <Plug>IMAP_JumpForward
+
 " Quicker window movement
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
