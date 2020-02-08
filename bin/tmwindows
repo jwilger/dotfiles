@@ -8,6 +8,8 @@ The format of the configuration file is as follows:
 
   ----
   app_name: {my_app}
+  aliases:
+    {my_alias}: {resulting_command}
   additional_windows:
     {window_suffix_a}: {window_command}
     {window_suffix_b}: {window_command}
@@ -18,6 +20,9 @@ example:
 
   ----
   app_name: todos
+  aliases:
+    mix: docker-compose exec app mix
+    iex: docker-compose exec app iex
   additional_windows:
     vim: vim .
     server: rails s
@@ -50,6 +55,7 @@ default_editor = ENV['VISUAL'] || 'vim'
 
 default_settings = {
   'app_name' => File.basename(current_dir),
+  'aliases' => {},
   'additional_windows' => {
     default_editor => "%s ." % default_editor
   }
@@ -66,6 +72,12 @@ settings = default_settings.merge(custom_settings)
 
 `tmux rename-window #{settings['app_name']}-sh`
 
+settings['aliases'].each do |name, command|
+  `tmux send-keys 'alias #{name}="#{command}"' C-m`
+end
+
 settings['additional_windows'].each do |name, command|
-  `tmux new-window -d -n #{settings['app_name']}-#{name} "#{command}"`
+  # `tmux new-window -d -n #{settings['app_name']}-#{name} '#{command}'`
+  `tmux new-window -n #{settings['app_name']}-#{name}`
+  `tmux send-keys '#{command}' C-m`
 end
