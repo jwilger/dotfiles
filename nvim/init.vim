@@ -7,14 +7,14 @@ call minpac#init()
 command! PackUpdate call minpac#update()
 command! PackClean call minpac#clean()
 
+call minpac#add('ctrlpvim/ctrlp.vim')
 call minpac#add('Numkil/ag.nvim')
 call minpac#add('Shougo/deoplete.nvim')
 call minpac#add('Valloric/ListToggle') "toggle quick and location lists
 call minpac#add('airblade/vim-gitgutter')
-call minpac#add('altercation/vim-colors-solarized')
 call minpac#add('andyl/vim-projectionist-elixir')
+call minpac#add('lifepillar/vim-solarized8')
 call minpac#add('c-brenn/phoenix.vim')
-call minpac#add('ctrlpvim/ctrlp.vim')
 call minpac#add('elmcast/elm-vim')
 call minpac#add('janko-m/vim-test')
 call minpac#add('jlanzarotta/bufexplorer')
@@ -41,9 +41,9 @@ call minpac#add('tpope/vim-repeat') "enable . repeating of plugin commands
 call minpac#add('tpope/vim-sleuth') "autodetect tab/indent settings
 call minpac#add('tpope/vim-surround') "enable cs for change surround
 call minpac#add('tpope/vim-unimpaired') "lots of toggles prefixed with [ and ]
-call minpac#add('vim-latex/vim-latex')
 call minpac#add('vim-airline/vim-airline')
 call minpac#add('vim-airline/vim-airline-themes')
+call minpac#add('vim-latex/vim-latex')
 call minpac#add('w0rp/ale')
 
 packloadall
@@ -345,6 +345,16 @@ augroup END
 
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
+"truecolor
+if (has("termguicolors"))
+    set termguicolors
+endif
+
+"Sometimes setting 'termguicolors' is not enough and one has to set the t_8f and t_8b options explicitly
+":h xterm-true-color
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
 set background=dark
-colorscheme solarized
-AirlineTheme solarized
+colorscheme solarized8
+" AirlineTheme solarized
