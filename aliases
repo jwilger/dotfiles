@@ -5,6 +5,9 @@ alias mkdir="mkdir -p"
 alias e="$EDITOR"
 alias v="$VISUAL"
 
+# tmuxinator
+alias tm=tmuxinator
+
 # editor
 alias vim=nvim
 alias vi=nvim
