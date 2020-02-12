@@ -13,3 +13,4 @@ tmp/**/*
 *.pyc
 .tool-versions
 .tmux-windows.yml
+Guardfile
