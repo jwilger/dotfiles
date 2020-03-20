@@ -14,3 +14,5 @@ tmp/**/*
 .tool-versions
 .tmux-windows.yml
 Guardfile
+.vim
+.elixir_ls
