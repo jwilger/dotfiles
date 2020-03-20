@@ -11,7 +11,7 @@ root: ~/projects/everfi/foundry-public-api
 
 # Project hooks
 # Runs on project start, always
-on_project_start: cd ~/projects/everfi && docker-compose up --build -d --remove-orphans && cd - && sleep 5 && bundle install --path .bundle --binstubs .bundle/bin && bundle exec rake db:reset
+on_project_start: cd ~/projects/everfi && docker-compose up --build -d --remove-orphans && cd - 
 
 # Run on project start, the first time
 # on_project_first_start: command
@@ -52,6 +52,6 @@ windows:
       panes:
         - vim
         - guard
-  - server: bundle exec foreman start -f Procfile.dev
+  - server: sleep 5; bundle exec foreman start -f Procfile.dev
   - logs: tail -f log/development.log
   - docker-logs: cd ~/projects/everfi && docker-compose logs -ft

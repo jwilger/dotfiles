@@ -28,24 +28,17 @@ if dein#load_state('/home/jwilger/.cache/dein')
     call dein#add('roxma/vim-hug-neovim-rpc')
   endif
 
-  call dein#add('neoclide/coc.nvim', {'merged':0, 'rev': 'release'})
   call dein#add('arcticicestudio/nord-vim')
+  call dein#add('elixir-editors/vim-elixir')
+  call dein#add('jlanzarotta/bufexplorer')
+  call dein#add('kburdett/vim-nuuid')
+  call dein#add('neoclide/coc.nvim', {'merged':0, 'rev': 'release'})
+  call dein#add('ryanoasis/vim-devicons')
+  call dein#add('tpope/vim-commentary') "toggle comment lines with gc
+  call dein#add('tpope/vim-fugitive')
+  call dein#add('tpope/vim-surround') "enable cs for change surround
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
-
-  call dein#add('elixir-editors/vim-elixir')
-  call dein#add('ctrlpvim/ctrlp.vim')
-  call dein#add('Valloric/ListToggle') "toggle quick and location lists
-  call dein#add('airblade/vim-gitgutter')
-  call dein#add('jreybert/vimagit')
-  call dein#add('kburdett/vim-nuuid')
-  call dein#add('scrooloose/nerdtree', {'on': 'NERDTreeToggle'})
-  call dein#add('tpope/vim-commentary') "toggle comment lines with gc
-  call dein#add('tpope/vim-endwise') "auto-insert closing 'end' statements
-  call dein#add('tpope/vim-eunuch') "Unix file manipulation like :Delete or :Move
-  call dein#add('tpope/vim-repeat') "enable . repeating of plugin commands
-  call dein#add('tpope/vim-sleuth') "autodetect tab/indent settings
-  call dein#add('tpope/vim-surround') "enable cs for change surround
   " Required:
   call dein#end()
   call dein#save_state()
@@ -165,19 +158,17 @@ set nocursorline
   endtry
 
 " === Coc.nvim === "
-  " use <tab> for trigger completion and navigate to next complete item
-  function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~ '\s'
-  endfunction
-
-  inoremap <silent><expr> <TAB>
-        \ pumvisible() ? "\<C-n>" :
-        \ <SID>check_back_space() ? "\<TAB>" :
-        \ coc#refresh()
-
   "Close preview window when completion is done.
   autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+
+" === coc-explorer === "
+let g:coc_explorer_global_presets = {
+\   'floatingLeftside': {
+\      'position': 'floating',
+\      'floating-position': 'left-center',
+\      'floating-width': 50
+\   }
+\ }
 
 " === nuuid === "
 let g:nuuid_iabbrev = 1
@@ -208,6 +199,9 @@ set sidescrolloff=10
 set splitbelow
 set splitright
 
+" Vertical and horizontal splits default to equal sizes when created
+set equalalways
+
 " Don't dispay mode in command line (airilne already shows it)
 set noshowmode
 
@@ -235,11 +229,13 @@ set numberwidth=5
 " or 'The only match'
 set shortmess+=c
 
-" Quick window switching
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
+" coc-highlight
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+augroup Smartf
+  autocmd User SmartfEnter :hi Conceal ctermfg=220 guifg=#6638F0
+  autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#504945
+augroup end
 
 " ============================================================================ "
 " ===                      CUSTOM COLORSCHEME CHANGES                      === "
@@ -270,12 +266,34 @@ endtry
 " ===                             KEY MAPPINGS                             === "
 " ============================================================================ "
 
+" Quick window switching
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+" Show buffer list (also mapped to "<leader>be", but this is easier to type
+map <leader>bb :BufExplorer<cr>
+
+" Show yank list
+nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
+
+" Remap for do codeAction of selected region
+function! s:cocActionsOpenFromSelected(type) abort
+  execute 'CocCommand actions.open ' . a:type
+endfunction
+xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
+nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
+
+" === coc-explorer === "
+nmap <leader>e :CocCommand explorer --toggle --preset floatingLeftside<CR>
+
 " === Denite shorcuts === "
 "   ;         - Browser currently open buffers
 "   <leader>t - Browse list of files in current directory
 "   <leader>g - Search current directory for occurences of given term and close window if no results
 "   <leader>j - Search current directory for occurences of word under cursor
-nmap ; :Denite buffer<CR>
+nmap <leader>; :Denite buffer<CR>
 nmap <leader>t :DeniteProjectDir file/rec<CR>
 nnoremap <leader>g :<C-u>Denite grep:. -no-empty<CR>
 nnoremap <leader>j :<C-u>DeniteCursorWord grep:.<CR>
@@ -351,28 +369,33 @@ endfunction
   " Use tab for trigger completion with characters ahead and navigate.
   " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
   " other plugin before putting this into your config.
+  " inoremap <silent><expr> <TAB>
+  "       \ pumvisible() ? "\<C-n>" :
+  "       \ <SID>check_back_space() ? "\<TAB>" :
+  "       \ coc#refresh()
+  " inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+  " function! s:check_back_space() abort
+  "   let col = col('.') - 1
+  "   return !col || getline('.')[col - 1]  =~# '\s'
+  " endfunction
+
+  " inoremap <expr><cr> pumvisible() ? "\<C-y>" : "\<CR>"
+
   inoremap <silent><expr> <TAB>
-        \ pumvisible() ? "\<C-n>" :
-        \ <SID>check_back_space() ? "\<TAB>" :
-        \ coc#refresh()
-  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+    \ pumvisible() ? "\<C-n>" :
+    \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ coc#refresh()
 
   function! s:check_back_space() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~# '\s'
   endfunction
 
-  " Use <c-space> to trigger completion.
-  inoremap <silent><expr> <c-space> coc#refresh()
-
-  " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
-  " position. Coc only does snippet and additional edit on confirm.
-  if has('patch8.1.1068')
-    " Use `complete_info` if your (Neo)Vim version supports it.
-    inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-  else
-    imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-  endif
+  inoremap <expr> <cr>
+    \ pumvisible() ? coc#_select_confirm() :
+    \ "\<cr>"
 
   " Use `[g` and `]g` to navigate diagnostics
   nmap <silent> [g <Plug>(coc-diagnostic-prev)
@@ -392,6 +415,53 @@ endfunction
   " Highlight the symbol and its references when holding the cursor.
   autocmd CursorHold * silent call CocActionAsync('highlight')
 
+  " Symbol renaming.
+  nmap <leader>rn <Plug>(coc-rename)
+
+  " Formatting selected code.
+  xmap <leader>f  <Plug>(coc-format-selected)
+  nmap <leader>f  <Plug>(coc-format-selected)
+
+  augroup mygroup
+    autocmd!
+    " Setup formatexpr specified filetype(s).
+    autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+    " Update signature help on jump placeholder.
+    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+  augroup end
+
+  " Applying codeAction to the selected region.
+  " Example: `<leader>aap` for current paragraph
+  xmap <leader>a  <Plug>(coc-codeaction-selected)
+  nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+  " Remap keys for applying codeAction to the current line.
+  nmap <leader>aa  <Plug>(coc-codeaction)
+  " Apply AutoFix to problem on the current line.
+  nmap <leader>af  <Plug>(coc-fix-current)
+
+  " Introduce function text object
+  " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
+  xmap if <Plug>(coc-funcobj-i)
+  xmap af <Plug>(coc-funcobj-a)
+  omap if <Plug>(coc-funcobj-i)
+  omap af <Plug>(coc-funcobj-a)
+
+  " Use <TAB> for selections ranges.
+  " NOTE: Requires 'textDocument/selectionRange' support from the language server.
+  " coc-tsserver, coc-python are the examples of servers that support it.
+  nmap <silent> <TAB> <Plug>(coc-range-select)
+  xmap <silent> <TAB> <Plug>(coc-range-select)
+
+  " Add `:Format` command to format current buffer.
+  command! -nargs=0 Format :call CocAction('format')
+
+  " Add `:Fold` command to fold current buffer.
+  command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+  " Add `:OR` command for organize imports of the current buffer.
+  command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
 " Switch between the last two files
 nnoremap <Leader><Leader> <c-^>
 
@@ -407,11 +477,10 @@ map <Enter> o<ESC>
 " The <ESC> key is too hard to reach for accurately on Apple keyboards
 imap jk <Esc>
 
-imap fpp \|>
-imap bpp <\|
+imap fpp \|><space>
+imap bpp <\|<space> 
 
 " Make dealing with split windows a little easier
-set equalalways " Vertical and horizontal splits default to equal sizes when created
 :noremap <leader>v :vsp<cr> " Quick access to vertical splits
 :noremap <leader>h :split<cr> " Quick access to horizontal splits
 :noremap <leader>w :wincmd w<cr> " Cycle through windows
@@ -422,6 +491,7 @@ nmap <leader>gi :MagitOnly<CR>
 nmap <leader>gp :Dispatch git push --quiet<CR>
 
 nmap <leader>ss :e ~/vim-scratch<CR>
+
 " ============================================================================ "
 " ===                                 MISC.                                === "
 " ============================================================================ "
@@ -449,6 +519,8 @@ if has('persistent_undo')
   set undoreload=10000
 endif
 set noswapfile
+set nobackup
+set nowritebackup
 
 " Reload icons after init source
 if exists('g:loaded_webdevicons')
@@ -466,12 +538,19 @@ set noerrorbells " No sound on errors
 set novisualbell
 set t_vb=
 
+set history=50
+set showcmd
+set autowrite
+
 " Specify the behavior when switching between buffers
 try
   set switchbuf=usetab
   set stal=1
 catch
 endtry
+
+" Always expand the gutter signs column, so screen doesn't jump
+set signcolumn=yes
 
 " Mkdir on save for new directories
 function s:MkNonExDir(file, buf)
@@ -496,3 +575,29 @@ set complete+=kspell
 
 " Always use vertical diffs
 set diffopt+=vertical
+
+augroup vimrcEx
+  autocmd!
+
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it for commit messages, when the position is invalid, or when
+  " inside an event handler (happens when dropping a file on gvim).
+  autocmd BufReadPost *
+    \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+
+  " Set syntax highlighting for specific file types
+  autocmd BufRead,BufNewFile Appraisals set filetype=ruby
+  autocmd BufRead,BufNewFile *.md set filetype=markdown
+  autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
+  autocmd BufRead,BufNewFile *.avsc set filetype=json
+augroup END
+
+" augroup vimElixir
+"   autocmd!
+
+"   autocmd BufWritePre *.{ex,exs} :Format
+" augroup END
+
+set noshowcmd

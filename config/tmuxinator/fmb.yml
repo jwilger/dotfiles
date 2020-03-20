@@ -11,10 +11,11 @@ root: ~/projects/everfi/gems/foundry-message_bus
 
 # Project hooks
 # Runs on project start, always
-on_project_start: cd ~/projects/everfi && docker-compose up --build -d && cd - && sleep 5 && bundle install --path .bundle --binstubs .bundle/bin
+# on_project_start: command
 
 # Run on project start, the first time
-# on_project_first_start: command
+on_project_first_start: cd ~/projects/everfi && docker-compose up --build -d && cd - && sleep 5 && bundle install --path .bundle --binstubs .bundle/bin
+
 # Run on project start, after the first time
 # on_project_restart: command
 # Run on project exit ( detaching from tmux session )
