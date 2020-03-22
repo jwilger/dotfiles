@@ -1,0 +1,2123 @@
+bc17042e37fe8af7e27fd4b24623180d|file:///home/jwilger/.config/nvim/init.vim|273|1|V|vim
+	nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
+bbee94c82da81ca1a1c332284293069c|file:///home/jwilger/.config/nvim/init.vim|275|1|V|vim
+	" === Denite shorcuts === "
+	"   ;         - Browser currently open buffers
+	"   <leader>t - Browse list of files in current directory
+	"   <leader>g - Search current directory for occurences of given term and close window if no results
+	"   <leader>j - Search current directory for occurences of word under cursor
+	nmap ; :Denite buffer<CR>
+	nmap <leader>t :DeniteProjectDir file/rec<CR>
+	nnoremap <leader>g :<C-u>Denite grep:. -no-empty<CR>
+	nnoremap <leader>j :<C-u>DeniteCursorWord grep:.<CR>
+	
+	" Define mappings while in 'filter' mode
+	"   <C-o>         - Switch to normal mode inside of search results
+	"   <Esc>         - Exit denite window in any mode
+	"   <CR>          - Open currently selected file in any mode
+	"   <C-t>         - Open currently selected file in a new tab
+	"   <C-v>         - Open currently selected file a vertical split
+	"   <C-h>         - Open currently selected file in a horizontal split
+dc97ef25bf64e139dc33b029bd4c7e62|file:///home/jwilger/.config/nvim/init.vim|234|1|V|vim
+	" Quick window switching
+	nmap <C-h> <C-w>h
+	nmap <C-j> <C-w>j
+	nmap <C-k> <C-w>k
+	nmap <C-l> <C-w>l
+	
+8ee4cdcd8417c54c38de273c28b683dd|file:///home/jwilger/.config/nvim/init.vim|180|1|V|vim
+	\   'nvim': {
+	\      'root-uri': '~/.config/nvim',
+	\   },
+	\   'floating': {
+	\      'position': 'floating',
+	\   },
+8eae39cf48f6b380c3ea3ad7d972c4a8|file:///home/jwilger/.config/nvim/init.vim|184|1|V|vim
+	\   },
+	\   'floatingRightside': {
+	\      'position': 'floating',
+	\      'floating-position': 'left-center',
+	\      'floating-width': 50,
+	\   },
+	\   'simplify': {
+	\     'file.child.template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
+	\   }
+5f611233060e6d01f6697a0ae9f55d4a|file:///home/jwilger/.config/nvim/init.vim|299|46|v|vim
+	nvim
+7db45d16b0e2ee73d2e52c6558323cc6|file:///home/jwilger/.config/nvim/coc-settings.json|10|25|v|jsonc
+	<URL for your JIRA workspace, w/o trailing slash>
+b420c6e804ae5382810e2acdd164d20e|file:///home/jwilger/.config/nvim/coc-settings.json|11|23|v|jsonc
+	<Your JIRA account email>
+974dfaffaa89891bc7730a7239df3bd9|file:///home/jwilger/.config/nvim/coc-settings.json|1|1|V|jsonc
+	DKrMl5kwePOMZXPAapPn94F9
+0298a0678c8bb1929bf40b66bd27080a|file:///home/jwilger/.config/nvim/coc-settings.json|11|24|v|jsonc
+	<Your JIRA account API key>"
+173dc3b8367fee62acf44efc5ebf7b4b|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug_test.exs|18|11|v|elixir
+	"apply(%TeamSlug{}, %SlugReserved{})"
+e747448d158f273c7f8255ba51cb14ed|file:///home/jwilger/.config/nvim/init.vim|394|1|V|vim
+	  " Use <c-space> to trigger completion.
+	  inoremap <silent><expr> <c-space> coc#refresh()
+	
+96b1313c6e44c569b4a1020cf17c31e6|file:///home/jwilger/.config/nvim/init.vim|474|10|v|vim
+	\|>\ 
+d8dab43e43e2a8d1847fb61b08478286|file:///home/jwilger/.config/nvim/init.vim|478|1|V|vim
+	set equalalways " Vertical and horizontal splits default to equal sizes when created
+61a486812bee16cf8a9f12583dabbaca|file:///home/jwilger/.config/nvim/init.vim|216|1|v|vim
+	set 
+c46078470304cac05d6f0b516e08cd14|file:///home/jwilger/.config/nvim/init.vim|216|1|v|vim
+	equalalways 
+cace54078e1b3df1c322c99746302f7b|file:///home/jwilger/.config/nvim/init.vim|217|16|v|vim
+	 " Vertical and horizontal splits default to equal sizes when created
+157f0a469aa7b6f5e1be3a8ee7b1c88c|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug_test.exs|19|3|V|elixir
+	  end
+bcd1230d1b52666d5f79414ac4f89389|file:///home/jwilger/.config/nvim/init.vim|178|1|V|vim
+	  imap <expr> <CR> (pumvisible() ? "\<C-y>\<CR>\<Plug>DiscretionaryEnd" : "\<CR>\<Plug>DiscretionaryEnd")
+	  let g:endwise_no_mappings = 1
+9199ba41cfc57a28e9b5101217b55800|file:///home/jwilger/.config/nvim/init.vim|177|3|V|vim
+	  imap <expr> <CR> (pumvisible() ? "\<C-y>\<CR>\<Plug>DiscretionaryEnd" : "\<CR>\<Plug>DiscretionaryEnd")
+ad4cb5740b3dcfdfd34f063746bce068|file:///home/jwilger/.config/nvim/init.vim|170|1|V|vim
+	  inoremap <silent><expr> <TAB>
+	        \ pumvisible() ? "\<C-n>" :
+	        \ <SID>check_back_space() ? "\<TAB>" :
+	        \ coc#refresh()
+3d305c4e0ece22abdcdcc14018db80cc|file:///home/jwilger/.config/nvim/init.vim|164|1|V|vim
+	  " use <tab> for trigger completion and navigate to next complete item
+	  function! s:check_back_space() abort
+	    let col = col('.') - 1
+	    return !col || getline('.')[col - 1]  =~ '\s'
+	  endfunction
+	
+d79c2635f9ab3bb249ce84a058af4634|file:///home/jwilger/.config/nvim/init.vim|165|1|V|vim
+	  " Make completion work with endwise plugin
+	  let g:endwise_no_mappings = 1
+ba60b9bceac29c962704a2cb8f442242|file:///home/jwilger/.config/nvim/init.vim|170|1|V|vim
+	  inoremap <silent><expr> <TAB>
+	        \ pumvisible() ? "\<C-n>" :
+	        \ <SID>check_back_space() ? "\<TAB>" :
+	        \ coc#refresh()
+	
+	  " Make completion work with endwise plugin
+	  let g:endwise_no_mappings = 1
+	  imap <expr> <CR> (pumvisible() ? "\<C-e>\<CR>\<Plug>DiscretionaryEnd" : "\<CR>\<Plug>DiscretionaryEnd")
+1f53f11f34a16a9af4b02e6f967e018a|file:///home/jwilger/.config/nvim/init.vim|170|1|V|vim
+	  inoremap <silent><expr> <TAB>
+	        \ pumvisible() ? "\<C-n>" :
+	        \ <SID>check_back_space() ? "\<TAB>" :
+	        \ coc#refresh()
+	
+	  " Make completion work with endwise plugin
+	  let g:endwise_no_mappings = 1
+	  imap <expr> <CR> (pumvisible() ? "\<C-e>\<CR>\<Plug>DiscretionaryEnd" : "\<CR>\<Plug>DiscretionaryEnd")
+	
+22884db148f0ffb0d830ba431102b0b5|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug_test.exs|18|58|v|elixir
+	module
+e98b0e6bbc8a87d1eb3eee8f308a926d|file:///home/jwilger/.config/nvim/init.vim|387|1|V|vim
+	  " Make completion work with endwise plugin
+	  let g:endwise_no_mappings = 1
+	  imap <expr> <CR> (pumvisible() ? "\<C-e>\<CR>\<Plug>DiscretionaryEnd" : "\<CR>\<Plug>DiscretionaryEnd")
+	
+069d29140767b0efd44c4e64ce126923|file:///home/jwilger/.config/nvim/init.vim|387|39|v|vim
+	\<C-y>
+927ff5f566db56586d2189be3062ee69|file:///home/jwilger/.config/nvim/init.vim|387|50|v|vim
+	\<C-g>u\<CR>
+9dd6b22d9b64476ce5e84c4c0e4fefaf|file:///home/jwilger/.config/nvim/init.vim|387|3|V|vim
+	  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+744c8abd90542f65200a7e5f03dc103b|file:///home/jwilger/.config/nvim/init.vim|389|3|V|vim
+	  "inoremap <expr> <CR> (pumvisible() ? "\<C-y>\<CR>\<Plug>DiscretionaryEnd" : "\<CR>\<Plug>DiscretionaryEnd")
+6bd1c7269fe319aa514b549a42ec732c|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug_test.exs|21|3|V|elixir
+	  do
+15e4d7a61dbd80a0dfbdefae2ba3b529|file:///home/jwilger/.config/nvim/init.vim|387|1|V|vim
+	  inoremap <expr> <cr> pumvisible() ? "\<c-y>" : "\<c-g>u\<cr>"
+	  "inoremap <expr> <cr> (pubvisible() ? "\<c-y>\<cr>\<Plug>DiscretionaryEnd" : "\<cr>\<Plug>DiscretionaryEnd")
+4012e9aca613607b1213ea141b0b150e|file:///home/jwilger/.cache/dein/.cache/init.vim/.dein/doc/coc.txt|646|1|V|help
+		inoremap <silent><expr> <TAB>
+		  \ pumvisible() ? coc#_select_confirm() :
+		  \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+		  \ <SID>check_back_space() ? "\<TAB>" :
+		  \ coc#refresh()
+	
+		function! s:check_back_space() abort
+		  let col = col('.') - 1
+		  return !col || getline('.')[col - 1]  =~# '\s'
+		endfunction
+	
+		let g:coc_snippet_next = '<tab>'
+c0eb52da1015e94053c78921d0c8ec43|file:///home/jwilger/.config/nvim/coc-settings.json|4|1|V|jsonc
+	  "suggest.autoTrigger": "trigger",
+811882fecd5c7618d7099ebbd39ea254|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug_test.exs|23|19|v|elixir
+	left
+7c4f29407893c334a6cb7a87bf045c0d|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug_test.exs|23|24|v|elixir
+	right
+ff5b19d93cb1ef515110097e8c8122b1|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug_test.exs|23|20|v|elixir
+	opts \\ []
+54bb10e5ebcd9222ebca2aa9c96c1914|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug_test.exs|23|6|V|elixir
+	     doctest(module, opts \\ []) 
+ec3964874b8679c3f291b6f6186614b8|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug_test.exs|23|7|V|elixir
+	      doctest(foo , opts \\ [])
+d3e0ff37ee72390cdd5bb459097bb5d6|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug_test.exs|24|9|V|elixir
+	        describe "foo" do
+41b394758330c83757856aa482c79977|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug_test.exs|24|10|V|elixir
+	          
+7461c354064452c6cc3c7f93b3820750|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug_test.exs|24|9|V|elixir
+	        end
+baaa30e7a80c2e615994a31668a2e983|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug_test.exs|21|1|V|elixir
+	  do
+	    describe "fooc" do
+	      describe "foo" do
+	          
+	        end
+	        
+	
+	
+	       " do
+	
+	        end 
+	      end
+	    end
+	  end
+4e76b8e87d0647794bfaadd5ae5fbce4|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug_test.exs|20|1|V|elixir
+	  end
+	  do
+	    describe "fooc" do
+	      describe "foo" do
+	          
+	        end
+	        
+	
+	
+	       " do
+	
+	        end 
+	      end
+	    end
+	  end
+2c34c4f395afd727117b28d8b7c77496|file:///home/jwilger/.config/nvim/init.vim|402|3|V|vim
+	  let g:coc_snippet_next = '<c-j>'
+830fb244207bb08d9d677bad1a166df6|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug_test.exs|20|1|V|elixir
+	  pumvisible() ? coc#_select_confirm() : "\
+	  "de
+	  pumvisible() ? coc#_select_confirm() : "\
+	  "pumvisible() ? coc#_select_confirm() : "\
+	  "
+4c6cb546665afddf310fd3f33cb7cf16|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug_test.exs|20|1|V|elixir
+	  pumvisible() ? coc#_select_confirm() : "\
+	  "pumvisible() ? coc#_select_confirm() : "\
+	  "
+f985db89277cb4e867bece4fc01aaf16|file:///home/jwilger/.config/nvim/init.vim|43|1|V|vim
+	  call dein#add('tpope/vim-endwise')
+5123805ea78d327e2458cab625747c4f|file:///home/jwilger/.config/nvim/init.vim|31|3|V|vim
+	  call dein#add('Valloric/ListToggle') "toggle quick and location lists
+97781e0177c9c2247d90bdf085ee89f6|file:///home/jwilger/.config/nvim/init.vim|37|3|V|vim
+	  call dein#add('scrooloose/nerdtree', {'on': 'NERDTreeToggle'})
+2ea06b2ba9e7e4ceefa464e45cf1951b|file:///home/jwilger/.config/nvim/init.vim|37|3|V|vim
+	  call dein#add('tiagofumo/vim-nerdtree-syntax-highlight')
+b12dc76e40046060dac963ea086688a1|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug_test.exs|20|1|V|elixir
+	  pumvisible() ? coc#_select_confirm() : "\
+	  "pumvisible() ? coc#_select_confirm() : "\
+	  "
+	  pumvisible() ? coc#_select_confirm() : "\
+	  "
+68ebd22c001a05b2370dab3e11ead120|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug_test.exs|20|1|V|elixir
+	
+	  describe "foo" do
+	    
+	  end
+7a39713d0ec1fd868d87becaedc0983c|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug_test.exs|22|5|V|elixir
+	    bar
+ccf7340095f9b72bdac8966c1600bf0d|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug_test.exs|20|1|V|elixir
+	
+	  describe "foo" do
+	  end
+0cf31b2c283ce3431794586df7b0996d|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug_test.exs|19|4|V|elixir
+	    
+b34574c76e1c7220bcf0f1cf583eb3e0|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug_test.exs|19|5|V|elixir
+	    test "returns an updated 
+7b9357e0e798bf41d13c52d40d5d1c62|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug_test.exs|19|1|V|elixir
+	    test "something" do
+	      describe "foo" do
+	        
+	      end
+	    end
+d0124dd3815cab42a0492e0d621f8211|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team_slug/events/slug_reserved.ex|10|3|V|elixir
+	  def new(opt
+36396e1c0a4c362ccf92379fa3e2f3b9|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team_slug/events/slug_reserved.ex|12|18|v|elixir
+	collectable
+c8171d71cb8d0700e8753b0bd4bf6a75|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team_slug/events/slug_reserved.ex|13|52|v|elixir
+	calendar \\ Calendar.ISO
+72b12b1c1799717f8e51959d0c878cc4|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug_test.exs|7|3|V|elixir
+	  describe "reserve(%TeamSlug{slug: nil}, %ReserveSlug{})" do
+f87221c031de049522835553be9e9d1f|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug_test.exs|11|7|V|elixir
+	      command = ReserveSlug.new(%{slug: slug, team_id: team_id})
+0246ffebde551816b7dcda9a1aeff87e|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team_slug.ex|22|5|V|elixir
+	    command
+a678a0d934390fda3fd7bbaebf36f25c|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team_slug.ex|22|5|V|elixir
+	    |> Map.from_struct()
+9c3b62949032a7361e2f0642fcb118d6|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug_test.exs|14|25|v|elixir
+	reserve
+301fb292f10004417f566955cdbb15bf|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/application/command_router.ex|15|1|V|elixir
+	
+	  dispatch(CreateTeam, to: TeamCommandsHandler, aggregate: Team, identity: :id)
+	  dispatch(ReserveSlug, to: TeamSlugCommandsHandler, aggregate: TeamSlug, identity: :slug)
+fe87d8b9b3b0c1a15fbf7f27293bb5ec|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/application/command_router.ex|9|11|v|elixir
+	CreateTeam, to: TeamCommandsHandler, aggregate: Team, identity: :id
+cc383691a055a211cc89fc0a14904496|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/application/command_router.ex|10|11|v|elixir
+	ReserveSlug, to: TeamSlugCommandsHandler, aggregate: TeamSlug, identity: :slug
+dce56b45afa767e47a08e1070d0b6d57|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/application/command_router.ex|12|64|v|elixir
+	, identity: :id 
+fb85081d9c63c81e23cefa8743d71f07|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/application/command_router.ex|13|73|v|elixir
+	, identity: :slug 
+5ba73f728009f229c3ea21160e8eab0b|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug_test.exs|21|17|v|elixir
+	Rese
+e1bb53fe846c1c19aa894559c5689805|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team_slug.ex|30|17|v|elixir
+	slug_reserved
+4710f6da33fbd01e035516792ee24446|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug_test.exs|18|1|V|elixir
+	      slug = "foo"
+	      team_id_1 = "5fd99bf4-ee9d-4092-8aae-b71d503b964c"
+	      team_id_2 = "354cecfb-cb44-48ae-bcae-1aed7e0bb65c"
+	      command = ReserveSlug.new(%{slug: slug, team_id: team_id_1})
+42189522c226a185604f08c6007a5ac2|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug_test.exs|30|7|V|elixir
+	      team_id_2 = "354cecfb-cb44-48ae-bcae-1aed7e0bb65c"
+cb9f6dcf02f021d0835d62d1f46607e9|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager.ex|12|3|V|elixir
+	  alias TeamWebsite.Team
+59e4f9b650df4aace3a56847b19094ec|file:///home/jwilger/.config/tmuxinator/evalufi.yml|14|1|V|yaml
+	on_project_start: cd ~/projects/everfi && docker-compose up --build -d --remove-orphans && cd - && sleep 5 && bundle install --path .bundle --binstubs .bundle/bin && bundle exec rake db:reset
+c17606ac99dc1b459efc41e84d66a090|file:///home/jwilger/.config/tmuxinator/evalufi.yml|14|21|v|yaml
+	cd ~/projects/everfi && docker-compose up --build -d --remove-orphans && cd - && sleep 5 && bundle install --path .bundle --binstubs .bundle/bin && bundle exec rake db:reset
+9ec0f2343bbae303fc8830e2b089fc62|file:///home/jwilger/.config/tmuxinator/evalufi.yml|16|1|V|yaml
+	# on_project_first_start: command
+57f052cd10445a81627f4d3765e493f3|file:///var/user_projects/jwilger/everfi/evalufi/Procfile|3|1|V|
+	fmbmessagepublisher: DB_POOL=1 bundle exec fmb_message_publisher
+03724a0afda983fe4604a6c6080bd28a|file:///home/jwilger/.config/tmuxinator/certificate-service.yml|16|102|v|yaml
+	 && sleep 5 && bundle install --path .bundle --binstubs .bundle/bin && bundle exec rake db:reset
+4a7e39e8437713ac165a394d21f118e9|file:///home/jwilger/.config/tmuxinator/compliance.yml|14|88|v|yaml
+	 && cd - && sleep 5 && bundle install --path .bundle --binstubs .bundle/bin && bundle exec rake db:reset
+e3059eb14e9f9c5b717573ba99105ac3|file:///home/jwilger/.config/tmuxinator/publicapi.yml|14|97|v|yaml
+	&& sleep 5 && bundle install --path .bundle --binstubs .bundle/bin && bundle exec rake db:reset
+bb3462b62cd8db3f9ba007d86f8d1c6d|file:///var/user_projects/jwilger/everfi/foundry-public-api/.circleci/config.yml|79|32|v|yaml
+	yarn
+bcb204d3641c12af14185102f2c7c70f|file:///var/user_projects/jwilger/everfi/foundry-public-api/.circleci/config.yml|79|32|v|yaml
+	.lock
+8ee2343978836a779dc9f8d6b794c3b2|file:///var/user_projects/jwilger/everfi/foundry-public-api/.circleci/config.yml|128|37|v|yaml
+	yarn.lock
+f1f246df6e5222de88f79907e661bc13|file:///var/user_projects/jwilger/everfi/foundry-public-api/lib/tasks/raml.rake|3|1|v|ruby
+	YARN_BIN
+de17f0f24b49f8364187891f8550ffbb|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/schemas/foundry_events_user.avsc|45|20|v|json
+	record
+8b54496ca1681b52e241a0c110d4b2e6|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/schemas/foundry_events_user.avsc|61|1|V|json
+	              "doc": "Identifies the type of event that occurred and the schema to be used for the event details.",
+43de7e49c2cd930539b5995adde14bf1|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/schemas/foundry_events_user.avsc|51|15|V|json
+	              "doc": ""
+ca82bfbfe0d77e6a75733df9d7fafc09|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/schemas/foundry_events_user.avsc|46|1|V|json
+	          "doc": "This event is triggered when the elasticsearch index has been updated to reflect recent changes to the user data.",
+206d1760ce463b55ce8c0b01345117c7|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/schemas/foundry_events_user.avsc|69|11|V|json
+	          "doc": ""
+1fdabf20635c5fb11b118fa110b0a373|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/schemas/foundry_events_user.avsc|48|1|V|json
+	            {
+	              "name": "event_type",
+	              "doc": "Identifies the type of event that occurred and the schema to be used for the event details.",
+	              "type": {
+	                "name": "event_type_index_updated",
+	                "type": "enum",
+	                "symbols": ["index_updated"]
+	              }
+	            },
+	            {
+	              "name": "reason",
+	              "doc": "Identifies the cause of the index update",
+	              "type": "enum",
+	              "symbols": ["created", "deleted"]
+	            }
+05db757826b91c0e6f4a589d299d519d|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/schemas/foundry_events_user.avsc|70|1|V|json
+	            {
+	              "name": "event_type",
+	
+	            }
+e2fa538867c3830a859a5b17ab24644b|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/schemas/foundry_events_user.avsc|83|28|v|json
+	created
+b3963c80d81a9700084eecbe31362873|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/lib/foundry/message_bus/contracts/user_event/index_updated_contract.rb|12|15|V|ruby
+	              array do
+7d8cbd27df278f5118944fc8ed1170d0|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/lib/foundry/message_bus/contracts/user_event/index_updated_contract.rb|12|17|V|ruby
+	                required
+1cd0361405ee31ff6a59ae778f9744fe|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/lib/foundry/message_bus/contracts/user_event/index_updated_contract.rb|17|30|v|ruby
+	event_type
+846c4067b506b73ab57f6b5486d27039|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/lib/foundry/message_bus/contracts/user_event/index_updated_contract.rb|22|95|v|ruby
+	 unless %w(created, updated, deleted).include?(value)
+662b918144d0dd3462471451211a879d|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/spec/integration_spec.rb|626|1|V|ruby
+	
+	  it 'publishes foundry_events_user/index_updated events when reason is created' do
+	    message = Foundry::MessageBus::MessageFormatters::UserEvent::IndexUpdated.new(
+	
+	    )
+	  end
+b29e237204161bf21e7793e1de8218da|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/spec/integration_spec.rb|234|1|V|ruby
+	      application_id: 'foundry-message_bus-integration-spec',
+	      user_id: SecureRandom.uuid,
+	      organization_id: SecureRandom.uuid,
+	      changed_at: Time.now,
+	      provenance_id: SecureRandom.uuid,
+	      rule_set_roles: {'cc_learner' => 'default', 'cc_admin' => 'primary'},
+	      previous_rule_set_roles: {'cc_admin' => 'blah'}
+0246e05a25c1b12331b3464ba419503e|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/spec/integration_spec.rb|254|1|V|ruby
+	      rule_set_roles: {'cc_learner' => 'default', 'cc_admin' => 'primary'},
+	      previous_rule_set_roles: {'cc_admin' => 'blah'}
+148fde05708f8296b5f3d6f7635babff|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/spec/integration_spec.rb|242|1|V|ruby
+	    Foundry::MessageBus.publish_foundry_message(use_outbox: false, **message)
+	    Foundry::MessageBus.shutdown
+2ffea03b3cc468eaf14e2475f9c85d37|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/spec/integration_spec.rb|247|1|V|ruby
+	  it 'publishes foundry_events_user/index_updated events when reason is created' do
+	    message = Foundry::MessageBus::MessageFormatters::UserEvent::IndexUpdated.new(
+	      application_id: 'foundry-message_bus-integration-spec',
+	      user_id: SecureRandom.uuid,
+	      organization_id: SecureRandom.uuid,
+	      changed_at: Time.now,
+	      provenance_id: SecureRandom.uuid,
+	      reason: 'created'
+	    )
+	    Foundry::MessageBus.publish_foundry_message(use_outbox: false, **message)
+	    Foundry::MessageBus.shutdown
+	  end
+1b2082b46b0184a96e4352049a3565b4|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/spec/integration_spec.rb|260|1|V|ruby
+	  it 'publishes foundry_events_user/index_updated events when reason is deleted' do
+	    message = Foundry::MessageBus::MessageFormatters::UserEvent::IndexUpdated.new(
+	      application_id: 'foundry-message_bus-integration-spec',
+	      user_id: SecureRandom.uuid,
+	      organization_id: SecureRandom.uuid,
+	      changed_at: Time.now,
+	      provenance_id: SecureRandom.uuid,
+	      reason: 'deleted'
+	    )
+	    Foundry::MessageBus.publish_foundry_message(use_outbox: false, **message)
+	    Foundry::MessageBus.shutdown
+	  end
+da602f0b162fccbf6b150cfcfc7a7379|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/spec/integration_spec.rb|280|16|v|ruby
+	deleted
+14f802e1fba977727845e8872c1743a7|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team/commands/create_team.ex|81|17|v|elixir
+	keys
+07b04b4a1ad8e384b72de8e8809628a0|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team/commands/create_team.ex|95|5|V|elixir
+	    |> Map.merte
+425ce871530e0633c917f98d8e9b1bc7|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team/commands/create_team.ex|95|18|v|elixir
+	attrs
+fb5d997356d45536780e27fd9d29c6cd|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager.ex|41|1|V|elixir
+	     [
+	       ReportProvisoningError.new(
+	         team_id: team_id,
+	         failed_command: failed_command,
+	         error: :already_in_use
+	       )
+	       | commands
+	     ], context}
+93fb59884860fcf38bc155e953de71c6|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager.ex|47|7|v|elixir
+	, context}
+bd8f11b0ea3731f845b089d2a9518ed7|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager.ex|42|1|V|elixir
+	       ReportProvisoningError.new(
+	         team_id: team_id,
+	         failed_command: failed_command,
+	         error: :already_in_use
+	       )
+7fc37547c392d9d0d6cf43ba1a454cf5|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager_test.exs|71|5|V|elixir
+	    test "with already_in_use error from ReserveSlug Command it 
+36ce240506773bb92b270385a9a6a5b8|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager_test.exs|71|5|V|elixir
+	    setup
+add1d7c24e8acd0d582c059d9e28a3b6|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager_test.exs|77|6|V|elixir
+	      cmd = ReserveSlug.new(team_id: "c89bbd6f-8384-48cb-a8f0-201af86ed6ae", slug: "foo")
+a127fd1f86e4ab650f2216f09992afa4|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager_test.exs|74|6|V|elixir
+	      
+dd82004827108d22dbde22ac5c3125ab|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager_test.exs|71|5|V|elixir
+	    @tag event: TeamCreated
+3f1b66a25602d41667e9adf7ceb681fa|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager_test.exs|81|16|V|elixir
+	               ProvisioningProcessManager.error({:error, :already_in_use}, cmd, %{})
+f50c5eb6cc7be42bbcaee6d6c93ee6dd|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager_test.exs|9|1|V|elixir
+	  setup %{} do
+	    :ok
+	  end
+c02f92e2e7b087a221475bb130a64129|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager_test.exs|13|1|V|elixir
+	    event = %TeamCreated{
+	      id: "19fc3ed6-4cac-4693-b40d-2fc602a5ba24",
+	      name: "Team Acme",
+	      slug: "acme",
+	      admin_id: "0c43e0c7-2ff8-46a7-9f88-e15cf954de01",
+	      admin_encryption_key: "blahblah",
+	      encrypted_admin_email: "ad;flkjasd;flkja;dfkjl",
+	      admin_password_hash: "a;lkdfja;lkfja;ldfj",
+	      encrypted_admin_first_name: "adsflajdsf;alkdsf",
+	      encrypted_admin_last_name: "dfjalsdfads;flkj",
+	      created_by: %SessionToken{id: "e2ee8411-91df-4dce-af2e-125a4efbfa35"},
+	      created_at: DateTime.utc_now()
+	    }
+5a562a1835530b189f188cdeaa4f723b|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager_test.exs|9|23|v|elixir
+	event 
+1062d0b75fbfb821580e4973fca7983b|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager_test.exs|22|1|V|elixir
+	  setup  do
+	    pm = %ProvisioningProcessManager{}
+	
+	    event = %TeamCreated{
+	      id: "19fc3ed6-4cac-4693-b40d-2fc602a5ba24",
+	      name: "Team Acme",
+	      slug: "acme",
+	      admin_id: "0c43e0c7-2ff8-46a7-9f88-e15cf954de01",
+	      admin_encryption_key: "blahblah",
+	      encrypted_admin_email: "ad;flkjasd;flkja;dfkjl",
+	      admin_password_hash: "a;lkdfja;lkfja;ldfj",
+	      encrypted_admin_first_name: "adsflajdsf;alkdsf",
+	      encrypted_admin_last_name: "dfjalsdfads;flkj",
+	      created_by: %SessionToken{id: "e2ee8411-91df-4dce-af2e-125a4efbfa35"},
+	      created_at: DateTime.utc_now()
+	    }
+	
+	    {:ok, process_manager: pm, team_created: event}
+	  end
+	
+	  setup ctx do
+	    :ok
+	  end
+935c38838f88c6ac708e8b0aa1022f7b|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager_test.exs|25|7|V|elixir
+	      team_created: event
+e03c90eb559717192e77c6b94fe97b8d|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager_test.exs|25|5|V|elixir
+	    } do
+4119639092e62c55ea8be348e4d9260d|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager_test.exs|25|17|v|elixir
+	event
+54b8cd2a0aee57d722340d635c0192a1|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager_test.exs|32|7|V|elixir
+	      process_manager: pm,
+c632f4137e09557f731c7fe9e522d5bd|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager_test.exs|45|5|V|elixir
+	        pm
+adb69b28cd854c441eabe73612c17f3b|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager_test.exs|41|7|V|elixir
+	      team_created: %{slug: slug, id: team_id} = event
+10af3407c20a6762bfa6da008cbcabcc|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager_test.exs|62|42|v|elixir
+	"c89bbd6f-8384-48cb-a8f0-201af86ed6ae"
+644fea370b6da3808758c71227842138|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager.ex|20|3|V|elixir
+	  @spec
+7b5995fc14e7f57e9dd482028421cb7c|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager.ex|11|1|V|elixir
+	  alias Team.Commands.ReportProvisoningError
+3f3fe7967c89ae42384956dccdf1c0ce|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager_test.exs|6|3|V|elixir
+	  alias TeamWebsite.Team.Commands.ReportProvisioningError
+717d94be2a34e63491dda445e2a5fd35|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager_test.exs|80|18|v|elixir
+	ReportProvisioningError
+dd15665a683136cd7bd1bdd11d7c053c|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team/team.ex|65|3|V|elixir
+	  @spec create(team :: t(), command :: CreateTeam.t()) :: {:error, message :: String.t()}
+7532aea3be08509b984e2491e2e8f333|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|68|7|V|elixir
+	      assert false = true
+150b8d0209d7e2132de3d15c1854cff3|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|67|1|V|elixir
+	    test "test me!" do
+	      assert false
+	    end
+7a8fa31c7947da32c92ba164d160e8a2|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|92|77|v|elixir
+	 collectable
+550445572734a7861d8830a48502d5e1|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|117|1|V|elixir
+	        admin_encryption_key:
+	          "vault:v1:QaG9HqLtDKqwFTiNOtUKFp7dYRXZZ7f7AdnuD26/BPekIgOfRuhRd16MJyITVr2RR1PbcJZKwL8NGiSf",
+	        encrypted_admin_email:
+	          "YwPZT8gFe5LeG0X0Ig+rlA==:V4KLdRkqpXHcnPEohxPV0BSyjszJf2dLcBi4RaXItuY=",
+	        admin_password_hash: password_hash,
+	        encrypted_admin_first_name: "B1bTCrVNdjuWksB1h2TFsw==:eO/qNnHf/dRRAT0aUv+wVw==",
+	        encrypted_admin_last_name: "O8J+x6KLDvuf+mdqNhg0IA==:gXRngLDD+Le/z7IsQqDyzw==",
+ad9ff0dc3b3b357891e581d3c1ddb112|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|108|7|V|elixir
+	      admin_encryption_key
+e75fb14cc9def4b1841573589e428b4a|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|108|7|V|elixir
+	      apassword_hash: Authentication.hash_password("s00p3r@S3kr37!"),
+a21abe6c345b85c1dc8fdb0f298410fd|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|114|1|V|elixir
+	      password_hash = Authentication.hash_password("s00p3r@S3kr37!")
+0ecc4eb15eb9fd36582dca430be9876c|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|96|31|v|elixir
+	 key
+27c67a27894a7e3b895ec2711a8aaec5|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|96|42|v|elixir
+	 default \\ nil
+fc274c73b3297d94626dcc273ea363e2|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|97|50|v|elixir
+	"s00p3r@S3kr37!"
+7a9f34e20112d1849721321a7b068d2c|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|97|29|v|elixir
+	 keys
+0577c3c7b011f3639d9d191b5125ab8d|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|115|18|v|elixir
+	 map2
+e2a38c6bea8f8ac639c8ac03a8c4a06d|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|130|1|V|elixir
+	        id: "15654c39-f584-4c45-af12-28766ec79ff0",
+9b691b4b2c2d779cc49d372df116eb99|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|124|7|V|elixir
+	      team_id
+8e802e684e4b28fdd35a2644410a35cb|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|123|34|v|elixir
+	%{} = attrs
+1583af9922e9ddece14bb50a7195cafb|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|124|7|V|elixir
+	      session_token = Authentication.start_session()
+1ffeb9f306630896ad019d1dc236c921|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|130|7|V|elixir
+	      created_at = DateTime.utc_now()
+03c289e29a548a368b72dcca6b5c75e0|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|149|20|v|elixir
+	"15654c39-f584-4c45-af12-28766ec79ff0",
+768e7a8eb2404ec99b4c3272ace8904a|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|150|22|v|elixir
+	"Acme Racing",
+08666bdb37e3ddd316b73e9344e63cd5|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|153|26|v|elixir
+	"b98b8dae-9908-4a30-ae1c-79c5c0d10820",
+8008b4186a5e21e94316ebba4f8480e8|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|154|16|V|elixir
+	               created_at: ^created_at,
+fff1d4c5cf46ab258c696bcfa47fe4b8|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|133|1|V|elixir
+	      event = %TeamCreated{
+	        id: "15654c39-f584-4c45-af12-28766ec79ff0",
+	        name: "Acme Racing",
+	        slug: "acme",
+	        admin_id: "b98b8dae-9908-4a30-ae1c-79c5c0d10820",
+	        admin_encryption_key:
+	          "vault:v1:QaG9HqLtDKqwFTiNOtUKFp7dYRXZZ7f7AdnuD26/BPekIgOfRuhRd16MJyITVr2RR1PbcJZKwL8NGiSf",
+	        encrypted_admin_email:
+	          "YwPZT8gFe5LeG0X0Ig+rlA==:V4KLdRkqpXHcnPEohxPV0BSyjszJf2dLcBi4RaXItuY=",
+	        admin_password_hash: password_hash,
+	        encrypted_admin_first_name: "B1bTCrVNdjuWksB1h2TFsw==:eO/qNnHf/dRRAT0aUv+wVw==",
+	        encrypted_admin_last_name: "O8J+x6KLDvuf+mdqNhg0IA==:gXRngLDD+Le/z7IsQqDyzw==",
+	        created_by: session_token,
+	        created_at: created_at
+	      }
+	
+fded2e1cd855e659a2ae8121fd1b737d|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team/events/provisioning_error_reported.ex|5|14|v|elixir
+	,  list)
+f1077ff14f84b49d69d4aaa19e29878a|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|92|45|v|elixir
+	kwlist
+5ccad20ff16383eb8f391cf552f22e0d|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|92|1|V|elixir
+	  @spec team_created_event(attrs :: map() | keyword()) :: TeamCreated.t()
+	  defp team_created_event(attrs \\ %{})
+	
+	  defp team_created_event(attrs) when is_list(attrs),
+	    do: attrs |> Enum.into(%{}) |> team_created_event()
+	
+	  defp team_created_event(%{} = attrs) do
+	    default_id = Ecto.UUID.generate()
+	    default_admin_id = Ecto.UUID.generate()
+	    password = Map.get(attrs, :password, "s00p3r@S3kr37!")
+	    attrs = Map.drop(attrs, [:password])
+	    password_hash = Authentication.hash_password(password)
+	
+	    %{
+	      id: default_id,
+	      name: "Team - #{default_id}",
+	      slug: "team-#{default_id}",
+	      admin_id: default_admin_id,
+	      admin_encryption_key:
+	        "vault:v1:QaG9HqLtDKqwFTiNOtUKFp7dYRXZZ7f7AdnuD26/BPekIgOfRuhRd16MJyITVr2RR1PbcJZKwL8NGiSf",
+	      encrypted_admin_email:
+	        "YwPZT8gFe5LeG0X0Ig+rlA==:V4KLdRkqpXHcnPEohxPV0BSyjszJf2dLcBi4RaXItuY=",
+	      admin_password_hash: password_hash,
+	      encrypted_admin_first_name: "B1bTCrVNdjuWksB1h2TFsw==:eO/qNnHf/dRRAT0aUv+wVw==",
+	      encrypted_admin_last_name: "O8J+x6KLDvuf+mdqNhg0IA==:gXRngLDD+Le/z7IsQqDyzw==",
+	      created_by: Authentication.start_session(),
+	      created_at: DateTime.utc_now()
+	    }
+	    |> Map.merge(attrs)
+	    |> (fn attrs -> struct(TeamCreated, attrs) end).()
+	  end
+	
+de135d01c4b4cf28b2e047060a26c571|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team/team.ex|78|35|v|elixir
+	%__MODULE__{} = team
+a770ef06ef8ce338cfdb014fa1a56559|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team/team.ex|78|48|v|elixir
+	%ReportProvisioningError{} = command
+6ad9bbd70db5e9e6035a9c8e030e8875|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team/team.ex|109|5|V|elixir
+	    Map.u
+f1acb9f569874b8beb2016815fa569a8|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team/team.ex|107|42|v|elixir
+	 fun
+294b62cdeebe4b7a4ff09d7abdcb1ffc|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team/team.ex|108|1|V|elixir
+	    team.provisioning_errors
+	    |> &([format_provisioning_error(event) | &1]).()
+	    |> &(%{team | provisioning_errors: &1}).()
+4a19a5577e4cecec6274737069f870e6|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team/team.ex|106|5|V|elixir
+	    team
+14adf5199f15512a51bb8fd73029470c|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|87|16|V|elixir
+	               failed_command: ^failed_command,
+24b0fad807997a67edb52ef8b5f58c36|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|87|16|V|elixir
+	               error: ^error_message
+48a798d59f2838c27d260ffd0cbae4bc|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|110|3|V|elixir
+	  describe
+9c13811a7bdc948423d9cfee38652a61|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|113|7|V|elixir
+	      result = Team.apply(
+ced806a10fbff00b7b09087299048460|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|110|7|V|elixir
+	      event = ProvisioningErrorReported.new(team_id: team_id, error: error)
+bc7ca40a084e32b9b612d467f0fa6b3a|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team/team.ex|86|94|v|elixir
+	%ProvisioningErrorReported{failed_command: %ReserveSlug{slug: slug}
+eff0ae280c6e914238420e2e38d5811f|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team/team.ex|86|103|v|elixir
+	 error: :already_in_use}
+c23573509a7854b7910ca4c2a674c4cf|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team/team.ex|87|1|V|elixir
+	    command
+	    |> Map.from_struct()
+	    |> to_struct(ProvisioningErrorReported)
+13c295beda3ab92b36ee117797c90751|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team/team.ex|114|35|v|elixir
+	ProvisioningErrorReported
+d0c1e8335fd026af38c7eb8deebac84c|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team/events/provisioning_error_reported.ex|7|1|V|elixir
+	    field :failed_command, Team.command(), enforce: true
+6f43a084b12f912bd3f569a539b3e97f|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team/team.ex|119|5|V|elixir
+	    {:slug, "The slug '#{slug}' is already being used."}
+1d3fb04f66982f0cb8da0ebd190c78e1|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team/events/provisioning_error_reported.ex|12|29|v|elixir
+	&(struct!(__MODULE__, &1)).()
+96c928e6da55da09d15db8caac7abe1b|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team/events/provisioning_error_reported.ex|10|5|V|elixir
+	    field :error, {atom(), atom(), String.t()}, enforce: true
+b895a248f1089da2ff197c6e65af66cb|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team/team.ex|114|1|V|elixir
+	  defp format_provisioning_error(%ReportProvisioningError{
+	         failed_command: %ReserveSlug{slug: slug},
+	         error: :already_in_use
+	       }) do
+	    {:slug, :already_in_use, slug}
+	  end
+02d1c00b58f4c4d33f1f0de9991c5806|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team/team.ex|88|3|V|elixir
+	  def report_provisioning_error(%__MODULE__{}, %ReportProvisioningError{} = command) do
+8fbe63422f6529147328d3a57026c08f|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team/team.ex|89|1|V|elixir
+	    %ProvisioningErrorReported{
+	      team_id: command.team_id,
+	      error: format_provisioning_error(command)
+	    }
+8a52f085586176ddcde6606385ec49b7|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|89|16|V|elixir
+	               error: {:slug, :already_in_use, ^slug}
+72842c3746367078e41bcf35a9cbae27|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|113|7|V|elixir
+	      error = {:slug, :already_in_use, team.slug}
+5d8cd0187bb5fac345bf0569e933bc02|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|112|1|V|elixir
+	      team = make_team()
+	
+	      event =
+	        ProvisioningErrorReported.new(
+	          team_id: team.id,
+	          attribute: :slug,
+	          error_code: :already_in_use,
+	          error_message: team.slug
+	        )
+	
+	      result = Team.apply(team, event)
+	      assert [^event | _] = result.provisioning_errors
+6336516b2f7789bf6c2a8483bc0dbf72|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|138|21|v|elixir
+	provisioning_errors
+d716d7633c599a7fea85f690f51f15dc|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team/team.ex|118|25|v|elixir
+	 value
+e46f8490fb599f13ee691f3537f6e24d|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/api/team_provisioning/team_provisioning.ex|75|5|V|elixir
+	    else
+925beb7b59c7a311cd1ea5c96cb548a9|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/api/team_provisioning/team_provisioning.ex|74|5|V|elixir
+	      :ok
+c750d97d004f4d7658b145f099b984fe|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/api/team_provisioning/team_provisioning.ex|73|10|V|elixir
+	         false <- has_provisioning_errors?(team_id) do
+ff483d1ff591898a9942916050d2ca3f|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/api/team_provisioning/team_provisioning.ex|72|97|v|elixir
+	identity
+91348b0c9d0cb80adcc14c63093180aa|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/api/team_provisioning/team_provisioning.ex|31|3|V|elixir
+	  ### Successful Team creation ###
+cf78d6c4007a4f349774dc573fbcd689|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/api/team_provisioning/team_provisioning.ex|43|1|V|elixir
+	  ### Failed Team creation ### 
+	  If, for example, the chosen slug is already in use:
+	
+	      iex> import TeamWebsite.TestScenarios, only: [given: 3]
+	      ...>
+	      iex> given(%{}, "An existing team", %{slug: "acme"})
+	      ...>
+	      iex> {:ok, session} = TeamWebsite.Authentication.start_session()
+	      iex> team = %{
+	      ...>   name: "Acme Cycling",
+	      ...>   slug: "acme",
+	      ...>   admin_email: "john.doe@domain.example",
+	      ...>   admin_password: "s00p3r@S3kr37!",
+	      ...>   admin_first_name: "John",
+	      ...>   admin_last_name: "Doe"
+	      ...> }
+	      iex> TeamWebsite.TeamProvisioning.create_new_team(team, session)
+	      {:error, {:duplicate_slug, "acme"}}
+5cf142aef08d6765e6a833119d7a699f|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/api/team_provisioning/team_provisioning.ex|7|3|V|elixir
+	  alias TeamWebsite.Team.Commands.CreateTeam
+626f46592fb43053efcac5206d263a3b|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/api/team_provisioning/team_provisioning.ex|49|12|V|elixir
+	           |> Map.pu
+b326b5062b2f0e69046810717534cb09|file:///var/user_projects/jwilger/teamwebsite/.vim/coc-settings.json|3|25|v|jsonc
+	true
+409069676b7826cc4f12a16181b4ad60|file:///var/user_projects/jwilger/teamwebsite/.gitignore|41|1|V|conf
+	.elixir_ls/
+24d65d1a860098037a2d5344c4904004|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team_slug.ex|43|1|V|elixir
+	      {:error,
+	       ":slug must start with a lower-case letter, end with a lower-case letter or number, and may contain only lower-case letters, numbers, and dashes (-). '#{
+	         slug
+	       }' does not match."}
+281c97cff15ec291b65520e9764352f1|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug_test.exs|53|9|V|elixir
+	        case TeamSlug.validate_slug(value) do
+24cd5561964c3d61de4519e224ad6a0d|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug_test.exs|54|1|V|elixir
+	            assert message =~
+	                     ":slug must start with a lower-case letter, end with a lower-case letter or number, and may contain only lower-case letters, numbers, and dashes (-)."
+	
+	          _ ->
+	            raise "Expected validation error for slug '#{value}'"
+2dbcba41b9ac4c5d22886ba672463cb4|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team/commands/create_team.ex|62|54|v|elixir
+	slug
+206e40d593153f5fad8c99dae6a68eab|file:///home/jwilger/.config/tmuxinator/skooma.yml|51|3|V|yaml
+	  - server: bundle exec rails s
+a243f9acd351dbd02c41099d2d4e4c8f|file:///home/jwilger/.config/tmuxinator/skooma.yml|51|3|V|yaml
+	  - logs: tail -f log/development.log
+4a595e7dbc5c2e9852170f62ee206d20|file:///home/jwilger/.config/tmuxinator/skooma.yml|51|7|V|yaml
+	      shell: zsh
+ecc971e85e163724c2a3707aae85f634|file:///var/user_projects/jwilger/skooma/test/skooma_error_test.exs|62|1|V|elixir
+	    expected_results = {:error, [%{key: nil, error_code: :missing_keys, error_info: ["key3"], error_message: "Missing required keys: [\"key3\"]"}]}
+037351fc766ae3a859d40960fc9e567b|file:///var/user_projects/jwilger/skooma/test/skooma_error_test.exs|72|5|V|elixir
+	    expected_results = {:error, ["Missing required keys: [\"key3\"]"]}
+cb8d7fc6037f74e91116fa61a65a1e47|file:///var/user_projects/jwilger/teamwebsite/mix.exs|62|1|V|elixir
+	      {:mix_test_watch, "~> 1.0", only: :dev, runtime: false},
+b0b935fb929472e032a5d015fc349d81|file:///var/user_projects/jwilger/skooma/test/skooma_error_test.exs|72|1|V|elixir
+	    expected_results =
+	      {:error,
+	       [
+	         %{
+	           key: nil,
+	           error_code: :missing_keys,
+	           error_data: [:key3],
+	           error_message: "Missing required keys: [\"key3\"]"
+	         }
+	       ]}
+0feecf23d6d2e7cd1f71b90eab48453d|file:///home/jwilger/.config/nvim/coc-settings.json|6|3|V|jsonc
+	  "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "typescriptreact", "json", "javascriptreact", "typescript.tsx", "elixir", "ruby"],
+277a0d3ddcb31f6b88a02161eaa12722|list:/yank|1|1|V|list
+	line    "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "typescriptreact", "json", "javascriptreact", "typescript.tsx", "elixir", "ruby"],
+	line      expected_results =       {:error,        [          %{            key: nil,            error_code: :missing_keys,            error_data: [:key3],            error_message: "Missin...
+68a23212b4f743670c424e4623fa6af9|file:///var/user_projects/jwilger/skooma/test/skooma_error_test.exs|98|5|V|elixir
+	    expected_results = {:error, ["Expected STRING, got INTEGER 8, at key1"]}
+523a4ac0ab7527180f74603ffee02a92|file:///var/user_projects/jwilger/skooma/.git/rebase-merge/git-rebase-todo|1|1|V|gitrebase
+	pick b16e7c8 WIP
+9470cd7fb7ad0c6a6cea3a17d9625adb|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|5|9|V|elixir
+	        # Your implementation here
+b9a88f670f4030acb96f06e61257ee57|unknown:18|7|5|V|cucumber
+	    Given there is no existing team already using the team slug "acme"
+e0b9eedf3bfe1a482c45a7ac40a04998|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|4|1|V|elixir
+	  defgiven ~r/^there is no existing team already using the team slug "(?<string_1>[^"]+)"$/,
+	           %{string_1: string_1},
+	           state do
+	  end
+08186d20fb1bc5de7be6ae4121031f2c|unknown:18|14|5|V|cucumber
+	    And I 
+e2a7106f1cc8bb1e1318df70aa0a3540|unknown:18|13|12|v|cucumber
+	enter
+eead2773a81becca25edc4d15604a8c7|unknown:18|18|5|V|cucumber
+	    Then I am prompted to 
+ba725f1c99bbad0558859bfcc6a1ec05|unknown:18|14|60|v|cucumber
+	on the platform email confirmation page
+9b39cd249ed2ac743c27b9b8eb5f1580|file:///var/user_projects/jwilger/teamwebsite/test/test_helper.exs|5|42|v|elixir
+	YourApplication
+ff7cd4eb074b5c8410d1246e929c9f25|file:///var/user_projects/jwilger/teamwebsite/test/support/feature_case.ex|8|7|V|elixir
+	      use Cabbage.Feature, async: false
+913f9c49dcb544e2087cee284f4a00b7|file:///var/user_projects/jwilger/teamwebsite/test/support/feature_case.ex|5|16|v|elixir
+	device
+2f9ec76c39d742e0539c5ab347b0b278|file:///var/user_projects/jwilger/teamwebsite/test/support/feature_case.ex|5|22|v|elixir
+	 item
+3ff2a49950548e2978e2f8265d274e84|file:///var/user_projects/jwilger/teamwebsite/test/support/feature_case.ex|5|5|V|elixir
+	    IO.inspect(blah)
+59aeb2c9970b7b25be2fab2317e31fcb|file:///var/user_projects/jwilger/teamwebsite/test/support/feature_case.ex|5|32|v|elixir
+	keywords
+11e369b8dec8838bd3e00ac207b84bee|file:///var/user_projects/jwilger/teamwebsite/test/support/feature_case.ex|5|5|V|elixir
+	    feature_file = Keyword.get(opts, :file)
+d78f74ef0d228be3240a27db6e608e1f|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|2|1|V|elixir
+	  # use Cabbage.Feature, async: false, file: "team_account_signup.feature"
+a396e646e465604a17ccc07202f32b16|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|11|5|V|elixir
+	    state = %{state | browser_sessions: Map.
+dd7a3ec438a3e37b42649ab552fa37b5|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|27|5|V|elixir
+	    fail
+aeb517bb7c03a452b932fecd157d82f0|file:///var/user_projects/jwilger/teamwebsite/test/support/feature_case.ex|6|7|V|elixir
+	      use ExUnit.Callbacks, unquote(opts)
+97f955e16ca9386bad1bd3649a1226cb|file:///var/user_projects/jwilger/teamwebsite/test/support/feature_case.ex|7|7|V|elixir
+	      use Wallaby.DSL
+8f445874ae17331dd2037be4a7774b73|file:///var/user_projects/jwilger/teamwebsite/test/support/feature_case.ex|7|7|V|elixir
+	      use Cabbage.Feature, unquote(opts)
+460a000a9368fd83af957dbea6610bcd|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|6|5|V|elixir
+	    {:ok, _} = Application.ensure_all_started(:wallaby)
+fa32778e4bcb78ac1171113a69b3e9ee|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|49|1|V|elixir
+	
+	  test "foo" do
+	    assert false
+	  end
+3ca2d23a84875b65affd3ab77192b3ac|file:///var/user_projects/jwilger/teamwebsite/mix.exs|52|25|v|elixir
+	, only: [:dev, :test], runtime: false},
+95357f9c654edf2bac9c0e1c86a2997b|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|2|1|V|elixir
+	  use TeamWebsiteWeb.FeatureCase, async: false, file: "team_account_signup.feature"
+fd976d72019946f3b47e276310190b87|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|45|1|V|elixir
+	
+	  defthen ~r/.*/, _vars, _state do
+	    assert false
+	  end
+2f267e8bfd80cbe32968a2d065f784b9|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|4|1|V|elixir
+	
+	  setup_all do
+	    :ok
+	  end
+	
+	  setup do
+	    # Do something when the scenario is done
+	    on_exit(fn ->
+	      IO.puts("Scenario completed, cleanup stuff")
+	    end)
+	  end
+7300006a71c872273d0377bbc66df151|file:///var/user_projects/jwilger/teamwebsite/test/support/feature_case.ex|14|57|v|elixir
+	 type \\ :temporary
+dba4a4b7890941293c494d2cb573fa35|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|13|7|V|elixir
+	      Map.get_and_update(state, :browser_sessions, &%{&1 | browser_session_id => browser_session})
+c7457b28a16f377fd2941535cc8ca2d0|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|19|5|V|elixir
+	    IO.inspect({:ok, state})
+68934a3e9455fa72420237eb05902327|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|5|36|v|elixir
+	false
+0db1da3fd9f3dcc44bb43e4e0d663042|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|27|5|V|elixir
+	    |> IO.inspect()
+88dedcd51c600e4539f4f0fba58b7dab|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|27|24|v|elixir
+	 opts \\ []
+5b2c2d739457baca98e932ed207607f9|file:///var/user_projects/jwilger/teamwebsite/config/test.exs|37|1|V|elixir
+	  chrome: [headless: false],
+2902142000f5d0f1b7d66b7cf7c0c7d7|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|27|3|V|elixir
+	    |> take_screenshot()
+addb196627421b1a2aa99fe19c89d8fe|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|28|21|v|elixir
+	 opts
+ab1c030ae5cc2a77443aac034c8e9fd5|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|28|5|V|elixir
+	    |> text()
+59f6135ff2f6716cd22d2e566265a1b2|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|28|5|V|elixir
+	    |> assert_text("Hello, World!")
+a5acac1b6a88f6285e95c36834052c1f|file:///var/user_projects/jwilger/teamwebsite/config/test.exs|36|18|v|elixir
+	phantomjs
+bc2460c8acbd3ce2e612e96951bb5555|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|28|5|V|elixir
+	    |> assert_has(css("body", text: "Hello, World"))
+cb5e100e5a9a3e7f6d1fd97512215282|file:///var/user_projects/jwilger/teamwebsite/config/test.exs|32|25|v|elixir
+	error
+1c497aa45fd344a57b96de6701cadd0a|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|4|1|V|elixir
+	  import Wallaby.Query
+dfa698f67ecb8157c7d1402b4f6c5641|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|27|5|V|elixir
+	    :time.sleep(10000)
+07cc694b9b3fc636710fa08b6922c42b|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|27|18|v|elixir
+	time
+11af4d15dae05d6ace7e785634692948|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|28|5|V|elixir
+	    :timer.sleep(10000)
+1840af1d511d60db17a518a576071d47|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|5|3|V|elixir
+	  defthen(~r/.*/, _, _, do: assert(true))
+7fc4327cab77723ff1e660dbd43bfd12|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|26|1|V|elixir
+	
+	  defwhen ~r/I choose to sign up$/, _vars, _state do
+	    assert true
+	  end
+	
+	  defwhen ~r/I submit valid details for my new team site$/, _vars, _state do
+	    assert true
+	  end
+	
+	  defthen ~r/I am asked to enter the details for my new team site$/, _vars, _state do
+	    assert true
+	  end
+964261aa8aa028a112c11d6d924b6047|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|6|5|V|elixir
+	    assert false
+184fa1d7879ddb2dbe45db27a4f0c4c6|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|6|5|V|elixir
+	    raise "#{step_name} has not been defined"
+ef63f9cd6c8710cf3e6e40b136ac4fa6|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|6|17|v|elixir
+	chardata_or_fun
+56db71d208644d387697b243b7634c42|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|6|55|v|elixir
+	 metadata \\ []
+6360c6ea7cb3a38a28dca906b53fa829|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|5|1|V|elixir
+	  defand ~r/^(?<step>.*)$/, %{step: step_name}, _state do
+	    Logger.warn("#{step_name} has not been defined!")
+	  end
+	
+9100b402fa418d2899463ef426ae817f|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|27|1|V|elixir
+	  defwhen(~r/^I choose to sign up$/, _vars, _state, do: assert(false))
+f6cd35b402e1e2d854b6393f243f122a|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|30|3|V|elixir
+	  defthen
+2ebb7520f02ea709f3cb37fd64ee7fed|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|30|5|V|elixir
+	    do: assert(false)
+17975830365e4ca3331fac689094a676|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|26|1|V|elixir
+	
+	  defwhen(~r/^I choose to sign up$/, _vars, _state, do: assert(false))
+	
+	  defthen ~r/^I am asked to enter the details for my new team site$/, _vars, _state do
+	    assert false
+	  end
+0adc4428ee9c32cd8e730a765d1ef66d|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|5|1|V|elixir
+	  defand ~r/^(?<step>.*)$/, %{step: step}, _state do
+	    assert false == "The step #{step} has not been defined."
+	  end
+	
+ce7bdf1945e59cd89b11d019ac66d219|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|24|1|V|elixir
+	    {_, browser} = state.active_browser_session
+	
+	    browser
+	    |> visit("/")
+5b3c32009797feb79096d52e56a56b82|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|5|28|v|elixir
+	selector
+d8890c5de46131ceb155a55103809b85|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|5|28|v|elixir
+	#sign-up-link
+3107fbfb7467cc25bdf2026ccaf722ca|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite_web/controllers/signup_controller.ex|4|25|v|elixir
+	, do: conn
+0ea4632898b92ef8fdbd8104d97cf6b1|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite_web/controllers/signup_controller.ex|6|13|v|elixir
+	 data
+4ccb65e726c19e980f04f2e353d08016|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|2|3|V|elixir
+	  use Cabbage.Feature, file: "team_account_signup.feature"
+965a0bb34e96c71b4db8764dde01b5c4|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|2|3|V|elixir
+	  use TeamWebsiteWeb.FeatureCase
+c502128d9d8a285566387ad3de7a9f9c|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|32|1|V|elixir
+	
+	  defp active_browser(%{active_browser_session: {_, browser}}), do: browser
+41dff33decec8fa259bad7c13259d223|file:///var/user_projects/jwilger/teamwebsite/test/support/feature_case.ex|10|6|V|elixir
+	      import TeamWebsiteWeb.FeatureCase
+99ca33f8163d6c76b213850ea26dcabe|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|24|1|V|elixir
+	    state
+	    |> active_browser()
+	    |> visit("/")
+249e57a909f63e224be86444ce99f54a|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|5|3|V|elixir
+	  }
+	
+21d6f40cfb511982e4424e0e250a9557|unknown:47|2|12|v|elixir
+	session
+131bdbab05f290a53e86ef3bc1bef989|unknown:47|5|14|v|elixir
+	Routs.page_path(state, :index)
+93473a7344419b15c4219cc2b6c64c6f|unknown:47|2|3|v|elixir
+	import
+f49838754a58c424f21fcb63a4244a98|unknown:47|2|3|V|elixir
+	  use Wallaby.DSL
+6c8045c1a60019684f6af4ea3d8bd9a2|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers.ex|2|3|V|elixir
+	  using do
+7b2c23b83e5ab8b75c5380e6a1a2f55e|file:///var/user_projects/jwilger/teamwebsite/test/support/feature_case.ex|22|1|V|elixir
+	
+	  def active_browser(%{active_browser_session: {_, browser}}), do: browser
+6df99eb1590c134f4303208af1357438|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers.ex|10|1|V|elixir
+	  def
+b45332391f2a367aaf2d86534c3ba418|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|31|5|V|elixir
+	    |> active_browser()
+01b80d10943b3c87095270e53840d6e3|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|31|5|V|elixir
+	    |> click(@sign_up_link)
+7263fb56e41d7f6d2508667fdcea39ff|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|6|1|V|elixir
+	  @sign_up_link Query.link("sign-up-link")
+	
+539a107cc743cb1c2b73cf45359e86ee|unknown:47|16|14|v|elixir
+	"sign-up-link"
+901d7d673c7119425bd07f2894060134|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers.ex|10|1|V|elixir
+	  defmacro with_active_browser(name, opts \\ []) do
+	    quote do
+	      def unquote(name) do
+	      end
+	    end
+	  end
+fce290146dc9fcd60ac4161c399ca07d|unknown:47|14|1|V|elixir
+	  with_active_browser choose_to_sign_up, fn browser ->
+	    click(browser, @sign_up_link)
+	  end
+d0f43f659f9a93a38f969743ef4aa605|unknown:47|22|3|V|elixir
+	  defp
+df29f780008dc7ca24888bd53c35e0ca|unknown:47|17|1|V|elixir
+	    state
+	    |> active_browser()
+	    |> click(@sign_up_link)
+9ea45487cc825195b5c2e897ffbb041d|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers.ex|11|1|V|elixir
+	
+	  def browser(state, func) do
+	    state
+	    |> active_browser()
+	    |> func.()
+	  end
+bccfaf5e2e764a62eed594b4d94bf15b|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|33|5|V|elixir
+	    state
+79545cb1d13b4b17e9f56e7bde44de61|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|33|5|V|elixir
+	    |> Platform.TeamSignup.
+44de45b94e4785bb698c17b8e1a5c121|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|35|5|V|elixir
+	    assert :step_1 == Platform.TeamSignup.current_step(state)
+f4eaca43114c148a4d3ef8b3515a1355|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|4|1|V|elixir
+	  def current_step(state) do
+	    state
+	    |> active_browser()
+	    |> attr(@
+	  end
+496f7dd55f5dc17b0ff84baa4b41c1b5|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite_web/controllers/signup_controller.ex|6|1|V|elixir
+	    |> json(nil)
+3f1175718ffaccf8fba97f31a3b32cb1|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|7|11|v|elixir
+	_fn.(
+5c398a6968507454ba18432a85a83f63|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|10|5|V|elixir
+	    )
+58392f1523e74a22f58c471a7dbfbdbe|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|15|3|V|elixir
+	  @spec assert_current_step(map(), number()) :: map() | no_return()
+051061d31c83c05247d41abb5a735935|file:///var/user_projects/jwilger/cabbage/lib/cabbage/feature.ex|315|7|V|elixir
+	      raise(MissingStepError, %{step_text: unquote(step.text), step_type: unquote(step_type), extra_vars: unquote(extra_vars)})
+dca62b169bcb5ebd5e30369d3b7ea10a|file:///var/user_projects/jwilger/cabbage/lib/cabbage/feature.ex|315|29|v|elixir
+	, %{step_text: unquote(step.text), step_type: unquote(step_type), extra_vars: unquote(extra_vars)})
+b0f8b139c479738f7364d018b26a0aa4|file:///var/user_projects/jwilger/cabbage/lib/cabbage/feature.ex|315|5|V|elixir
+	    extra_vars = %{table: step.table_data, doc_string: step.doc_string}
+f30c30f9d9f144926ad9939578f71044|file:///var/user_projects/jwilger/cabbage/lib/cabbage/feature.ex|318|7|V|elixir
+	      raise MissingStepError, [step_text: unquote(step.text), step_type: unquote(step_type), extra_vars: unquote(extra_vars)]
+873c9c603aaa419ecbd50e8c0d941b0b|file:///var/user_projects/jwilger/cabbage/test/feature_suggestion_test.exs|19|7|V|elixir
+	      assert_raise MissingStepError, message, fn ->
+4e48e167064ff87d7a971cede55de53c|file:///var/user_projects/jwilger/cabbage/test/feature_suggestion_test.exs|22|7|V|elixir
+	      end
+b45cffe084dd3d20d928bee85e7b0f21|file:///var/user_projects/jwilger/cabbage/test/feature_suggestion_test.exs|25|45|v|elixir
+	string
+78e731027d8fd50ed642340b7c9a63b3|file:///var/user_projects/jwilger/cabbage/test/feature_suggestion_test.exs|25|53|v|elixir
+	message
+ab1139308d8f3e5146004d3cf8c57f7a|file:///var/user_projects/jwilger/cabbage/test/feature_suggestion_test.exs|26|7|V|elixir
+	      assert Regex.match?(~r/#{Regex.escape(message)}/, output)
+b311cc12441f1b8803b511e0e1c71fb6|file:///var/user_projects/jwilger/cabbage/test/feature_suggestion_test.exs|25|38|v|elixir
+	output 
+818eb0420faae2ca9e0c698740025059|file:///var/user_projects/jwilger/cabbage/test/feature_suggestion_test.exs|25|1|V|elixir
+	      assert WordSmith.squish(output)=~ WordSmith.squish(message)
+73547d234da02142a05ba9eb452a1343|file:///var/user_projects/jwilger/cabbage/test/feature_suggestion_test.exs|23|1|V|elixir
+	      {result, output} = CabbageTestHelper.run()
+	                         |> IO.inspect()
+	      assert WordSmith.squish(output)=~ WordSmith.squish(message)
+c11f261684a0317944335da1355b5d86|file:///var/user_projects/jwilger/cabbage/test/feature_suggestion_test.exs|45|1|V|elixir
+	
+	      {result, output} = CabbageTestHelper.run()
+	                         |> IO.inspect()
+	      assert WordSmith.squish(output)=~ WordSmith.squish(message)
+27cf1e36682fb645e2f4943bbe54f7be|file:///var/user_projects/jwilger/cabbage/.git/rebase-merge/git-rebase-todo|1|1|v|gitrebase
+	pick
+369804b60d762d1742d4d7e450173a3b|file:///var/user_projects/jwilger/cabbage/.git/COMMIT_EDITMSG|1|1|V|gitcommit
+	fixes broken test
+4d008ee2333cfe2021b9f286607d1741|file:///var/user_projects/jwilger/cabbage/test/feature_suggestion_test.exs|24|1|V|elixir
+	                         |> IO.inspect()
+c0019d0b22b5fc2f59cca2d25f0eaa81|file:///var/user_projects/jwilger/cabbage/test/feature_suggestion_test.exs|6|1|V|elixir
+	  alias Cabbage.Feature.MissingStepError
+8e73fde9db1d610e3a93d6f887a39b1f|file:///var/user_projects/jwilger/cabbage/test/feature_suggestion_test.exs|27|3|V|elixir
+	      Please add a matching step for:
+9350cbb84e8ab827898a783d8f724951|file:///var/user_projects/jwilger/cabbage/test/feature_suggestion_test.exs|23|10|v|elixir
+	inspect
+f2fc740eaa53b453cfe24d021ab710f2|file:///var/user_projects/jwilger/cabbage/test/feature_suggestion_test.exs|13|7|^v|elixir
+	 
+	 
+	 
+	 
+	 
+	 
+dd6c9691dee7f897f5681cae7764151a|file:///var/user_projects/jwilger/cabbage/test/feature_suggestion_test.exs|27|7|V|elixir
+	      IO.puts(message)
+f6e81069b6f4c359312acf99e6cad825|file:///var/user_projects/jwilger/cabbage/test/feature_suggestion_test.exs|27|7|V|elixir
+	      IO.puts(output)
+a6c786634360922f9af77bbf3bdf7a31|file:///var/user_projects/jwilger/cabbage/test/feature_suggestion_test.exs|31|7|V|elixir
+	      assert strip_spaces_from_blank_lines(output) =~ strip_spaces_from_blank_lines(message)
+445128fbd99195ba2c1c2c6f0181772d|file:///var/user_projects/jwilger/cabbage/test/feature_suggestion_test.exs|30|1|V|elixir
+	      assert output_contains?(output, message)
+fea5ceefe27204ff6c29aa0c839922b1|file:///var/user_projects/jwilger/cabbage/test/feature_suggestion_test.exs|17|1|V|elixir
+	           ** (Cabbage.Feature.MissingStepError) Please add a matching step for:
+ac219ea10e795840a026b8a0da7ba0c8|file:///var/user_projects/jwilger/cabbage/mix.exs|49|7|V|elixir
+	      {:word_smith, ">= 0.0.0"},
+c9c0754f38784e4160ce59d60c3016fd|file:///var/user_projects/jwilger/cabbage/.git/COMMIT_EDITMSG|5|1|V|gitcommit
+	
+	Note that I really dislike the addition of another dependency
+	(`WordSmith`) that is used to make it possible to compare the test
+	output with the expected messages, but they were differing only in
+	whitespace, and I'm not sure what would be a better way to handle that.
+	It does drop some meaning from the tests (since the messages are
+	purposefully formatted), so if there's a way to better handle it, I'd
+	love to find it.
+2808e249f7c290e0b41f97c029310fdd|file:///var/user_projects/jwilger/cabbage/.git/rebase-merge/git-rebase-todo|1|1|V|gitrebase
+	pick 0bb5860 Fixes meaningless test failure
+b7c12cd7c2cd278b67d4d926610f345e|file:///var/user_projects/jwilger/cabbage/mix.lock|1|3|v|elixir
+	"assert_value": {:hex, :assert_value, "0.9.3", "5d146ecdcef004f48915d535a0233fdb7bdf657579e97eedca2d079e45e7d904", [:mix], [], "hexpm", "33d4efe53d7247158302b4b1bddd6d2ebb61df9a4946745378036c5491b041dc"},
+f0ff95686ca008692eece8f9bc625d9f|file:///var/user_projects/jwilger/cabbage/mix.lock|17|3|V|elixir
+	  "word_smith": {:hex, :word_smith, "0.2.0", "f74548173431d3b4914eb2b0d89079ebda7a62f814877b051e3b3880695f4cf0", [:mix], [], "hexpm", "35c49425385c2eead99b26fe0638f9f838903b929539addebb8588a40a57285d"}}
+f1eaf34849c0ad9b1214b555b17821bb|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|33|5|V|elixir
+	    |> Platform.TeamSignup.do
+9bb4b71e94b92dd4c8d9123479c28114|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|23|26|v|elixir
+	load()
+97ce426fd0c0a6a8c1b64b029e1beaf8|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|30|5|V|elixir
+	    |> Platform.Homepage.choose_to_sign_up()
+f133c5a0b82b4d401e9ea07b79f5890e|unknown:47|5|1|V|elixir
+	
+	  def run(state, action) do
+	    apply(__MODULE__, action, [state])
+	    state
+	  end
+	
+	  def run(state, action, args) do
+	    apply(__MODULE__, action, [state | args])
+	    state
+	  end
+8e8dd768e842d7c4db13ca061f070f1d|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers.ex|14|1|V|elixir
+	      def run(state, action, args) when is_list(args) do
+	        apply(__MODULE__, action, [state | args])
+	        state
+	      end
+7e880003c32b5f70caff8bf768ff85f1|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|32|5|V|elixir
+	    flunk("not implemented")
+9ed39e2ea931586b6a985a6942ef573e|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|21|14|v|elixir
+	state
+1ffdec4b3ab9221264a3f93c14b0b3e3|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|22|3|V|elixir
+	    form_values = Enum.into(form_values, %{})
+ed6765442d93facaa34b5f8dc828ba27|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|31|29|v|elixir
+	map1
+25e13f2de1a5c88ab05c2f96c9920445|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|30|1|V|elixir
+	    form_values
+	    |> Enum.into(%{})
+62abb4f74a4fb5d6ee41addb958ff8bf|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|21|32|v|elixir
+	form_values \\ []
+c8f0da66aee4da9b3664e994181ed9dd|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|38|5|V|elixir
+	    Map.merge(defaults, form_values)
+149b41a8e06ea6a331cb9b2b9035e36a|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|28|5|V|elixir
+	    active_browser(state)
+f17c87e4a593ef1cfcdff02588f54382|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|28|16|v|elixir
+	 query
+1d04e54bd308befa2f6558ab03fd7522|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|28|23|v|elixir
+	 list
+62dcc58e776bc22c5da7e1944c0314ea|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|34|1|V|elixir
+	
+	
+	    %{
+	      team_name: "Acme Racing",
+	      slug: "team-#{Ecto.UUID.generate()}",
+	      admin_first_name: "John",
+	      admin_last_name: "Doe",
+	      admin_email: "admin-#{Ecto.UUID.generate()}@team.example",
+	      admin_password: "s00p3rS3kr37!"
+	    }
+	    |> Map.merge(form_values)
+	    |> Enum.each(fn {field, value} ->
+	
+	      fill_in(form_field(field), with: value)
+	    end)
+	
+	
+7c0ed235adbf8581d2800d76da687f42|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|9|5|V|elixir
+	    |> &visible?(active_browser(state), &1) |> IO.inspect()))
+beb5c17f703a8ea5bd96f389665257b5|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|7|1|V|elixir
+	    @root_element
+	    |> Query.compile()
+	
+871630827ca17d66049af6b0ab4dcaee|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|14|25|v|elixir
+	screenshot()
+4e20b679ce30658ed19829e299b1cd3d|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite_web/templates/page/index.html.eex|1|1|V|eelixir
+	<%= link("Sign Up", to: Routes.signup_path(@conn, :new), id: "sign-up-link") %>
+131bc6f8b1d2f2809f21c0c047e23a50|unknown:47|11|5|V|elixir
+	    assert state |> active_browser() |> visible?(@sign_up_link)
+6379c4ba86d00f74338cc30575e7f6a8|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|14|5|V|elixir
+	    active_browser(state) |> take_screenshot()
+7a35be065e0eda044c98a80b9ba6dffc|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|17|14|V|elixir
+	             |> IO.inspect()
+585318265e4bec858d96e145a13be872|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|22|1|V|elixir
+	  def submit_team_details(state, form_values) when is_list(form_values) do
+	    submit_team_details(state, form_values |> Enum.into(%{}))
+	  end
+	
+f4f9cf3356a2e5a6a2f224500ae3b510|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|7|1|V|elixir
+	  @admin_first_name Query.css("#team-sign-up-admin-first-name")
+b440e09b39a7a74393954637f8e19022|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|8|10|v|elixir
+	first_
+8b04d5e3775d298e78455efc5ca404d5|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|8|51|v|elixir
+	first
+93193e58ce92b07a3b5de7f6d699936c|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|10|50|v|elixir
+	first-name")
+6e400ba3daf8970e87a19afc8c2aaf87|file:///var/user_projects/jwilger/everfi/foundry-public-api/spec/services/webhooks/send_request_spec.rb|2|1|V|ruby
+	require 'webhooks/send_request'
+5806038830ee6568fbe793838fe45491|file:///var/user_projects/jwilger/everfi/foundry-public-api/config/environment.rb|1|1|V|ruby
+	require 'delegate'
+a98686795b161ff4c6fa599d4d58d201|file:///var/user_projects/jwilger/everfi/foundry-public-api/.git/COMMIT_EDITMSG|11|58|v|gitcommit
+	, as they are
+09aeb27c5c4e6e8072b9c9b76f78215e|file:///var/user_projects/jwilger/everfi/foundry-public-api/.git/COMMIT_EDITMSG|12|1|V|gitcommit
+	just adding additional public interfaces).
+7ffb5bbe2a8318dcfd9457e25a3b5575|file:///var/user_projects/jwilger/everfi/foundry-public-api/app/services/check_organization_enabled.rb|14|1|V|ruby
+	    # TODO: Remove - rely on just the local projection -
+	    # once other services trigger Public API actions only
+	    # after receiving public_api_access_changed messages,
+	    # instead of organization_capabilities_changed.
+	    # See CS-3437 and NXT-3178
+	    retrieve_organization
+	    check_capability
+a33e1945cd753990a42ba0d9b0117889|file:///var/user_projects/jwilger/everfi/foundry-public-api/app/services/check_organization_enabled.rb|36|1|V|ruby
+	
+	  def retrieve_organization
+	    call_service(Extractors::AdminifiV1::ExtractOrganization,
+	                 organization_id: organization_id,
+	                 found: method(:organization=))
+	    disabled! if organization.nil?
+	  end
+	
+	  def check_capability
+	    disabled! unless organization.capabilities.any? do |cap|
+	      cap.capability_type == 'Capabilities::PublicApiAccess'
+	    end
+	    enabled!
+	  end
+ed1b3f1b82ec21a4796925c615ab93a4|file:///var/user_projects/jwilger/everfi/foundry-public-api/app/services/check_organization_enabled.rb|35|1|V|ruby
+	  attr_accessor :organization
+5c3f182888d5bd68a75b0263dff5661d|file:///var/user_projects/jwilger/everfi/foundry-public-api/app/services/check_organization_enabled.rb|28|12|v|ruby
+	unless
+cf00673d4440b596ecdf94a609279324|file:///var/user_projects/jwilger/everfi/foundry-public-api/app/services/check_organization_enabled.rb|34|5|V|ruby
+	    enabled!
+42522bbdf34cc6134174130a51a5da50|file:///var/user_projects/jwilger/everfi/foundry-public-api/app/services/check_organization_enabled.rb|32|5|V|ruby
+	    disabled!
+a0ae742d1b90ff0480cd7ee9f9a76ecb|file:///var/user_projects/jwilger/everfi/foundry-public-api/app/services/check_organization_enabled.rb|18|5|V|ruby
+	    check_projection_with_api_access
+d6bf32853c7fff96aca65a9dee8f5d3a|file:///var/user_projects/jwilger/everfi/foundry-public-api/app/services/check_organization_enabled.rb|22|1|V|ruby
+	  def enabled!
+	    run_callback(enabled)
+	    stop_with result.success(enabled)
+	  end
+	
+	  def disabled!
+	    stop_with(result.success run_callback(disabled))
+	  end
+	
+42abede28c48592fa813b2afc57d1fdc|file:///var/user_projects/jwilger/everfi/foundry-public-api/spec/services/check_organization_enabled_spec.rb|34|1|V|ruby
+	  let!(:extract_canonical_org) do
+	    service_double('Extractors::AdminifiV1::ExtractOrganization')
+	  end
+	
+	  let(:canonical_organization) do
+	    double('AdminifiClient::Resources::Organization',
+	           capabilities: capabilities)
+	  end
+	
+	  let(:capabilities) do
+	    []
+	  end
+	
+	  let(:public_api_access_cap) do
+	    double('AdminifiClient::Resources::Capability',
+	           capability_type: 'Capabilities::PublicApiAccess')
+	  end
+3d97674e8f0e7e28e4efdc7a62f14a53|file:///var/user_projects/jwilger/everfi/foundry-public-api/spec/services/check_organization_enabled_spec.rb|34|1|V|ruby
+	  before do
+	    allow(extract_canonical_org).to receive(:call) { |found:, **_|
+	      found.call(canonical_organization)
+	    }
+	  end
+aa103e52fa2678e85cf1516d68ee152a|file:///var/user_projects/jwilger/everfi/foundry-public-api/spec/services/check_organization_enabled_spec.rb|60|1|V|ruby
+	  shared_examples 'falls back to the canonical organization capabilities' do
+	    context 'canonical organization not found' do
+	      let(:canonical_organization) { nil }
+	      include_examples 'calls the correct failure callbacks'
+	    end
+	
+	    context 'canonical organization has the correct capability' do
+	      let(:capabilities) { [ public_api_access_cap ] }
+	
+	      include_examples 'calls the correct success callbacks'
+	    end
+	
+	    context 'canonical organization does not have the correct capability' do
+	      include_examples 'calls the correct failure callbacks'
+	    end
+	  end
+deef705808bf82ddd75478286f4ae997|file:///var/user_projects/jwilger/everfi/foundry-public-api/spec/services/check_organization_enabled_spec.rb|61|5|V|ruby
+	    include_examples 'falls back to the canonical organization capabilities'
+02599b1ee5c3d5c01de9b4f74aa70481|file:///var/user_projects/jwilger/everfi/foundry-public-api/spec/services/check_organization_enabled_spec.rb|61|1|V|ruby
+	    include_examples 'calls the correct failure callbacks'
+f6c882f127d611eb2b77f16208c805f0|file:///var/user_projects/jwilger/everfi/foundry-public-api/spec/services/check_organization_enabled_spec.rb|74|5|V|ruby
+	      include_examples 'falls back to the canonical organization capabilities'
+fb4b6b98ab1296af1ae5881441b472be|file:///var/user_projects/jwilger/everfi/adminifi/spec/lib/authorization_hierarchy_spec.rb|177|7|V|ruby
+	      ActiveRecord::Base.transaction do
+8e37c1728aa517f1ebcb75ab7232ca9c|file:///var/user_projects/jwilger/everfi/adminifi/app/lib/authorization_hierarchy/repo/subject.rb|66|9|V|ruby
+	        upsert
+6b3985a3647072b64f457e638728d5fc|file:///var/user_projects/jwilger/everfi/adminifi/app/lib/authorization_hierarchy/repo/subject.rb|67|9|V|ruby
+	        Association.create!(parent_id: parent_id, child_id: child_id)
+bd4c489ef56962d4ec30ce9187921d0d|file:///var/user_projects/jwilger/everfi/adminifi/app/lib/authorization_hierarchy/repo/subject.rb|68|1|V|ruby
+	      rescue ActiveRecord::RecordNotUnique
+	        # If the association already exists, this is just an idempotent operation, so don't error
+	        # out; just return the child record as-is.
+	        get(child_id)
+a697c0e9a4bd7ab2f6f1a8dddfbc4143|file:///var/user_projects/jwilger/everfi/adminifi/app/lib/authorization_hierarchy/repo/subject.rb|72|9|V|ruby
+	        Association.upsert(parent_id: parent_id, child_id: child_id)
+19f47d1a79f40c301d915e3a736d3d4d|file:///var/user_projects/jwilger/everfi/adminifi/app/lib/authorization_hierarchy/repo/subject.rb|69|37|v|ruby
+	authorization_hierarchy_subject_assoc_unique
+f0825f7b43a28174e2fa09634c75e79c|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite_web/templates/signup/new.html.eex|3|1|V|eelixir
+	    <%= text_input(f, :team_name) %>
+8d6bb662f5cdf1d1eba67b008559ca8d|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite_web/templates/signup/new.html.eex|4|24|v|eelixir
+	team_name
+d4227eea7d5da92fc72ea633c24ae992|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite_web/templates/signup/new.html.eex|4|1|V|eelixir
+	    <%= text_input(f, :slug) %>
+47ce35d5d47943d45e9368690074f6ef|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite_web/templates/signup/new.html.eex|5|1|V|eelixir
+	    <%= text_input(f, :admin_first_name) %>
+891456096a3c52691dac3b7b1121cff2|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite_web/templates/signup/new.html.eex|6|1|V|eelixir
+	    <%= text_input(f, :admin_last_name) %>
+7d4553c09a59578c8addc8c617a76ca1|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite_web/templates/signup/new.html.eex|7|30|v|eelixir
+	last_name
+102bb83bcfbead337837069c31c53392|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite_web/templates/signup/new.html.eex|7|1|V|eelixir
+	    <%= text_input(f, :admin_email) %>
+0c83f57c786a0b4a39efab23731c7ebc|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite_web/templates/signup/new.html.eex|8|30|v|eelixir
+	email
+216223a3b235be6d84d97f85fd4106b0|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite_web/controllers/signup_controller.ex|10|62|v|elixir
+	team_data
+23a58bf9274bedb19375e527a0744fa9|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite_web/controllers/signup_controller.ex|20|5|v|elixir
+	with
+361add3c3a544720fe7de56869e7b8a1|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/pii_encryption/pii_encryption.ex|22|6|v|elixir
+	 Data, 
+2e5f1071591d7ef755f8efaf35631cd0|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/pii_encryption/pii_encryption.ex|34|1|V|elixir
+	      iex> PII.decrypt(data_subject_id, encrypted_key, encrypted_data.email)
+e0286229c9ead7141253a18a6aabcb52|file:///var/user_projects/jwilger/teamwebsite/test/test_helper.exs|5|1|V|elixir
+	Application.put_env(:teamwebsite, :authentication, TeamWebsite.MockAuthentication)
+3c4ba2c0b4d8b76fa5c4c5932367e7a2|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/commands/create_team_test.exs|11|1|V|elixir
+	  @hashed_admin_password "hashed version of admin_password"
+e44e4612f62d2fb8f8738bab118a9850|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/commands/create_team_test.exs|57|7|v|elixir
+	assert
+768034cef88e5754202a5993bf2d3ab1|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/commands/create_team_test.exs|55|1|V|elixir
+	    test "hashes the admin password using TeamWebsite.Authentication.hash_password", %{
+0a87cd21ec9c62120a8bea9714549bb6|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/commands/create_team_test.exs|54|5|V|elixir
+	    test "hashes the admin password", %{
+5f4dcc3b5aa765d61d8327deb882cf99|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/commands/create_team_test.exs|58|87|v|elixir
+	password
+3fa6889483a4c9f5d4ce4657789df7ad|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/commands/create_team_test.exs|36|1|V|elixir
+	      stub(MockAuthentication, :hash_password, fn @admin_password ->
+	        {:ok, @hashed_admin_password}
+	      end)
+	
+20bfb57354af349c3778989876691bf5|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/authentication/basic_impl.ex|15|34|v|elixir
+	 stored_hash
+cd51402959ed7264b3601784b28f3340|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/commands/create_team_test.exs|54|41|v|elixir
+	hash_password
+8fb431180e445ed82a129f8d3ad3254b|file:///var/user_projects/jwilger/teamwebsite/test/test_helper.exs|4|1|V|elixir
+	Mox.defmock(TeamWebsite.MockAuthentication, for: TeamWebsite.Authentication.Impl)
+7b5b571bf8aeb37ea0067f03be9c03f8|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|14|3|V|elixir
+	  alias TeamWebsite.MockAuthentication
+0fa0cc67441d859e157b6abbc5f92325|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|18|1|V|elixir
+	    stub(MockAuthentication, :start_session, fn ->
+	      {:ok, %Authentication.SessionToken{id: "a34d84f7-e538-43bc-a637-73fd7ff453a1"}}
+	    end)
+	
+	    stub(MockAuthentication, :hash_password, fn _password ->
+	      {:ok, "blahblahblahsomehashblahblahblah"}
+	    end)
+fc8711634177ade6b643f9090c199605|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team/team_test.exs|17|1|V|elixir
+	  setup do
+	    :ok
+	  end
+	
+bd436d4dcfc428fb70a058f27333b225|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/authentication/basic_impl.ex|4|1|V|elixir
+	  alias TeamWebsite.Authentication.SessionToken
+	
+	  def start_session do
+	    {:ok, %SessionToken{id: Ecto.UUID.generate()}}
+	  end
+	
+	  def hash_password(password) do
+	    {:ok, Argon2.hash_pwd_salt(password)}
+	  end
+	
+	  def check_password(password, hashed_password) do
+	    Argon2.verify_pass(password, hashed_password)
+	  end
+05d8b9ffc5c2ceb5702b8a427bc31992|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/authentication/authentication.ex|6|1|V|elixir
+	  @behaviour TeamWebsite.Authentication.Impl
+	
+	  @impl true
+	  def start_session do
+	    impl().start_session()
+	  end
+	
+	  @impl true
+	  def hash_password(password) do
+	    impl().hash_password(password)
+	  end
+	
+	  @impl true
+	  def check_password(password, hashed_password) do
+	    impl().check_password(password, hashed_password)
+	  end
+	
+	  defp impl do
+	    Application.get_env(:teamwebsite, :authentication, __MODULE__.BasicImpl)
+	  end
+33f2429083af5334fda0a1a8cdff70e0|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/authentication/authentication.ex|28|48|v|elixir
+	hashed_password
+44113bba1ed5c01bcc2584933e07b42b|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/pii_encryption/pii_encryption_test.exs|71|61|v|elixir
+	data_subject_id
+a4ba831b935ca9003b22bf4b384e7150|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/pii_encryption/pii_encryption.ex|54|5|V|elixir
+	    {:ok, key, encrypted_key} = generate_encryption_key(data_subject_id)
+8201ac13ed043dc9f5fd8d275d89d776|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/pii_encryption/pii_encryption.ex|66|5|V|elixir
+	    {:ok, _key, encrypted_key} = generate_encryption_key(data_subject_id)
+2deb4c1dfb40b744baace586b0dea11f|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/pii_encryption/pii_encryption_test.exs|32|1|V|elixir
+	    test "it returns a tuple {:ok, encrypted_key, nil} when the data is nil" do
+	      data_subject_id = Ecto.UUID.generate()
+	      pii_data = nil
+	
+	      {:ok, encrypted_key, nil} = PIIEncryption.encrypt(data_subject_id, pii_data)
+	      assert is_binary(encrypted_key)
+	    end
+	
+	    test "it returns a tuple {:ok, encrypted_key, encrypted_data}" do
+	      data_subject_id = Ecto.UUID.generate()
+	      pii_data = "some private information"
+	
+	      {:ok, encrypted_key, encrypted_data} = PIIEncryption.encrypt(data_subject_id, pii_data)
+	
+	      assert is_binary(encrypted_key)
+	      assert is_binary(encrypted_data)
+	      assert pii_data != encrypted_data
+	    end
+	
+	    test "it can encrypt a map of data, returning {:ok, encrypted_key, map_of_encrypted_data}" do
+	      data_subject_id = Ecto.UUID.generate()
+	      pii_data = %{foo: "bar", baz: "bam"}
+	
+	      {:ok, encrypted_key, %{foo: encrypted_foo, baz: encrypted_baz}} =
+	        PIIEncryption.encrypt(data_subject_id, pii_data)
+	
+	      assert is_binary(encrypted_key)
+	      assert is_binary(encrypted_foo)
+	      assert is_binary(encrypted_baz)
+	      assert pii_data.foo != encrypted_foo
+	      assert pii_data.baz != encrypted_baz
+	    end
+0e1bf15b2a490782f0638c57f1a5931b|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/pii_encryption/pii_encryption_test.exs|75|1|V|elixir
+	    test
+443b2a34dad96a8fee17c8d731dc5737|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/pii_encryption/pii_encryption_test.exs|68|76|v|elixir
+	 pii_data
+a729b9a4b925bceeb9674b6b1ef9d7bf|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/pii_encryption/pii_encryption_test.exs|68|83|v|elixir
+	 encryption_key \\ nil
+7f26641ba7de6ef36b0d32274c7addff|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/pii_encryption/pii_encryption_test.exs|74|7|V|elixir
+	      data_subject_id = Ecto.UUID.generate()
+87b9efa9b19a778d4b9220b575ab5179|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/pii_encryption/pii_encryption_test.exs|75|7|V|elixir
+	      pii_data = "foo"
+e5b9384e96f7fc7eb53e7de21f4b3c0a|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/pii_encryption/pii_encryption_test.exs|76|98|v|elixir
+	,  pii_data)
+082fe6d1ada4cd9666240d37c5c2694d|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/pii_encryption/pii_encryption_test.exs|80|7|V|elixir
+	      pii_data = nil
+8faa993f5adc0fcfda3287e803ad6a23|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/pii_encryption/pii_encryption_test.exs|81|7|V|elixir
+	      assert is_binary(encrypted_key)
+facde46483ce4b234a13f8c7c9b7b4c0|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/pii_encryption/pii_encryption_test.exs|80|82|v|elixir
+	pii_data
+ffa3c0722a5177efb8ea3daf5eb48cde|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/pii_encryption/pii_encryption_test.exs|79|77|v|elixir
+	, %{data_subject_id: data_subject_id, encrypted_key: encrypted_key} do
+	
+995797a7511f5bba11915b4facf2ad6c|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/pii_encryption/pii_encryption_test.exs|83|67|v|elixir
+	 do
+	
+59d2f88aaf4ef020af7f42110b57c826|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/pii_encryption/pii_encryption.ex|19|47|v|elixir
+	 using a Vault-generated encryption key.
+e180365553b9a8ab621d000456e6ab60|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/pii_encryption/pii_encryption.ex|74|1|V|elixir
+	      iex> alias TeamWebsite.PIIEncryption, as: PII
+	      iex> data_subject_id = "b65b2f14-22ab-4df1-91ea-0a05bcb88e44"
+	      iex> data = %{email: "nobody@test.example", name: "John Doe"}
+	      iex> {:ok, encrypted_key, encrypted_data} = PII.encrypt(data_subject_id, data)
+	      iex> data.email == encrypted_data.email
+	      false
+	      iex> data.name == encrypted_data.name
+	      false
+	      iex> PII.decrypt(data_subject_id, encrypted_key, encrypted_data.email)
+	      {:ok, "nobody@test.example"}
+	      iex> PII.decrypt(data_subject_id, encrypted_key, encrypted_data.name)
+	      {:ok, "John Doe"}
+4bf4ebd985fa03dd23d71be6bb095a55|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/pii_encryption/pii_encryption.ex|80|1|V|elixir
+	  @doc """
+	  Generates an Encryption Key and Encrypts all PII in the provided Map structure
+	
+	  A new encryption key is generated for the given Data Subject, and the key is used to encrypt the
+	  PII, returning both an encrypted key and a new map with the values encrypted using that key.
+	
+	  Examples:
+	
+	      iex> alias TeamWebsite.PIIEncryption, as: PII
+	      iex> data_subject_id = "b65b2f14-22ab-4df1-91ea-0a05bcb88e44"
+	      iex> data = %{email: "nobody@test.example", name: "John Doe"}
+	      iex> {:ok, encrypted_key, encrypted_data} = PII.encrypt(data_subject_id, data)
+	      iex> data.email == encrypted_data.email
+	      false
+	      iex> data.name == encrypted_data.name
+	      false
+	      iex> PII.decrypt(data_subject_id, encrypted_key, encrypted_data.email)
+	      {:ok, "nobody@test.example"}
+	      iex> PII.decrypt(data_subject_id, encrypted_key, encrypted_data.name)
+	      {:ok, "John Doe"}
+	  """
+	  @spec encrypt(data_subject_id :: binary(), pii_data :: %{atom() => String.t()}) ::
+	          {:ok, encrypted_key :: binary, encrypted_data :: %{atom() => binary()}}
+06af6ef316c7261170aef5fa82350c71|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/pii_encryption/pii_encryption_test.exs|9|1|V|elixir
+	  describe "encrypt_with_key/2" do
+	    test "it returns the tuple {:ok, encrypted_data}" do
+	      pii_data = "some private data"
+	      {:ok, key} = ExCrypto.generate_aes_key(:aes_256, :bytes)
+	      key = Base.encode64(key)
+	      {:ok, encrypted_data} = PIIEncryption.encrypt_with_key(key, pii_data)
+	
+	      assert pii_data != encrypted_data
+	    end
+	  end
+	
+	  describe "decrypt_with_key/2" do
+	    test "it returns the tuple {:ok, decrypted_data} when the data can be decrypted with the key" do
+	      pii_data = "some private data"
+	      {:ok, key} = ExCrypto.generate_aes_key(:aes_256, :bytes)
+	      key = Base.encode64(key)
+	      {:ok, encrypted_data} = PIIEncryption.encrypt_with_key(key, pii_data)
+	
+	      assert {:ok, ^pii_data} = PIIEncryption.decrypt_with_key(key, encrypted_data)
+	    end
+	  end
+9184e070b77a4afa98845bf002f7e9af|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/pii_encryption/pii_encryption.ex|104|1|V|elixir
+	  defp encrypt_with_key(key, pii_data) do
+	    key = Base.decode64!(key)
+	
+	    {:ok, {iv, encrypted_data}} = ExCrypto.encrypt(key, pii_data)
+	
+	    data =
+	      [iv, encrypted_data]
+	      |> Enum.map(&Base.encode64/1)
+	      |> Enum.join(":")
+	
+	    {:ok, data}
+	  end
+	
+cacedde038ae03c001c800c0ccb5c931|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/pii_encryption/pii_encryption.ex|33|1|V|elixir
+	  Encrypting a single value, no key provided:
+	
+	      iex> alias TeamWebsite.PIIEncryption, as: PII
+	      iex> data_subject_id = "68c57252-961a-43ef-85f4-e78fac327058"
+	      iex> pii_data = "John Doe"
+	      iex> {:ok, encrypted_key, encrypted_data} = PII.encrypt(data_subject_id, pii_data)
+	      iex> encrypted_data == pii_data
+	      false
+	      iex> PII.decrypt(data_subject_id, encrypted_key, encrypted_data)
+	      {:ok, "John Doe"}
+	
+	  Encrypting a map of data, no key provided:
+	      iex> alias TeamWebsite.PIIEncryption, as: PII
+	      iex> data_subject_id = "b65b2f14-22ab-4df1-91ea-0a05bcb88e44"
+	      iex> data = %{email: "nobody@test.example", name: "John Doe"}
+	      iex> {:ok, encrypted_key, encrypted_data} = PII.encrypt(data_subject_id, data)
+	      iex> data.email == encrypted_data.email
+	      false
+	      iex> data.name == encrypted_data.name
+	      false
+	      iex> PII.decrypt(data_subject_id, encrypted_key, encrypted_data.email)
+	      {:ok, "nobody@test.example"}
+	      iex> PII.decrypt(data_subject_id, encrypted_key, encrypted_data.name)
+	      {:ok, "John Doe"}
+a4938322aca9e4b4c01fb509f5546948|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/pii_encryption/pii_encryption.ex|63|7|V|elixir
+	      iex> pii_data = "John Doe"
+0ce8849f9599df6e11617649e5734984|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/pii_encryption/pii_encryption.ex|63|1|V|elixir
+	      iex> {:ok, encrypted_key, _} = PII.encrypt(data_subject_id, "foo")
+0ca6b603eed73749f6737a1fdcafb43a|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/pii_encryption/pii_encryption.ex|132|102|v|elixir
+	, pii_data, {key,  encrypted_key})
+bf3a9ef2aaa88db4e1fb4373e4ee4df5|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/pii_encryption/pii_encryption.ex|135|1|V|elixir
+	  @spec decrypt(data_subject_id :: binary(), encrypted_key :: binary(), encrypted_data :: binary()) ::
+	  {:ok, decrypted_data :: binary()} | {:error, reason :: atom()}
+0c1d0e2ef91d68bdb15eff954448b898|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite_web/controllers/signup_controller.ex|21|18|v|elixir
+	conn
+3b32599143ad3785c1e805bab22a4fec|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite_web/controllers/signup_controller.ex|21|24|v|elixir
+	 status
+e19035dfa9f6ac37d4737ecfea10b7ea|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite_web/controllers/signup_controller.ex|21|7|V|elixir
+	      put_status(conn, 202)
+a1828001ea24166776819e3a495a775e|file:///var/user_projects/jwilger/everfi/adminifi/app/models/team.rb|139|1|V|ruby
+	    with_lock do
+d29af5fc39b85b1909fce25e5633575e|file:///var/user_projects/jwilger/everfi/adminifi/app/models/team.rb|148|5|V|ruby
+	    end
+190964e565d6763eecd49c676dc12aad|file:///var/user_projects/jwilger/everfi/adminifi/spec/models/team_spec.rb|354|9|V|ruby
+	        sleep 0.01
+041ffcba9aafd5ecd9dddc706433a3a0|file:///var/user_projects/jwilger/everfi/adminifi/spec/models/team_spec.rb|347|1|V|ruby
+	  describe 'concurrent saving of team' do
+	    let(:team) { build(:team) }
+	
+	    specify do
+	      expect(team.authorization_subject).to be_nil
+	
+	      threads = []
+	      4.times do
+	        threads << Thread.new { team.save! }
+	      end
+	
+	      threads.each { |t| t.join }
+	    end
+	  end
+901a922be670022ccc90e793db686ea4|file:///var/user_projects/jwilger/everfi/adminifi/app/models/team.rb|139|5|V|ruby
+	    transaction do
+a4e17eec646cc768078b340a33ecd972|file:///var/user_projects/jwilger/everfi/adminifi/app/models/team.rb|148|7|V|ruby
+	      raise "farts are stinky"
+ca4c59c7c21eba0531b36899e7ec04a9|file:///var/user_projects/jwilger/everfi/adminifi/spec/api/v1/teams_spec.rb|106|1|V|ruby
+	      before do
+	        # allow_any_instance_of(Team).to receive(:add_to_authorization_subject_hierarchy).and_return(true)
+	        # allow_any_instance_of(TeamManager).to receive(:associate_authorization_subjects).and_return(true)
+	      end
+	
+6fcfe68b6d8a9568e2f44ce352dd09a7|file:///var/user_projects/jwilger/everfi/adminifi/app/models/team.rb|139|1|V|ruby
+	  with_lock do
+a47d56e7a44e4d049add83ab847b36ea|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/db/migrations/20200320081800_index_fmb_outbox_created_at.rb|1|7|v|ruby
+	RemoveNotificationRuleFromFoundryMessageBusOutbox
+8afff10dcf12f1baa20eb522e12421e0|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/db/migrations/20200320081800_index_fmb_outbox_created_at.rb|3|1|V|ruby
+	    reversible do |dir|
+	      dir.up do
+	        execute("DROP RULE foundry_message_bus_outbox_insert_notification ON foundry_message_bus_outbox")
+	      end
+	
+	      dir.down do
+	        execute(<<~SQL.squish)
+	          CREATE RULE foundry_message_bus_outbox_insert_notification
+	          AS ON INSERT TO foundry_message_bus_outbox
+	          DO ALSO NOTIFY foundry_message_bus_outbox;
+	        SQL
+	      end
+29b0dfda92911844737bc1e80a2af113|file:///var/user_projects/jwilger/everfi/adminifi/Gemfile|14|1|V|ruby
+	gem 'foundry-message_bus', '~> 8.6', path: '../gems/foundry-message_bus'
+20a16d87eb5e7ef359cfbdc8a9cf583a|file:///var/user_projects/jwilger/everfi/adminifi/Gemfile|14|1|V|ruby
+	gem 'foundry-message_bus', '~> 8.6'
+d70a6e3280e8cc00a3cce0fdbe1fe27d|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/db/migrations/20200320084000_add_pre_encoded_boolean_to_outbox.rb|1|7|v|ruby
+	IndexFmbOutboxCreatedAt
+94a7e830216ce9fd6f9fef33bde51598|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/db/migrations/20200320084000_add_pre_encoded_boolean_to_outbox.rb|3|5|V|ruby
+	    add_index :foundry_message_bus_outbox, :created_at
+6b2eff40562c0c4a561f1daa09c95922|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/db/migrations/20200320084000_add_pre_encoded_boolean_to_outbox.rb|3|1|V|ruby
+	    add_column :foundry_message_bus_outbox, :pre_encoded, :boolean, null: false, default: false
+4f7fe20c699fecd005b11bc74a8f772d|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/db/migrations/20200320084000_add_pre_encoded_boolean_to_outbox.rb|4|37|v|ruby
+	outbox, :pre_encoded, :boolean, null: false, default: false
+6f7ab77f2b9a4d27b3cfbb8b05b99a2a|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/spec/foundry/message_bus/publish_message_spec.rb|15|7|V|ruby
+	      target:
+138dd79257a1e03d9e28b38934578e36|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/spec/foundry/message_bus/publish_message_spec.rb|77|1|V|ruby
+	      specify do
+	        subject.call
+	        expect(producer).to(
+	          have_received(:deliver).with(
+	            message: encoded_message,
+	            topic: namespaced_topic,
+	            partition_key: partition_key,
+	            async: async
+	          )
+	        )
+	      end
+be729f19d8d567d808a7b84bfcc2d5e3|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/spec/foundry/message_bus/publish_message_spec.rb|87|1|V|ruby
+	      specify do
+	        expect { subject.call }.not_to change { Foundry::MessageBus::OutboxItem.count }
+	      end
+852f3b3702a87eac9b835247219226fb|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/spec/foundry/message_bus/publish_message_spec.rb|89|1|V|ruby
+	
+	      it 'returns the encoded message' do
+	        expect(subject.call).to eq encoded_message
+	      end
+ba931cafffdef96e195f00264ecfac4e|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/spec/foundry/message_bus/publish_message_spec.rb|74|7|v|ruby
+	it 'returns the encoded message' do
+221ff097125383ce5a012f7b5ea8e02d|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/spec/foundry/message_bus/publish_message_spec.rb|93|1|V|ruby
+	      it_behaves_like :it_returns_the_encoded_message
+e500e23d76f618971f8b6033e46bf8b7|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/lib/foundry/message_bus/publish_message.rb|60|9|V|ruby
+	        encoded_message
+aab5a1868b44ff626c284838ac92c94f|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/lib/foundry/message_bus/publish_message.rb|12|5|V|ruby
+	    #
+96c5f08fdddcd7abfd40f3eaef27b86b|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/lib/foundry/message_bus.rb|134|1|V|ruby
+	        PublishMessage.call(
+	          topic: topic, message: message, partition_key: partition_key,
+	          logger: logger, config: config, producer: producer, async: async
+	        )
+3cda7ef78eb0891ae555709ece7d19ea|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/lib/foundry/message_bus.rb|136|20|v|ruby
+	?(use_outbox, async)
+f9133228b886f637731d24380ad39e7b|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/lib/foundry/message_bus.rb|136|7|V|ruby
+	      if use_outbox
+051655dd3c9322be7c452755d7e2ff41|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/lib/foundry/message_bus.rb|137|1|V|ruby
+	      else
+	      end
+94fc5d5ca2569609d8a527e84110b26b|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/lib/foundry/message_bus.rb|129|75|v|ruby
+	, pre_encoded: false)
+9fc2aa5e834d5d3cafd209660a25d727|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/spec/foundry/message_bus/publish_message_spec.rb|82|1|V|ruby
+	        before do
+	          service_args[:pre_encoded] = false
+	        end
+	
+	        specify do
+	          subject.call
+	          expect(producer).to(
+	            have_received(:deliver).with(
+	              message: encoded_message,
+	              topic: namespaced_topic,
+	              partition_key: partition_key,
+	              async: async
+	            )
+	          )
+	        end
+e0d8265f6a5948c67d550186afc29139|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/lib/foundry/message_bus/outbox_item.rb|7|5|V|ruby
+	    serialize :message, JSON
+25f4051896b267149f3b25e5795786b8|file:///home/jwilger/.config/tmuxinator/fmb.yml|14|1|V|yaml
+	on_project_start: cd ~/projects/everfi && docker-compose up --build -d && cd - && sleep 5 && bundle install --path .bundle --binstubs .bundle/bin
+4b17b66537be633759d3c85c401f7e24|file:///home/jwilger/.config/tmuxinator/fmb.yml|14|19|v|yaml
+	cd ~/projects/everfi && docker-compose up --build -d && cd - && sleep 5 && bundle install --path .bundle --binstubs .bundle/bin
+fd6cb23884c91708769c0de703595b92|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/lib/foundry/message_bus/outbox_item.rb|55|5|V|ruby
+	    def 
+8fbfdf504af4bf6d84595f35e6672da0|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/exe/fmb_message_publisher|3|1|V|ruby
+	def decode_message(message, pre_
+cca011f997f8038893c7ff95ae65687b|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/db/migrations/20200320084000_add_pre_encoded_boolean_to_outbox.rb|4|1|V|ruby
+	    add_column :foundry_message_bus_outbox, :original_message, :text
+c7422f8013527a1c20d8dd6d6863c503|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/db/migrations/20200320084000_add_pre_encoded_boolean_to_outbox.rb|6|37|v|ruby
+	outbox
+a2f2ed4f8ebc2cbb4c21a29dc40ab61d|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/lib/foundry/message_bus/outbox_item.rb|8|5|v|ruby
+	class
+e7860079c8dd057ffcebac3fcc8437cc|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/exe/fmb_message_publisher|32|1|V|ruby
+	          puts message.inspect
+304d7a61c5427242bae78a439aedaa3b|file:///var/user_projects/jwilger/everfi/gems/foundry-message_bus/lib/foundry/message_bus/publish_message.rb|63|9|V|ruby
+	        return if target == :outbox
+f912a56a16842d34f35b6bdc29d1da05|file:///home/jwilger/.dotfiles/config/nvim/coc-settings.json|10|1|V|jsonc
+	  "jira.workspaceUrl": "https://everfi.atlassian.net",
+	  "jira.user.email": "jwilger@everfi.com",
+	  "jira.user.apiKey": "DKrMl5kwePOMZXPAapPn94F9",
+70ca6ddfceec37a3b6ec4f9976cac6e6|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup/email_confirmation.ex|4|27|v|elixir
+	#team-sign-up-email-confirmation
+648ddaaaf5f8621c35044aec56bd382b|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers.ex|9|1|V|elixir
+	      def run(state, action) do
+	        apply(__MODULE__, action, [state])
+	        state
+	      end
+	
+	      def run(state, action, args) when is_list(args) do
+	        apply(__MODULE__, action, [state | args])
+	        state
+	      end
+	
+	      def run(state, action, args), do: run(state, action, [args])
+9cb0ad24cf1907b16848de2c17fc8fbd|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup/email_confirmation.ex|10|5|V|elixir
+	           "Platform.TeamSignup.EmailConfirmation is not visible."
+bf9d56658f911c8407abd992ea923c95|file:///var/user_projects/jwilger/teamwebsite/.gitignore|42|1|V|conf
+	.elixir-ls/
+beaebaa29e27e645e2aa5875fbeeebb7|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|14|1|V|elixir
+	    assert state
+	           |> active_browser()
+	           |> visible?(@root_element),
+	           "Platform.TeamSignup component is not visible."
+	
+f829b1cee4ed4c5f470ebfe359ed336e|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers.ex|15|1|V|elixir
+	    browser_session_id = Ecto.UUID.generate()
+	
+	    {:ok, state} =
+	      Map.get_and_update(state, :browser_sessions, &{:ok, Map.put(&1, browser_session_id, browser_session)})
+	
+	    state = Map.put(state, :active_browser_session, {browser_session_id, browser_session})
+	    {:ok, state}
+a12859a924a518a705cd77dddfb29662|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers.ex|14|5|V|elixir
+	    :elixir_errors.warn __ENV__.line, __ENV__.file
+384f243e5b0c5c23dac12c24c7b96e06|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers.ex|17|1|V|elixir
+	
+	  def active_browser(_) do
+	    IO.warn(
+	      "There is no active browser session in your current state. The browser session returned by this function will not be shared.",
+	      Macro.Env.stacktrace(__ENV__)
+	    )
+	
+	    {:ok, browser_session} = Wallaby.start_session()
+	    browser_session
+	  end
+96be78be781ad8c0cb5f2668f3565a05|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|16|5|V|elixir
+	           |> visible?(@root_element),
+77495bac7561ee5a0446bc3a966f795f|file:///home/jwilger/.config/nvim/init.vim|40|8|v|vim
+	minpac#add
+65b52b84ff58c0195e683a7b6b6fa428|file:///home/jwilger/.config/nvim/init.vim|40|1|V|vim
+	  call dein#add('tpope/vim-eunuch') "Unix file manipulation like :Delete or :Move
+0b324c6599702d6b84e9730c225f4dfa|file:///home/jwilger/.config/nvim/init.vim|41|28|v|vim
+	eunuch
+b9be7e77448734000d66250a0c774022|file:///home/jwilger/.config/nvim/init.vim|41|38|v|vim
+	Unix file manipulation like :Delete or :Move
+3b0e0ae2c2bc2a1592a721e357c7cf76|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug/commands/reserve_slug_test.exs|27|21|v|elixir
+	"team_slug:#{@valid_slug}"
+5205e43c124f2e0973c5476a5c1a1984|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug/commands/reserve_slug_test.exs|27|7|V|elixir
+	      expected_id = "team_slug:#{@valid_slug}"
+26f65c6fe7cea4c1c3a881e223e8fc2d|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team_slug.ex|16|3|V|elixir
+	  It is simply the slug value prefixed with `"team_slug:"`
+a5daaca7a2e5410a3759aad32fedc742|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team_slug.ex|13|1|V|elixir
+	  @typedoc """
+	  Unique identifier for a `TeamWebsite.TeamSlug`
+	
+5e3f2f7fdc0a285464ad2383843b83af|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team_slug.ex|16|154|V|elixir
+	  It is simply the slug value prefixed with `"team_slug:"` so that the event stream for the aggregate will be identified by more than just the slug value.
+	
+ae3d411741f89b635e3e0882ca94f3ec|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team_slug/commands/reserve_slug.ex|4|3|V|elixir
+	  alias TeamWebsite.Authentication.SessionToken
+0b9eac7eb23d1d8e587146413def213a|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug_test.exs|10|1|V|elixir
+	      slug_id = "team_slug:#{slug}"
+10dbf6384e6261fdc583fe2cb8818029|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug_test.exs|31|78|v|elixir
+	team_slug
+0c1446355b5740577e010ed3102d9ce8|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/team_slug_test.exs|31|91|v|elixir
+	 command
+14f508341cc06b7b7ba66fff99c0e95e|file:///var/user_projects/jwilger/teamwebsite/.dialyzer_ignore.exs|2|1|V|elixir
+	  {":0:unknown_function Function ExUnit.Callbacks.__merge__/3 does not exist."},
+	  {":0:unknown_function Function ExUnit.CaseTemplate.__proxy__/2 does not exist."},
+	  {":0:unknown_function Function ExUnit.Callbacks.on_exit/1 does not exist."},
+656d809c53fbd6fbda1652a78ca36dfc|file:///var/user_projects/jwilger/teamwebsite/.dialyzer_ignore.exs|12|3|V|elixir
+	  {"
+5dd15a44207b8a709e7e75885a263165|file:///var/user_projects/jwilger/teamwebsite/.dialyzer_ignore.exs|7|1|V|elixir
+	  {"test/support/ui_test_drivers/platform/team_signup.ex:13:no_return Function assert_visible/1 has no local return."},
+	  {"test/support/ui_test_drivers/platform/team_signup.ex:22:no_return Function assert_current_step/2 has no local return."},
+	  {"test/support/ui_test_drivers/platform/team_signup.ex:31:no_return Function submit_team_details/1 has no local return."},
+	  {"test/support/ui_test_drivers/platform/team_signup.ex:33:no_return Function submit_team_details/2 has no local return."},
+	  {"test/support/ui_test_drivers/platform/team_signup/email_confirmation.ex:6:no_return Function assert_visible/1 has no local return."},
+587b4d6aefe8fa1567939046e5e8a6ca|file:///var/user_projects/jwilger/teamwebsite/.vim/coc-settings.json|4|3|V|jsonc
+	  "elixirLS.dialyzerWarnOpts": uu
+fdba44ea8cffa0221c20d05b915ff3d4|file:///var/user_projects/jwilger/teamwebsite/.vim/coc-settings.json|3|3|V|jsonc
+	  "elixirLS.dialyzerFormat": "dialyzer"
+098f6bcd4621d373cade4e832627b4f6|file:///home/jwilger/.config/nvim/coc-settings.json|18|23|v|jsonc
+	test
+b54e5c569d9cfdf290f12225e22d254f|file:///var/user_projects/jwilger/teamwebsite/.vim/coc-settings.json|3|3|V|jsonc
+	  "elixirLS.dialyzerFormat": "dialyxir_long"
+6d350341e6bc025e00cbc102877c050b|file:///var/user_projects/jwilger/teamwebsite/.vim/coc-settings.json|2|1|V|jsonc
+	  "elixir.pathToElixirLS": ".elixir-ls/release/language_server.sh",
+5614a5470b85218dcc610178b85ab3c8|file:///home/jwilger/.config/nvim/coc-settings.json|18|31|v|jsonc
+	dialyxir_long
+1c907d4503482c8a16196da30e644fa4|file:///home/jwilger/.config/nvim/coc-settings.json|19|3|V|jsonc
+	  "elixirLS.dialyzerEnabled": false
+a4ac5682537d9fa655298329e09bb180|file:///var/user_projects/jwilger/teamwebsite/mix.exs|14|1|V|elixir
+	      dialyzer: [
+	        plt_add_deps: :transitive,
+	        plt_file: {:no_warn, "priv/plts/dialyzer.plt"},
+	        ignore_warnings: ".dialyzer_ignore.exs"
+	      ],
+11d30f6b879e471dee7dc1b7932ceb24|file:///var/user_projects/jwilger/teamwebsite/.elixir-ls/apps/language_server/mix.exs|20|7|V|elixir
+	        plt_add_deps: :transitive,
+7e53d29942b6cf782b254ddc749cc663|file:///var/user_projects/jwilger/teamwebsite/.vim/coc-settings.json|3|3|V|jsonc
+	  "elixirLS.mixEnv": "dev"
+f4039bc1e41adcfc10d9f19b815b481e|file:///var/user_projects/jwilger/teamwebsite/.vim/coc-settings.json|3|3|V|jsonc
+	  "elixirLS.dialyzerWarnOpts": ["no_return"]
+5328b8e33ec24fc5a07144f1200a4966|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|34|5|V|elixir
+	    raise "fuck"
+fbcbb621ef37446e7b777de2088d05e4|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|34|5|V|elixir
+	    farthead()
+0a4535c2fa08202a6bd1822cb76b9ba9|file:///var/user_projects/jwilger/teamwebsite/.vim/coc-settings.json|2|3|V|jsonc
+	  "elixir.pathToElixirLS": "./.elixir-ls/release/language_server.sh",
+d0d2ed2d0a641dd52510233981240b3b|file:///home/jwilger/.config/nvim/coc-settings.json|17|3|V|jsonc
+	  "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh"
+f1cbcac2cbfdc238896681bb814f9c3c|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|34|5|V|elixir
+	    fart
+f271aa6ba752efbc7a07b7df93134d49|file:///var/user_projects/jwilger/teamwebsite/.vim/coc-settings.json|2|3|V|jsonc
+	  "auto
+13ff537a495bbd3ee89bc7f21e8160ed|file:///var/user_projects/jwilger/teamwebsite/.vim/coc-settings.json|2|1|V|jsonc
+	  "coc.preferences.formatOnTypeFiletypes": ["ex", "exs", "elixir"],
+aa952d49e7f48afdfbaca9dc4231ba13|file:///var/user_projects/jwilger/teamwebsite/.vim/coc-settings.json|2|20|v|jsonc
+	formatOnTypeFiletypes
+a0aa8f46a7ae8ed8832956d2fcc00dfe|file:///var/user_projects/jwilger/teamwebsite/.vim/coc-settings.json|2|35|v|jsonc
+	["ex", "exs", "elixir"],
+2a013c31f20d83f955afda51d0948c1b|file:///var/user_projects/jwilger/teamwebsite/.vim/coc-settings.json|2|3|V|jsonc
+	  "coc.preferences.formatOnType": true,
+89c3bfdaca2db76d8ba7bc94fc66e0c6|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|36|3|V|elixir
+	  def fart() do
+c245a500857b254e2c79866e0e4dbdf5|file:///home/jwilger/.config/nvim/init.vim|41|1|V|vim
+	  call dein#add('tpope/vim-repeat') "enable . repeating of plugin commands
+32cf6da134a8b268cf4ab6b79a9a5ad9|file:///home/jwilger/.config/nvim/init.vim|42|28|v|vim
+	repeat
+3bc95430d62ed9d1489adda9b11ac842|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|31|1|V|elixir
+	  def fart(%{}) do
+	    %{}
+	    |> submit_team_details([])
+	  end
+	
+8c912ce34ba90510b9fec8d4b748e07a|file:///home/jwilger/.config/nvim/init.vim|97|1|V|vim
+	imap <expr> <CR> (pumvisible() ? "\<C-e>\<CR>\<Plug>DiscretionaryEnd" : "\<CR>\<Plug>DiscretionaryEnd")
+abe492c507e927088183f82d5d702c9c|file:///home/jwilger/.config/nvim/init.vim|96|1|V|vim
+	let g:endwise_no_mappings = 1
+2ff7d940634bf5c568e58dd55eb1d0aa|file:///home/jwilger/.config/nvim/init.vim|42|1|V|vim
+	  call dein#add('tpope/vim-endwise') " add block closing statements
+006d20cce1528057cb19123948d8de35|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|31|1|V|elixir
+	  def fart() do
+	    
+	  end
+09a9c454e6c35bbde596ce8936e18f8e|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|23|5|V|elixir
+	    Map.put(state, :number, fart().(1))
+447b7147e84be512208dcc0995d67ebc|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|28|55|v|elixir
+	item
+eb4112b6a6b76c8a84808a40baa94769|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|28|57|v|elixir
+	opts
+7e066da756ecf6b79e587cd7f9af80dc|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite_web/controllers/signup_controller.ex|21|45|v|elixir
+	conn_or_endpoint
+418c5509e2171d55b0aee5c2ea4442b5|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite_web/controllers/signup_controller.ex|21|51|v|elixir
+	action
+3aa53305c1f892d5eac388358a17075a|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite_web/controllers/signup_controller.ex|22|7|V|elixir
+	      json(conn, nil)
+66f6181bcb4cff4cd38fbc804a036db6|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite_web/controllers/signup_controller.ex|26|18|v|elixir
+	template
+95ae8f4ad89cb6742e1e9e09b341d73b|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite_web/controllers/signup_controller.ex|26|40|v|elixir
+	assigns
+9a8160b3949d4f6d074f2ac1a24b1d3b|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|46|34|v|elixir
+	Map.get(form_values, :team_name, "Acme Racing"))
+e6af58e033e510eaa2689a81de456cbb|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|47|29|v|elixir
+	Map.get(form_values, :slug, "team-#{Ecto.UUID.generate()}"))
+0d5de0cc295f299b1b026a54cc47e451|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|48|41|v|elixir
+	Map.get(form_values, :admin_first_name, "John"))
+8ca8d23052fcba5c6ff8558a84887a3f|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|49|40|v|elixir
+	Map.get(form_values, :admin_last_name, "Doe"))
+f92577f84cf5c9c7fb707caa0f86bc8e|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|51|7|V|elixir
+	      with: Map.get(form_values, :admin_email, "admin-#{Ecto.UUID.generate()}@team.example")
+bec77c95a12890b7d234045fc849f857|file:///var/user_projects/jwilger/teamwebsite/test/support/ui_test_drivers/platform/team_signup.ex|51|39|v|elixir
+	Map.get(form_values, :admin_password, "s00p3rS3kr37!"))
+c4a3c91f6ebcf9c0f4f511de313b1f0b|file:///var/user_projects/jwilger/teamwebsite/config/dev.exs|30|1|V|elixir
+	config :teamwebsite, TeamWebsite.Mailer, adapter: Bamboo.LocalAdapter
+dd9f92f9d3fdc9478976a11ce61636bf|file:///var/user_projects/jwilger/teamwebsite/config/test.exs|40|58|v|elixir
+	LocalAdapter
+aa218e243d7e5b026fafd9dd60bba0cc|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|22|5|V|elixir
+	    {:ok, state}
+28ab1cbd7b0ec4bfe4d7b228f7e8476a|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|28|1|V|elixir
+	    |> return_updated_state()
+990fe6c76ffe0a2167ce703a83802087|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|57|5|V|elixir
+	    IO.inspect(state)
+b4dad0fe5fbef2c0e24d9db1cc69e5a2|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/email_confirmation.ex|2|46|v|elixir
+	term
+8f9bfe9d1345237cb3b2b205864da075|unknown:21|1|41|v|elixir
+	User
+5adc3757530dbef1c80b3316c6779deb|unknown:21|2|1|V|elixir
+	  use Ecto.Schema
+	
+	  schema do 
+	  end
+b3a35e6c95c2b1890733691e11cba461|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/email_confirmation/projections/team.ex|7|19|v|elixir
+	:message
+0f8d6fb56fe6cdf55ad0114ec5b51dbb|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/email_confirmation/projections/team_test.exs|14|39|v|elixir
+	struct
+9a59a3934a82794f1158f0a4e6edf33a|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/email_confirmation/projections/team_test.exs|16|9|V|elixir
+	        |> IO.inspect()
+828b7d2e189a01d1b5c04e0d93efc03f|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/email_confirmation/projections/team.ex|16|5|V|elixir
+	    from __MODULE__
+f93b3ec096ac8801dbd0fdb3ccd438e2|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/email_confirmation/projections/team.ex|17|5|V|elixir
+	    raise NotFoundError, "could not find a team with slug \"#{slug}\""
+39eef72082dc1a66f9a0728384dc65fa|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/email_confirmation/projections/team_test.exs|15|1|V|elixir
+	        TeamWebsite.Repo.insert!(%Team{id: "f5c88e6b-8865-44f2-8f89-cce20707ca9c", slug: "foo"})
+6c4053c4362ca4988d5e7afb7bb6d355|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/email_confirmation/projections/team_test.exs|14|43|v|elixir
+	f5c88e6b-8865-44f2-8f89-cce20707ca9c
+23af06de4bafe45f54e671be0a1bb5c6|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/email_confirmation/projections/team_test.exs|14|1|V|elixir
+	      TeamWebsite.Repo.insert!(%Team{id: "c220c06c-153d-4939-8933-2bea0c4e8193", slug: "foo"})
+3e3129ac5a162fb064c108898249f6da|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/email_confirmation/projections/team_test.exs|17|43|v|elixir
+	c220c06c-153d-4939-8933-2bea0c4e8193
+5a269439a6ac45cd7782ed200cd34a26|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/email_confirmation/projections/team.ex|18|15|v|elixir
+	queryable
+7a5e0a0ad29f86d124281550da1f1627|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/email_confirmation/projections/team.ex|18|1|V|elixir
+	    Repo.one!(, opts \\ [])
+db10ddc8ca3734ca71d0cd8af7fedaeb|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/email_confirmation/projections/team.ex|19|5|V|elixir
+	      %__MODULE__{} = team -> team
+3b53d91ba334faf5d32dca7bfee0ce7c|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager_test.exs|33|7|V|elixir
+	      team_id = @team_created_event.id
+ffbc7c8e02d30c80fea4ba8da2853608|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager_test.exs|33|42|v|elixir
+	eam_id
+0ce5df7d32f61e7e1547ac8cf32fd84d|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager.ex|17|1|V|elixir
+	    field :team_id, Ecto.UUID.t()
+a662679147e987ab1167dbe6e020f6be|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager.ex|24|1|V|elixir
+	  def apply(%__MODULE__{} = pm, %TeamCreated{id: team_id}) do
+	    %{pm | team_id: team_id}
+	  end
+8bb1372a2e48a8544454c71479411136|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/email_confirmation/projections/projections_supervisor.ex|5|39|v|elixir
+	init_arg
+631696dbad3dbb1c2481655e0bbae8fa|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/email_confirmation/projections/projections_supervisor.ex|5|49|v|elixir
+	options \\ []
+b1bc248a7ff2b2e95569f56de68615df|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/email_confirmation/projections/projections_supervisor.ex|8|15|v|elixir
+	number
+945f3fc449518a73b9f5f32868db466c|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/email_confirmation/projector.ex|7|35|v|elixir
+	lambda
+dd36907ccbbbf27ec8e92e3bbea0167c|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/email_confirmation/projector.ex|6|5|V|elixir
+	    consistency: :strong
+559d51b4cb3b33d239db1f937e87169d|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/email_confirmation/projector.ex|9|1|V|elixir
+	  project(%TeamCreated{} = event, metadata, fn multi ->
+	    IO.inspect(metadata)
+	    {:error, :failed}
+	  end)
+d4fcc1639c021988557ac28eb2ec7a2c|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/email_confirmation/projector.ex|7|1|V|elixir
+	  alias TeamWebsite.Team.Events.TeamCreated
+4a4701fe03040b5af2088bf8ec7fd6e0|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/email_confirmation/projections/team.ex|30|5|V|elixir
+	    kkkkkkkkkkkkkkk
+e7d7b19bd3a982aa9c60ce0f5bdeacc2|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/email_confirmation/projections/team.ex|33|3|V|elixir
+	    |> Ecto.Multi.
+ea8f243d9885cf8ce9876a580224fd3c|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/email_confirmation/projections/team.ex|34|23|v|elixir
+	multi
+b068931cc450442b63f5b3d276ea4297|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/email_confirmation/projections/team.ex|34|31|v|elixir
+	name
+222afc80aed3dfe817168ae2586fa33e|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/email_confirmation/projections/team.ex|34|45|v|elixir
+	changeset_or_struct_or_fun
+f26d21fd42bf942c774cc213abd2b7ce|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/email_confirmation/projections/team_test.exs|27|57|v|elixir
+	nuuid
+9e28339749dbdbfcabf410548d71a8e3|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/email_confirmation/projections/team_test.exs|32|36|v|elixir
+	fun_or_multi
+7376749b22188b29af1700431f0b4702|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/email_confirmation/projections/team.ex|31|5|V|elixir
+	    IO.inspect(multi)
+c16b1ebfb7838101aa359711dcbb8591|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/email_confirmation/projections/team.ex|31|5|V|elixir
+	    IO.inspect(attrs)
+e866231598ed4cb18be5e493240a11b0|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|57|24|v|elixir
+	arg1
+3ecb683ec7a7886b7921f0de63631511|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|57|5|V|elixir
+	    :timer.apply_after(, arg2, arg3, arg4)
+f7427143ea0f91d72e5cad222dce7e11|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|62|20|v|elixir
+	, item, opts)
+f09b5c21aea5f5175143008711254842|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|57|5|V|elixir
+	    :timer.sleep(1)
+e8e9212a4ff68d985211948e985f3c89|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|61|1|V|elixir
+	    team =
+	      TeamWebsite.EmailConfirmation.Team.find_by_slug!(state.submit_team_details_last_values.slug)
+	
+	    IO.inspect(team)
+	
+	    user =
+	      TeamWebsite.EmailConfirmation.User.find_by_email!(
+	        state.submit_team_details_last_values.admin_email,
+	        team_id: team.id
+	      )
+	
+97579929f75dcc4cf736ca47df22405d|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|61|1|V|elixir
+	    expected = TeamWebsite.EmailConfirmation.Email.team_sign_up_confirmation(team, user)
+	
+	    assert_delivered_email(expected)
+	    assert_email_delivered_with(text_body: ~r/\b#{Regex.escape(user.email_confirmation_code)}\b/)
+49baf12b746088e4f7738f6906743c94|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/email_confirmation/projections/user.ex|4|3|V|elixir
+	  @pri
+5d1ab2b7e9ac5606402c6ee77a6fad04|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|63|55|v|elixir
+	state.submit_team_details_last_values.slug
+6617e90769ebd218b63366ab86f65558|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|64|1|V|elixir
+	                   state.submit_team_details_last_values.admin_email,
+c45a152a6f1dc563e348f04b2b3f45e3|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|64|20|V|elixir
+	                   team_id: team.id
+4e01626d313394f3b96717b3b0faf807|file:///var/user_projects/jwilger/teamwebsite/test/features/team_account_signup_test.exs|64|18|V|elixir
+	                 ) do
+14da757aa871d92c8ed3382d04ddee78|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/email_confirmation/projections/user_test.exs|9|72|v|elixir
+	"example@test.example"
+9c8b3c3b63670acda43e17a3f6b46dfc|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/email_confirmation/projections/user_test.exs|9|97|v|elixir
+	"c074186e-0897-4a96-910a-e4febd0a2421"
+829557b30183af74ca585c935382b9ed|file:///var/user_projects/jwilger/teamwebsite/test/support/storage.ex|32|1|V|elixir
+	      email_confirmation__teams
+5f934b14ba28596f85aa5a0c345201c1|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/email_confirmation/projections/team.ex|7|1|V|elixir
+	  import Ecto.Query, only: [where: 2, first: 1]
+ad159b5c2d047c507985af041ffdb768|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/email_confirmation/projections/team.ex|9|1|V|elixir
+	  defmodule NotFoundError do
+	    defexception message: "No such Team was found."
+	  end
+9a7cc1e8536d83c5769b3089d279c11a|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/email_confirmation/projections/team.ex|20|1|V|elixir
+	  rescue
+	    _ in Ecto.NoResultsError -> raise NotFoundError, "could not find a team with slug \"#{slug}\""
+f894427cc1c571f79da49605ef8b112f|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/email_confirmation/projections/user.ex|24|72|v|elixir
+	team
+01a4e55df8edceee82c95db510de6bc6|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/email_confirmation/projections/user_test.exs|23|67|v|elixir
+	"5ea3a019-f8eb-410c-b0d8-05cd9962901d"
+0d4211a8a00d2bc38a992f32ff668c8c|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/email_confirmation/projections/user_test.exs|24|22|V|elixir
+	                     )
+fa4c6af29d47a0aeeb2c2f93d56a5591|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/email_confirmation/projections/user_test.exs|21|100|v|elixir
+	 in team #{
+aad66733f3d2b2e527bc572a500c48bc|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/email_confirmation/projections/user_test.exs|22|22|V|elixir
+	                     other_team_id
+2df806939ab1cc498d379177c875346e|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/email_confirmation/projections/user_test.exs|22|20|V|elixir
+	                   }/,
+ca39e8df794a7399c9bb501a1c97ddc2|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/email_confirmation/projections/user_test.exs|28|22|V|elixir
+	                     existing_team_id
+d7c0817695d3e240de91a58a5032d8d2|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/email_confirmation/projections/user_test.exs|8|1|V|elixir
+	      existing_email = "example@test.example"
+	      other_email = "example2@test.example"
+	      existing_team_id = "8d9be2e9-0401-4997-85b2-689d6bd65dba"
+	      other_team_id = "c6210274-d906-4030-9246-c3221345ec4a"
+	
+	      %User{
+	        id: "9d19398f-0edf-4fa2-bd23-f6106af82310",
+	        email_address: existing_email,
+	        team_id: existing_team_id
+	      }
+	      |> TeamWebsite.Repo.insert!()
+1dd05af17eb29a7aef6bc58781d4a5ed|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/email_confirmation/projections/user_test.exs|38|1|V|elixir
+	      TeamWebsite.Repo.insert!(%User{id: "78a4e304-cb6c-4038-a02d-4cbd9fb7015b", team_id: "424140b0-acb9-407a-8e68-cae4c11bb19f", email_address: "example@test.example"})
+15ef0e993762d5a97771af4fb57ad6e6|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/email_confirmation/projections/user_test.exs|39|43|v|elixir
+	78a4e304-cb6c-4038-a02d-4cbd9fb7015b
+1114b858674c04e8b649e2c65f1de3fc|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/email_confirmation/projections/user_test.exs|40|43|v|elixir
+	94304aa0-14be-4298-a486-043769972199
+4966546dd758fc78a0f8f40d669199ad|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/email_confirmation/projections/user_test.exs|39|91|^v|elixir
+	"424140b0-acb9-407a-8e68-cae4c11bb19f"
+	"424140b0-acb9-407a-8e68-cae4c11bb19f"
+	"424140b0-acb9-407a-8e68-cae4c11bb19f"
+b5e0aaf3295aa47ce8f929f7aa697def|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/email_confirmation/projections/user_test.exs|43|57|v|elixir
+	email_address
+10ae9fc7d453b0dd525d0edf2ede7961|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/email_confirmation/projections/user_test.exs|43|82|v|elixir
+	list
+830407a0f2ea845895ad1e68faf30cb2|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager.ex|13|3|V|elixir
+	  alias Team.Commands.ReportProvisioningError
+7ac24ee1e1c3771db54ad64e5d17bb1a|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager_test.exs|44|1|V|elixir
+	  describe "apply/2" do
+	    test "with TeamCreated event sets the :slug_provisioned to false in process manager state" do
+	      assert %ProvisioningProcessManager{slug_provisioned: false} =
+	               ProvisioningProcessManager.apply(
+	                 %ProvisioningProcessManager{},
+	                 @team_created_event
+	               )
+	    end
+	  end
+2b11c6db522758195903ac69e8595862|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager.ex|14|1|V|elixir
+	  @derive Jason.Encoder
+	  typedstruct do
+	    field :slug_provisioned, boolean(), default: false
+	  end
+a2a96670ffc2585ecf0a41162715498a|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager.ex|16|12|v|elixir
+	slug_provisioned
+193b6f61df802e5e97cf1c851a834119|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager.ex|7|3|V|elixir
+	  use TypedStruct
+f2cb273a5f96001ceb1caf3437805290|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager.ex|12|1|V|elixir
+	  @derive Jason.Encoder
+	  typedstruct do
+	    field :team_id, boolean(), default: false
+	  end
+b7390e4255040db8a9ce6dfd3e7bf6e0|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager_test.exs|50|10|v|elixir
+	ProvisioningProcessManager
+f6a7ca40fb244678abe4ebba37174d7d|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager.ex|16|12|v|elixir
+	team_id
+84e2c64f38f78ba3ea5c905ab5a2da27|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager.ex|16|16|v|elixir
+	boolean
+4753a2607708d7126672be6ac00d0dcb|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager.ex|14|3|V|elixir
+	  @derive Jason.Encoder
+0af6e023ce67f97c8f2fbfab26148047|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager_test.exs|64|9|V|elixir
+	        |> ProvisioningProcessManager.handle(@team_created_event)
+5f6bc08c46cee6f21bfcdd08aff6e8aa|file:///var/user_projects/jwilger/teamwebsite/test/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager_test.exs|61|7|v|elixir
+	commands
+2e6030baeab0be65215a95f31c8e266e|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager.ex|17|5|V|elixir
+	    field :id, Ecto.UUID.t(), default: Ecto.UUID.generate()
+9d33ac350c51c43ffbf9df23e525f471|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/aggregates/team/commands/create_team.ex|105|1|V|elixir
+	  defp to_struct(attrs), do: struct!(__MODULE__, attrs)
+11fc8638b0b02d1694418c86cf3e4120|file:///var/user_projects/jwilger/teamwebsite/lib/teamwebsite/api/team_provisioning/process_managers/provisioning_process_manager.ex|37|5|V|elixir
+	    |> (&struct)
+464b4a38530e3c286b49157721720649|file:///home/jwilger/.config/tmuxinator/teamwebsite.yml|32|15|v|yaml
+	-f ~/.tmux.mac.conf
+9326d04113ad8d70a38a1e68fdb10922|file:///home/jwilger/.config/tmuxinator/teamwebsite.yml|35|15|v|yaml
+	byobu
