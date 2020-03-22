@@ -2,7 +2,6 @@
   "suggest.echodocSupport": true,
   "suggest.maxCompleteItemCount": 20,
   "suggest.noselect": false,
-  "suggest.autoTrigger": "trigger",
   "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact", "typescript.tsx"],
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
@@ -13,6 +12,5 @@
     "everfi",
     "postgres",
     "postgresql"
-  ],
-  "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh"
+  ]
 }
