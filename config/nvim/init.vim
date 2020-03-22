@@ -37,6 +37,8 @@ if dein#load_state('/home/jwilger/.cache/dein')
   call dein#add('tpope/vim-commentary') "toggle comment lines with gc
   call dein#add('tpope/vim-fugitive')
   call dein#add('tpope/vim-surround') "enable cs for change surround
+  call dein#add('tpope/vim-eunuch') "Unix file manipulation like :Delete or :Move
+  call dein#add('tpope/vim-repeat') "enable . repeating of plugin commands
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
   " Required:
@@ -176,6 +178,11 @@ let g:nuuid_iabbrev = 1
 " ============================================================================ "
 " ===                                UI                                    === "
 " ============================================================================ "
+
+" Enable mouse support (hey, it's convenient for scrolling when reading code!)
+set mouse=a
+
+let g:airline_powerline_fonts = 1
 
 " Enable true color support
 set termguicolors
@@ -478,7 +485,7 @@ map <Enter> o<ESC>
 imap jk <Esc>
 
 imap fpp \|><space>
-imap bpp <\|<space> 
+imap bpp <\|<space>
 
 " Make dealing with split windows a little easier
 :noremap <leader>v :vsp<cr> " Quick access to vertical splits
