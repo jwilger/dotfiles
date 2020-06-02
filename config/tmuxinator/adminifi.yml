@@ -42,9 +42,7 @@ on_project_first_start: cd ~/projects/everfi && docker-compose up --build -d --r
 # attach: false
 
 windows:
-  - shell:
-      - zsh
-      - clear
+  - shell: zsh
   - editor:
       layout: main-vertical
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.

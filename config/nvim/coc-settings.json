@@ -2,15 +2,41 @@
   "suggest.echodocSupport": true,
   "suggest.maxCompleteItemCount": 20,
   "suggest.noselect": false,
-  "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact", "typescript.tsx"],
+  "eslint.filetypes": [
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "javascriptreact",
+    "typescript.tsx"
+  ],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "json",
+    "elixir"
+  ],
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
   "diagnostic.infoSign": "•",
-  "yank.enableCompletion": false,
   "codeLens.enable": true,
   "cSpell.userWords": [
+    "Rubyists",
     "everfi",
     "postgres",
     "postgresql"
-  ]
+  ],
+  "explorer.icon.enableNerdfont": true,
+  "explorer.icon.enableVimDevicons": true,
+  "explorer.sources": [
+    {
+      "name": "file",
+      "expand": true
+    }
+  ],
+  "explorer.presets": {
+    "floating": {
+      "position": "floating"
+    }
+  },
+  "git.showCommitInFloating": true,
+  "git.addGBlameToVirtualText": true
 }

@@ -1,53 +1,9 @@
 {
-  "diagnostics": {
-    "%2Fvar%2Fuser_projects%2Fjwilger%2Fteamwebsite": [
-      "di"
-    ]
-  },
-  "extensions": {
-    "%2Fvar%2Fuser_projects%2Fjwilger%2Fteamwebsite": [
-      "el"
-    ]
-  },
-  "commands": {
-    "%2Fvar%2Fuser_projects%2Fjwilger%2Fteamwebsite": [
-      "exfor"
-    ],
-    "%2Fvar%2Fuser_projects%2Fjwilger%2Fskooma": [
-      "form"
-    ]
-  },
-  "marketplace": {
-    "%2Fvar%2Fuser_projects%2Fjwilger%2Fteamwebsite": [
-      "doc",
-      "gitig",
-      "gher"
-    ]
-  },
   "lists": {
-    "%2Fvar%2Fuser_projects%2Fjwilger%2Fteamwebsite": [
-      "mar"
-    ]
-  },
-  "actions": {
-    "%2Fvar%2Fuser_projects%2Fjwilger%2Fteamwebsite": [
-      "afo"
-    ]
-  },
-  "tasks": {
-    "%2Fvar%2Fuser_projects%2Fjwilger%2Fteamwebsite": [
-      "help"
-    ]
-  },
-  "explorerFiles": {
-    "%2Fvar%2Fuser_projects%2Fjwilger%2Fteamwebsite": [
-      "team",
-      "teamslugte"
-    ]
-  },
-  "explorerActions": {
-    "%2Fvar%2Fuser_projects%2Fjwilger%2Feverfi%2Ffoundry-public-api%2Flib%2Ftasks": [
-      "uppre"
-    ]
+    "%2Fhome%2Fjwilger%2F": {
+      "dotfiles%2Fconfig": [
+        "ext"
+      ]
+    }
   }
 }

@@ -1,6 +1,6 @@
 import { Sequence, GenIterable } from './types';
 import { toIterableIterator } from './util/util';
-export { Sequence, GenIterable } from './types';
+export { Sequence, GenIterable, AsyncGenIterable } from './types';
 export { toIterableIterator } from './util/util';
 export interface SequenceCreator<T> {
     (i: GenIterable<T>): Sequence<T>;
