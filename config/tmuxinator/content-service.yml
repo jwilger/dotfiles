@@ -11,10 +11,11 @@ root: ~/projects/everfi/content-service
 
 # Project hooks
 # Runs on project start, always
-on_project_start: cd ~/projects/everfi && docker-compose up --build -d --remove-orphans && cd - && sleep 5 && bundle install --path .bundle --binstubs .bundle/bin && bundle exec rake db:reset
+# on_project_start: command
 
 # Run on project start, the first time
 # on_project_first_start: command
+on_project_first_start: cd ~/projects/everfi && docker-compose up --build -d --remove-orphans && cd - && sleep 5 && bundle install --path .bundle --binstubs .bundle/bin && bundle exec rake db:reset
 # Run on project start, after the first time
 # on_project_restart: command
 # Run on project exit ( detaching from tmux session )
@@ -41,17 +42,10 @@ on_project_start: cd ~/projects/everfi && docker-compose up --build -d --remove-
 # attach: false
 
 windows:
-  - shell:
-      - zsh
-      - clear
-  - editor:
-      layout: main-vertical
-      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
-      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
-      # synchronize: after
-      panes:
-        - vim
-        - guard
+  - shell: zsh
+  - editor: vim
   - server: bundle exec foreman start -f Procfile.dev
-  - logs: tail -f log/*.log
-  - docker-logs: cd ~/projects/everfi && docker-compose logs -ft
+  - logs:
+      panes:
+        - tail -f log/*.log
+        - cd ~/projects/everfi && docker-compose logs -ft

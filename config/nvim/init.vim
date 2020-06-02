@@ -41,6 +41,9 @@ if dein#load_state('~/.cache/dein')
   call dein#add('tpope/vim-repeat') "enable . repeating of plugin commands
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
+  call dein#add('Valloric/ListToggle')
+  call dein#add('Numkil/ag.nvim')
+  call dein#add('ctrlpvim/ctrlp.vim')
   " Required:
   call dein#end()
   call dein#save_state()
@@ -163,15 +166,6 @@ set nocursorline
   "Close preview window when completion is done.
   autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
-" === coc-explorer === "
-let g:coc_explorer_global_presets = {
-\   'floatingLeftside': {
-\      'position': 'floating',
-\      'floating-position': 'left-center',
-\      'floating-width': 50
-\   }
-\ }
-
 " === nuuid === "
 let g:nuuid_iabbrev = 1
 
@@ -293,7 +287,7 @@ xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<
 nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 
 " === coc-explorer === "
-nmap <leader>e :CocCommand explorer --toggle --preset floatingLeftside<CR>
+nmap <silent> <leader>e :CocCommand explorer --preset floating<CR>
 
 " === Denite shorcuts === "
 "   ;         - Browser currently open buffers
@@ -499,6 +493,16 @@ nmap <leader>gp :Dispatch git push --quiet<CR>
 
 nmap <leader>ss :e ~/vim-scratch<CR>
 
+let g:lt_location_list_toggle_map = '<leader>ol'
+let g:lt_quickfix_list_toggle_map = '<leader>oq'
+nmap <leader>oq :QToggle<CR>
+
+nmap <Bslash> :Ag<Space>
+nmap <Bslash><Bslash> :AgAdd<Space>
+
+" Enable returning to normal mode in terminals with a non-stupid key sequence
+tnoremap <Esc> <C-\><C-n>
+tnoremap jk <C-\><C-n>
 " ============================================================================ "
 " ===                                 MISC.                                === "
 " ============================================================================ "
@@ -608,3 +612,50 @@ augroup END
 " augroup END
 
 set noshowcmd
+
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+        \ --ignore .git
+        \ --ignore .svn
+        \ --ignore .hg
+        \ --ignore .DS_Store
+        \ --ignore "**/*.pyc"
+        \ -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+
+  if !exists(":Ag")
+    command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+    nnoremap \ :Ag<SPACE>
+  endif
+endif
+
+" Run ruby code and preview resulting output
+function! Ruby_eval_vsplit() range
+  let src = tempname()
+  let dst = "Ruby Output"
+  " put current buffer's content in a temp file
+  silent execute ": " . a:firstline . "," . a:lastline . "w " . src
+  " open the preview window
+  silent execute "pedit! " . dst
+  " change to preview window
+  wincmd P
+  " set options
+  setlocal buftype=nofile
+  setlocal noswapfile
+  setlocal syntax=none
+  setlocal bufhidden=delete
+  " replace current buffer with ruby's output
+  silent execute ":%! ruby -e \"puts eval(File.read('" . src . "')).inspect\""
+  " change back to the source buffer
+  wincmd p
+endfunction
+
+vmap <silent> <leader>r :call Ruby_eval_vsplit()<CR>
+nmap <silent> <leader>r mzggVG<leader>r`z
