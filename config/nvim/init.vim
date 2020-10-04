@@ -7,56 +7,56 @@ if &compatible
   set nocompatible               " Be iMproved
 endif
 
-" Required:
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
-
-" Required:
-if dein#load_state('~/.cache/dein')
-  call dein#begin('~/.cache/dein')
-
-  " Let dein manage dein
   " Required:
-  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+  set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
-  " Add or remove your plugins here like this:
-  "call dein#add('Shougo/neosnippet.vim')
-  "call dein#add('Shougo/neosnippet-snippets')
+  " Required:
+  if dein#load_state('~/.cache/dein')
+    call dein#begin('~/.cache/dein')
 
-  call dein#add('Shougo/denite.nvim')
-  if !has('nvim')
-    call dein#add('roxma/nvim-yarp')
-    call dein#add('roxma/vim-hug-neovim-rpc')
+    " Let dein manage dein
+    " Required:
+    call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+
+    " Add or remove your plugins here like this:
+    "call dein#add('Shougo/neosnippet.vim')
+    "call dein#add('Shougo/neosnippet-snippets')
+
+    call dein#add('Shougo/denite.nvim')
+    if !has('nvim')
+      call dein#add('roxma/nvim-yarp')
+      call dein#add('roxma/vim-hug-neovim-rpc')
+    endif
+
+    call dein#add('arcticicestudio/nord-vim')
+    call dein#add('elixir-editors/vim-elixir')
+    call dein#add('jlanzarotta/bufexplorer')
+    call dein#add('kburdett/vim-nuuid')
+    call dein#add('neoclide/coc.nvim', {'merged':0, 'rev': 'release'})
+    call dein#add('ryanoasis/vim-devicons')
+    call dein#add('tpope/vim-commentary') "toggle comment lines with gc
+    call dein#add('tpope/vim-fugitive')
+    call dein#add('tpope/vim-surround') "enable cs for change surround
+    call dein#add('tpope/vim-eunuch') "Unix file manipulation like :Delete or :Move
+    call dein#add('tpope/vim-repeat') "enable . repeating of plugin commands
+    call dein#add('vim-airline/vim-airline')
+    call dein#add('vim-airline/vim-airline-themes')
+    call dein#add('Valloric/ListToggle')
+    call dein#add('Numkil/ag.nvim')
+    call dein#add('ctrlpvim/ctrlp.vim')
+    " Required:
+    call dein#end()
+    call dein#save_state()
   endif
-
-  call dein#add('arcticicestudio/nord-vim')
-  call dein#add('elixir-editors/vim-elixir')
-  call dein#add('jlanzarotta/bufexplorer')
-  call dein#add('kburdett/vim-nuuid')
-  call dein#add('neoclide/coc.nvim', {'merged':0, 'rev': 'release'})
-  call dein#add('ryanoasis/vim-devicons')
-  call dein#add('tpope/vim-commentary') "toggle comment lines with gc
-  call dein#add('tpope/vim-fugitive')
-  call dein#add('tpope/vim-surround') "enable cs for change surround
-  call dein#add('tpope/vim-eunuch') "Unix file manipulation like :Delete or :Move
-  call dein#add('tpope/vim-repeat') "enable . repeating of plugin commands
-  call dein#add('vim-airline/vim-airline')
-  call dein#add('vim-airline/vim-airline-themes')
-  call dein#add('Valloric/ListToggle')
-  call dein#add('Numkil/ag.nvim')
-  call dein#add('ctrlpvim/ctrlp.vim')
-  " Required:
-  call dein#end()
-  call dein#save_state()
-endif
 
 " Required:
 filetype plugin indent on
 syntax enable
 
-" If you want to install not installed plugins on startup.
-if dein#check_install()
-  call dein#install()
-endif
+  " If you want to install not installed plugins on startup.
+  if dein#check_install()
+    call dein#install()
+  endif
 
 " Remap leader key to ,
 let g:mapleader=' '
@@ -89,7 +89,6 @@ set nowrap
 
 " Don't highlight current cursor line
 set nocursorline
-
 
 " ============================================================================ "
 " ===                           PLUGIN SETUP                               === "
@@ -659,3 +658,7 @@ endfunction
 
 vmap <silent> <leader>r :call Ruby_eval_vsplit()<CR>
 nmap <silent> <leader>r mzggVG<leader>r`z
+
+" No, really maintain context around cursor
+set scrolloff=7
+set sidescrolloff=10

@@ -12,7 +12,8 @@
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
     "json",
-    "elixir"
+    "elixir",
+    "rust"
   ],
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
