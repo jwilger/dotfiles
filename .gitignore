@@ -4,3 +4,4 @@ ssh/known_hosts.old
 ssh/ssh_auth_sock
 nvim/pack/minpac/start/*
 config/coc/extensions/node_modules/
+config/coc/extensions/coc-rust-analyzer-data/
