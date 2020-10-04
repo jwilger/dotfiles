@@ -17,3 +17,6 @@ Host remote-gregor
   GSSAPIAuthentication no
   GSSAPIDelegateCredentials yes
   LocalForward 8080 localhost:80
+
+Host *
+  ServerAliveInterval 10

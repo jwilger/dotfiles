@@ -40,3 +40,5 @@
   user = jwilger
 [rerere]
   enabled = 1
+[pull]
+	rebase = true

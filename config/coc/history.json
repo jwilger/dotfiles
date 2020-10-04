@@ -5,5 +5,11 @@
         "ext"
       ]
     }
+  },
+  "marketplace": {
+    "%2Fhome%2Fjwilger%2Frustlings": [
+      "rust",
+      "rustqq"
+    ]
   }
 }
