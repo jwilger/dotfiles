@@ -49,6 +49,31 @@ endif
     call dein#save_state()
   endif
 
+let g:coc_global_extensions = [
+\'coc-actions',
+\'coc-cspell-dicts',
+\'coc-css',
+\'coc-docker',
+\'coc-elixir',
+\'coc-eslint',
+\'coc-explorer',
+\'coc-git',
+\'coc-gitignore',
+\'coc-highlight',
+\'coc-html',
+\'coc-json',
+\'coc-markdownlint',
+\'coc-marketplace',
+\'coc-pairs',
+\'coc-rls',
+\'coc-sh',
+\'coc-snippets',
+\'coc-solargraph',
+\'coc-spell-checker',
+\'coc-tasks',
+\'coc-yaml'
+\]
+
 " Required:
 filetype plugin indent on
 syntax enable
