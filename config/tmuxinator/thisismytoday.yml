@@ -1,7 +1,7 @@
 # /home/jwilger/.config/tmuxinator/teamwebsite.yml
 
-name: teamwebsite
-root: ~/projects/teamwebsite
+name: thisismytoday
+root: ~/projects/this_is_my_today
 
 # Optional tmux socket
 # socket_name: foo

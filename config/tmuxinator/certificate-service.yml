@@ -1,7 +1,7 @@
-# /home/jwilger/.config/tmuxinator/teamwebsite.yml
+# /home/jwilger/.config/tmuxinator/certificate-service.yml
 
-name: teamwebsite
-root: ~/projects/teamwebsite
+name: certificate-service
+root: ~/projects/everfi/certificate-service
 
 # Optional tmux socket
 # socket_name: foo
@@ -12,27 +12,23 @@ root: ~/projects/teamwebsite
 # Project hooks
 # Runs on project start, always
 # on_project_start: command
-
 # Run on project start, the first time
-on_project_first_start: docker-compose up --build -d --remove-orphans; dev-setup
-
+on_project_first_start: cd ~/projects/everfi && docker-compose up --build -d --remove-orphans && cd -
 # Run on project start, after the first time
 # on_project_restart: command
-
 # Run on project exit ( detaching from tmux session )
 # on_project_exit: command
-
 # Run on project stop
-on_project_stop: docker-compose down --remove-orphans
+# on_project_stop: command
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-pre_window: source .env
+# pre_window: rbenv shell 2.0.0-p247
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 # tmux_options: -f ~/.tmux.mac.conf
 
 # Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
-# tmux_command: wemux
+# tmux_command: byobu
 
 # Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
 # startup_window: editor
@@ -44,14 +40,10 @@ pre_window: source .env
 # attach: false
 
 windows:
-  - editor:
-      layout: main-vertical
-      panes:
-        - vim
-        - mix test.watch
-  - shell: zsh
-  - servers:
-      layout: even-horizontal
-      panes:
-        - iex -S mix phx.server
-        - docker-compose logs -ft
+  - shell:
+      - zsh
+      - clear
+  - editor: vim
+  - server: sleep 5; bundle exec foreman start -f Procfile.dev
+  - logs: tail -f log/development.log
+  - docker-logs: cd ~/projects/everfi && docker-compose logs -ft
