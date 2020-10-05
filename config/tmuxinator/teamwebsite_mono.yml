@@ -1,7 +1,7 @@
-# /home/jwilger/.config/tmuxinator/teamwebsite.yml
+# /home/jwilger/.config/tmuxinator/teamwebsite_mono.yml
 
-name: teamwebsite
-root: ~/projects/teamwebsite
+name: teamwebsite_mono
+root: ~/projects/teamwebsite_monorepo
 
 # Optional tmux socket
 # socket_name: foo
@@ -53,5 +53,5 @@ windows:
   - servers:
       layout: even-horizontal
       panes:
-        - iex -S mix phx.server
+        # - iex -S mix phx.server
         - docker-compose logs -ft
