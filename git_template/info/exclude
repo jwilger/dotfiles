@@ -5,3 +5,4 @@
 # *.[oa]
 # *~
 Procfile.dev_box
+/build
