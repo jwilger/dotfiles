@@ -1,8 +1,8 @@
-# ___  ________          ________  ________  ________   ________ ___  ________     
-#|\  \|\_____  \        |\   ____\|\   __  \|\   ___  \|\  _____\\  \|\   ____\    
-#\ \  \|____|\ /_       \ \  \___|\ \  \|\  \ \  \\ \  \ \  \__/\ \  \ \  \___|    
-# \ \  \    \|\  \       \ \  \    \ \  \\\  \ \  \\ \  \ \   __\\ \  \ \  \  ___  
-#  \ \  \  __\_\  \       \ \  \____\ \  \\\  \ \  \\ \  \ \  \_| \ \  \ \  \|\  \ 
+# ___  ________          ________  ________  ________   ________ ___  ________
+#|\  \|\_____  \        |\   ____\|\   __  \|\   ___  \|\  _____\\  \|\   ____\
+#\ \  \|____|\ /_       \ \  \___|\ \  \|\  \ \  \\ \  \ \  \__/\ \  \ \  \___|
+# \ \  \    \|\  \       \ \  \    \ \  \\\  \ \  \\ \  \ \   __\\ \  \ \  \  ___
+#  \ \  \  __\_\  \       \ \  \____\ \  \\\  \ \  \\ \  \ \  \_| \ \  \ \  \|\  \
 #   \ \__\|\_______\       \ \_______\ \_______\ \__\\ \__\ \__\   \ \__\ \_______\
 #    \|__|\|_______|        \|_______|\|_______|\|__| \|__|\|__|    \|__|\|_______|
 
@@ -18,14 +18,14 @@ set $mod Mod4
 
 # Fonts
 
-font pango: Source Code Pro 14pt
+font pango: JetBrains Mono 10pt
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec konsole
-bindsym $mod+t exec konsole
+bindsym $mod+Return exec kitty
+bindsym $mod+t exec kitty
 
 # start browser
 bindsym $mod+w exec google-chrome --new-window
@@ -101,6 +101,9 @@ bindsym $mod+Shift+r restart
 # bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+Shift+e exec ~/.config/i3/exit_menu.sh
 
+# lock screen
+bindsym $mod+0 exec i3lock -i /home/jwilger/Pictures/moonbg.png
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -135,13 +138,13 @@ bindsym $mod+r mode "resize"
 
 set $ws1 "1: Main"
 set $ws2 "2: Comms"
-set $ws3 "3"
-set $ws4 "4"
+set $ws3 "3: IDE"
+set $ws4 "4: Read Later"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
-set $ws9 "9"
+set $ws9 "9: Music"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -209,7 +212,7 @@ exec --no-startup-id compton
 #retrieve wallpaper
 exec --no-startup-id ~/.config/fehbg
 
-#reset colorscheme 
+#reset colorscheme
 exec_always --no-startup-id wal -R
 
 #remerge Xresources
@@ -224,10 +227,13 @@ exec --no-startup-id xrandr --dpi 220
 #exec udiskie &
 
 #polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh 
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+# notifications
+exec_always --no-startup-id /usr/lib/x86_64-linux-gnu/notify-osd
 
 # Media player controls
-bindsym XF86AudioPlay exec cmus-remote -u 
+bindsym XF86AudioPlay exec cmus-remote -u
 bindsym XF86AudioNext exec cmus-remote -n
 bindsym XF86AudioPrev exec cmus-remote -r
 
@@ -238,3 +244,4 @@ bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 # Disables screen blanking
 exec_always --no-startup-id xset s off
 exec_always --no-startup-id xset -dpms
+

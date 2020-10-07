@@ -52,7 +52,7 @@ padding-bottom = 4
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = "Source Code Pro:pixelsize=28;2"
+font-0 = "JetBrains Mono:pixelsize=28;2"
 font-1 = "FontAwesome:style=Regular:pixelsize=24;2"
 
 modules-left = i3
@@ -112,7 +112,7 @@ pin-workspaces = false
 
 ; This will split the workspace name on ':'
 ; Default: false
-strip-wsnumbers = true
+; strip-wsnumbers = true
 
 ; Sort the workspaces by index instead of the default
 ; sorting that groups the workspaces by output
