@@ -20,6 +20,8 @@ set $mod Mod4
 
 font pango: JetBrains Mono 10pt
 
+focus_follows_mouse no
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -84,7 +86,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+Shift+a focus child
 
 # middle mouse on title bars/borders kills window
 bindsym --border button2 kill
@@ -201,25 +203,25 @@ client.background $bg
 
 
 # Custom Keybinds
-bindsym $mod+f exec konsole -e ranger
+bindsym $mod+f exec kitty -e ranger
 
 ###################
 # Startup commands#
 ###################
 
-exec --no-startup-id compton
+exec --no-startup-id compton -b
 
 #retrieve wallpaper
-exec --no-startup-id ~/.config/fehbg
+# exec --no-startup-id ~/.config/fehbg
 
 #reset colorscheme
-exec_always --no-startup-id wal -R
+exec_always --no-startup-id wal -i "~/Documents/Desktop Backgrounds/586756.png" -s -t
 
 #remerge Xresources
 exec --no-startup-id xrdb /home/jwilger/.Xresources
 
 #set dpi
-exec --no-startup-id xrandr --dpi 220
+exec --no-startup-id xrandr --dpi 218
 
 # Strartup apps
 
@@ -241,7 +243,6 @@ bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-# Disables screen blanking
-exec_always --no-startup-id xset s off
-exec_always --no-startup-id xset -dpms
-
+# Screensaver/blanking
+exec_always --no-startup-id xset dpms 600
+exec_always --no-startup-id xautolock -time 10 -locker "i3lock -i /home/jwilger/Pictures/moonbg.png"
