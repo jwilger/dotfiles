@@ -91,6 +91,12 @@ bindsym $mod+Shift+a focus child
 # middle mouse on title bars/borders kills window
 bindsym --border button2 kill
 
+# add window to scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# toggle first scratchpad window
+bindsym $mod+minus scratchpad show
+
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -209,19 +215,19 @@ bindsym $mod+f exec kitty -e ranger
 # Startup commands#
 ###################
 
-exec --no-startup-id compton -b
+# exec --no-startup-id compton -b
 
 #retrieve wallpaper
-# exec --no-startup-id ~/.config/fehbg
+exec --no-startup-id ~/.config/fehbg
 
 #reset colorscheme
-exec_always --no-startup-id wal -i "~/Documents/Desktop Backgrounds/586756.png" -s -t
+exec_always --no-startup-id wal --theme "/home/jwilger/.config/i3/theme.json" -s -t -n
 
 #remerge Xresources
-exec --no-startup-id xrdb /home/jwilger/.Xresources
+exec_always --no-startup-id xrdb /home/jwilger/.Xresources
 
 #set dpi
-exec --no-startup-id xrandr --dpi 218
+exec_always --no-startup-id xrandr --dpi 215
 
 # Strartup apps
 
@@ -229,10 +235,13 @@ exec --no-startup-id xrandr --dpi 218
 #exec udiskie &
 
 #polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec --no-startup-id ~/.config/polybar/launch.sh
 
 # notifications
-exec_always --no-startup-id /usr/lib/x86_64-linux-gnu/notify-osd
+exec --no-startup-id /usr/lib/x86_64-linux-gnu/notify-osd
+
+# Google Drive Sync
+exec --no-startup-id insync start
 
 # Media player controls
 bindsym XF86AudioPlay exec cmus-remote -u

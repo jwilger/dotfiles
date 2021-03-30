@@ -57,7 +57,7 @@ default_settings = {
   'app_name' => File.basename(current_dir),
   'aliases' => {},
   'additional_windows' => {
-    default_editor => "%s ." % default_editor
+    default_editor => "%s" % default_editor
   }
 }
 
@@ -72,11 +72,11 @@ settings = default_settings.merge(custom_settings)
 
 `tmux rename-window #{settings['app_name']}-sh`
 
-settings['aliases'].each do |name, command|
+settings['aliases']&.each do |name, command|
   `tmux send-keys 'alias #{name}="#{command}"' C-m`
 end
 
-settings['additional_windows'].each do |name, command|
+settings['additional_windows']&.each do |name, command|
   # `tmux new-window -d -n #{settings['app_name']}-#{name} '#{command}'`
   `tmux new-window -n #{settings['app_name']}-#{name}`
   `tmux send-keys '#{command}' C-m`

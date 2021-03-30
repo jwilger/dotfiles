@@ -39,6 +39,7 @@ endif
     call dein#add('tpope/vim-surround') "enable cs for change surround
     call dein#add('tpope/vim-eunuch') "Unix file manipulation like :Delete or :Move
     call dein#add('tpope/vim-repeat') "enable . repeating of plugin commands
+    call dein#add('tpope/vim-endwise') "do/end blocks, etc.
     call dein#add('vim-airline/vim-airline')
     call dein#add('vim-airline/vim-airline-themes')
     call dein#add('Valloric/ListToggle')
@@ -407,6 +408,10 @@ endfunction
 
   " inoremap <expr><cr> pumvisible() ? "\<C-y>" : "\<CR>"
 
+  let g:endwise_no_mappings = v:true
+  inoremap <expr> <Plug>CustomCocCR pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+  imap <CR> <Plug>CustomCocCR<Plug>DiscretionaryEnd
+
   inoremap <silent><expr> <TAB>
     \ pumvisible() ? "\<C-n>" :
     \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
@@ -418,9 +423,9 @@ endfunction
     return !col || getline('.')[col - 1]  =~# '\s'
   endfunction
 
-  inoremap <expr> <cr>
-    \ pumvisible() ? coc#_select_confirm() :
-    \ "\<cr>"
+  " inoremap <expr> <cr>
+  "   \ pumvisible() ? coc#_select_confirm() :
+  "   \ "\<cr>"
 
   " Use `[g` and `]g` to navigate diagnostics
   nmap <silent> [g <Plug>(coc-diagnostic-prev)
@@ -500,10 +505,13 @@ nnoremap <Down> :echoe "Use j"<CR>
 map <Enter> o<ESC>
 
 " The <ESC> key is too hard to reach for accurately on Apple keyboards
-imap jk <Esc>
+inoremap jk <Esc>
 
-imap fpp \|><space>
-imap bpp <\|<space>
+iabbrev fpp \|>
+iabbrev bpp <\|
+iabbrev hrr =>
+
+imap !!nuuid <Plug>Nuuid
 
 " Make dealing with split windows a little easier
 :noremap <leader>v :vsp<cr> " Quick access to vertical splits
