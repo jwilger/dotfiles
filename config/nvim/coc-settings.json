@@ -1,7 +1,9 @@
 {
   "suggest.echodocSupport": true,
   "suggest.maxCompleteItemCount": 20,
-  "suggest.noselect": false,
+  "suggest.noselect": true,
+  "suggest.minTriggerInputLength": 3,
+  "suggest.removeDuplicateItems": true,
   "eslint.filetypes": [
     "javascript",
     "typescript",

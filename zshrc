@@ -60,5 +60,7 @@ export PATH="$HOME/.local/bin:$PATH"
 [[ -f /usr/local/asdf/installs/nodejs/11.9.0/.npm/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /usr/local/asdf/installs/nodejs/11.9.0/.npm/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-eval $(/usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
-export GNOME_KEYRING_CONTROL GNOME_KEYRING_PID GPG_AGENT_INFO SSH_AUTH_SOCK
+if [ -z $SSH_CLIENT ]; then
+  eval $(/usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
+  export GNOME_KEYRING_CONTROL GNOME_KEYRING_PID GPG_AGENT_INFO SSH_AUTH_SOCK
+fi

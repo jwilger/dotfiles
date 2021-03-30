@@ -1,0 +1,27 @@
+{
+  "wallpaper": "/home/jwilger/Documents/Desktop Backgrounds/586756.png",
+  "alpha": "100",
+  "special": {
+    "background": "#11110c",
+    "foreground": "#d5d8d5",
+    "cursor": "#d5d8d5"
+  },
+  "colors": {
+    "color0": "#11110c",
+    "color1": "#70949F",
+    "color2": "#799BA4",
+    "color3": "#8D9F9F",
+    "color4": "#FFFFFF",
+    "color5": "#B0B7B1",
+    "color6": "#C3BCAC",
+    "color7": "#d5d8d5",
+    "color8": "#959795",
+    "color9": "#70949F",
+    "color10": "#799BA4",
+    "color11": "#8D9F9F",
+    "color12": "#8FA9AD",
+    "color13": "#B0B7B1",
+    "color14": "#C3BCAC",
+    "color15": "#d5d8d5"
+  }
+}
