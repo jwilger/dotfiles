@@ -64,3 +64,6 @@ if [ -z $SSH_CLIENT ]; then
   eval $(/usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
   export GNOME_KEYRING_CONTROL GNOME_KEYRING_PID GPG_AGENT_INFO SSH_AUTH_SOCK
 fi
+
+# tempo autocomplete setup
+TEMPO_AC_ZSH_SETUP_PATH=/home/jwilger/.cache/tempomat/autocomplete/zsh_setup && test -f $TEMPO_AC_ZSH_SETUP_PATH && source $TEMPO_AC_ZSH_SETUP_PATH;
