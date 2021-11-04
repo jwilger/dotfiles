@@ -201,6 +201,7 @@ let g:nuuid_iabbrev = 1
 " Enable mouse support (hey, it's convenient for scrolling when reading code!)
 set mouse=a
 
+set encoding=utf-8
 let g:airline_powerline_fonts = 1
 
 " Enable true color support
@@ -695,3 +696,9 @@ nmap <silent> <leader>r mzggVG<leader>r`z
 " No, really maintain context around cursor
 set scrolloff=7
 set sidescrolloff=10
+
+highlight! link DiffText MatchParen
+
+if &diff
+  colorscheme traffic_lights_diff
+endif

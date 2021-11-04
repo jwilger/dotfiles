@@ -4,13 +4,6 @@
   "suggest.noselect": true,
   "suggest.minTriggerInputLength": 3,
   "suggest.removeDuplicateItems": true,
-  "eslint.filetypes": [
-    "javascript",
-    "typescript",
-    "typescriptreact",
-    "javascriptreact",
-    "typescript.tsx"
-  ],
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
     "json",
@@ -28,7 +21,7 @@
     "postgresql"
   ],
   "explorer.icon.enableNerdfont": true,
-  "explorer.icon.enableVimDevicons": true,
+  "explorer.icon.source": "vim-devicons",
   "explorer.sources": [
     {
       "name": "file",
@@ -41,5 +34,6 @@
     }
   },
   "git.showCommitInFloating": true,
-  "git.addGBlameToVirtualText": true
+  "git.addGBlameToVirtualText": true,
+  "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh"
 }
