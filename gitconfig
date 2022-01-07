@@ -49,13 +49,13 @@
     show = delta
 
 [interactive]
-    diffFilter = delta --color-only --features=interactive
+    diffFilter = delta --features=interactive
 
 [delta]
     features = decorations
 
 [delta "interactive"]
-    keep-plus-minus-markers = false
+    keep-plus-minus-markers = true
 
 [delta "decorations"]
     commit-decoration-style = blue ol

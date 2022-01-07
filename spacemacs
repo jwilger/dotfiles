@@ -32,7 +32,10 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(ruby
+   '(javascript
+     yaml
+     sql
+     ruby
      markdown
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
@@ -46,10 +49,18 @@ This function should only modify configuration layer settings."
           git-enable-magit-delta-plugin t
           git-enable-magit-todos-plugin t)
      helm
-     (lsp :variables lsp-ui-doc-enable nil)
+     (lsp :variables
+          lsp-ui-doc-header t
+          lsp-ui-doc-include-signature t
+          lsp-ui-doc-position 'at-point
+          lsp-ui-doc-use-webkit t
+          lsp-ui-doc-enhanced-markdown t
+          lsp-treemacs-sync-mode 1
+          lsp-modeline-diagnostics-enable t
+          lsp-lens-place-position 'above-line)
      dap
      markdown
-     multiple-cursors
+     ;; multiple-cursors
      org
      (shell :variables
             shell-default-height 30
@@ -60,8 +71,8 @@ This function should only modify configuration layer settings."
      spell-checking
      syntax-checking
      version-control
-     treemacs
-     themes-megapack
+     (treemacs :variables
+               treemacs-default-visit-action 'treemacs-visit-node-in-most-recently-used-window)
      elixir
      web-beautify
      (html :variables
@@ -82,7 +93,7 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(exunit direnv bpr vterm)
+   dotspacemacs-additional-packages '(exunit direnv bpr vterm nord-theme)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -240,7 +251,8 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
+   dotspacemacs-themes '(nord
+                         spacemacs-dark
                          spacemacs-light)
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
@@ -431,7 +443,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil smartparens-mode will be enabled in programming modes.
    ;; (default t)
-   dotspacemacs-activate-smartparens-mode t
+   dotspacemacs-activate-smartparens-mode nil
 
    ;; If non-nil pressing the closing parenthesis `)' key in insert mode passes
    ;; over any automatically added closing parenthesis, bracket, quote, etc...
@@ -530,7 +542,7 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-home-shorten-agenda-source nil
 
    ;; If non-nil then byte-compile some of Spacemacs files.
-   dotspacemacs-byte-compile nil))
+   dotspacemacs-byte-compile t))
 
 (defun dotspacemacs/user-env ()
   "Environment variables setup.
@@ -561,10 +573,30 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-
+  (setq-default truncate-lines 1)
   (setq-default evil-escape-key-sequence "jk")
+  (spacemacs/set-leader-keys
+    "bl" 'bury-buffer
+    "wv" 'split-window-right-and-focus
+    "wh" 'split-window-below-and-focus
+    "hh" 'lsp-ui-doc-show)
   (setq save-abbrevs 'silent)
   (setq-default abbrev-mode t)
+  (defun insert-uuid ()
+    (insert (uuidgen-4)))
+  (define-abbrev global-abbrev-table "nuuid" "" 'insert-uuid)
+  (defun add-and-switch-project (dir)
+    "Adds a new project to Projectile and then opens it in its own layout"
+    (interactive (list (read-directory-name "Directory to add as project: ")))
+    (projectile-add-known-project dir)
+    (spacemacs/layout-goto-default)
+    (projectile-find-file-in-directory dir)
+    (spacemacs//create-persp-with-current-project-buffers dir))
+  (spacemacs/set-leader-keys "pn" 'add-and-switch-project)
+  (with-eval-after-load 'evil
+    (defalias #'forward-evil-word #'forward-evil-symbol)
+    ;; make evil-search-word look for symbol rather than word boundaries
+    (setq-default evil-symbol-word-search t))
   (use-package lsp-mode
     :commands (lsp lsp-deferred)
     :ensure t
@@ -579,50 +611,57 @@ before packages are loaded."
       "ta" 'exunit-verify
       "tk" 'exunit-rerun
       "tt" 'exunit-verify-single))
-  (push '("*exunit-compilation*"
-        :dedicated t
-        :position bottom
-        :stick t
-        :height 0.4
-        :noselect t)
-      popwin:special-display-config)
+
+  (push '(compilation-mode
+          :dedicated t
+          :position bottom
+          :stick t
+          :tail t
+          :noselect t)
+        popwin:special-display-config)
+  (push '(comint-mode
+          :dedicated t
+          :position bottom
+          :stick t
+          :tail t
+          :noselect t)
+        popwin:special-display-config)
+  (push '(exunit-compilation-mode
+          :dedicated t
+          :position bottom
+          :stick t
+          :tail t
+          :noselect t)
+        popwin:special-display-config)
+
   (use-package direnv :config (direnv-mode))
 
-  (use-package bpr)
-  (setq bpr-colorize-output t)
-  (setq bpr-close-after-success t)
-  (defun split-main-window-for-tests (direction size)
-    "Split the main window in the DIRECTION where DIRECTION is a symbol with
-possible values of right, left, above or below and SIZE is the final size of the
-windows, if the window is split horizontally (i.e. in DIRECTION below or above)
-SIZE is assumed to be the target height otherwise SIZE is assumed to be the
-target width"
-    (let* ((new-window (split-window (frame-root-window) nil direction))
-           (horizontal (member direction '(right left))))
-      (save-excursion 
-        (with-selected-window new-window
-        (enlarge-window (- size (if horizontal
-                                    (window-width)
-                                  (window-height)))
-                        horizontal)
-        (visual-line-mode)))
-      new-window))
-  (defun split-window-for-tests ()
-    (split-main-window-for-tests 'right 40))
-  (setq bpr-window-creator #'split-window-for-tests)
+  (autoload 'exunit-compile "exunit")
   (defun run-elixir-tests-stale ()
-    "Spawns 'mix test --stale' process"
-    (interactive)
-    (let* ((bpr-scroll-direction 1))
-      (bpr-spawn "mix test --stale")))
+    "run mix test --stale"
+    (exunit-compile '("--stale")))
 
   (add-hook 'elixir-mode-hook
             (lambda ()
               (add-hook 'after-save-hook 'run-elixir-tests-stale nil 'make-it-local)))
+
+  (add-hook 'web-mode-hook
+            (lambda ()
+              (if (string-match-p "\\.[hl]*eex$" buffer-file-name)
+                  (add-hook 'after-save-hook 'run-elixir-tests-stale nil 'make-it-local))))
+
   (add-hook 'elixir-mode-hook
             (lambda ()
               (add-hook 'before-save-hook 'elixir-format nil 'make-it-local)))
+
   (add-to-list 'auto-mode-alist '("\\.heex\\'" . web-mode))
+  (setq web-mode-engines-alist '(("lsp" . "\\.heex\\'")))
+  (defun my-web-mode-hook ()
+    "Hooks for Web mode."
+    (setq web-mode-markup-indent-offset 2)
+    (setq web-mode-css-indent-offset 2)
+    (setq web-mode-code-indent-offset 2)
+    (setq web-mode-auto-pairing f))
   (eval-after-load 'js2-mode
     '(add-hook 'js2-mode-hook
                (lambda ()
@@ -654,7 +693,15 @@ target width"
                (lambda ()
                  (add-hook 'before-save-hook 'web-beautify-css-buffer t t))))
 
-  (evil-set-initial-state 'shell-mode 'normal)
+  (add-hook 'term-mode-hook 'evil-emacs-state)
+  (add-hook 'shell-mode-hook 'evil-emacs-state)
+  (add-hook 'comint-mode-hook 'evil-emacs-state)
+
+  (setq projectile-create-missing-test-files t)
+
+  (setq scroll-step 1)
+  (setq scroll-margin 10)
+  (setq scroll-conservatively 9999)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -671,7 +718,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
-   '(xterm-color vterm treemacs-magit terminal-here smeargle shell-pop seeing-is-believing rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocopfmt rubocop rspec-mode robe rbenv rake orgit-forge orgit org-rich-yank org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download org-contrib org org-cliplink multi-term minitest htmlize helm-org-rifle helm-gitignore helm-git-grep gnuplot gitignore-templates git-timemachine git-messenger git-link git-gutter-fringe fringe-helper git-gutter forge yaml magit ghub closql emacsql-sqlite emacsql treepy magit-section git-commit with-editor transient flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip evil-org eshell-z eshell-prompt-extras esh-help chruby bundler inf-ruby browse-at-remote auto-dictionary ob-elixir flycheck-credo alchemist elixir-mode vmd-mode valign mmm-mode markdown-toc markdown-mode gh-md emoji-cheat-sheet-plus company-emoji company zenburn-theme zen-and-art-theme ws-butler writeroom-mode winum white-sand-theme which-key volatile-highlights vi-tilde-fringe uuidgen use-package undo-tree underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme treemacs-projectile treemacs-persp treemacs-icons-dired treemacs-evil toxi-theme toc-org tao-theme tangotango-theme tango-plus-theme tango-2-theme symon symbol-overlay sunny-day-theme sublime-themes subatomic256-theme subatomic-theme string-inflection string-edit spaceline-all-the-icons spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme seti-theme reverse-theme restart-emacs request rebecca-theme rainbow-delimiters railscasts-theme quickrun purple-haze-theme professional-theme popwin planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme pcre2el password-generator paradox overseer organic-green-theme org-superstar open-junk-file omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme naquadah-theme nameless mustang-theme multi-line monokai-theme monochrome-theme molokai-theme moe-theme modus-vivendi-theme modus-operandi-theme minimal-theme material-theme majapahit-theme madhat2r-theme macrostep lush-theme lorem-ipsum link-hint light-soap-theme kaolin-themes jbeans-theme jazz-theme ir-black-theme inspector inkpot-theme info+ indent-guide hybrid-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation heroku-theme hemisu-theme helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-org helm-mode-manager helm-make helm-ls-git helm-flx helm-descbinds helm-ag hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme google-translate golden-ratio gandalf-theme font-lock+ flycheck-package flycheck-elsa flx-ido flatui-theme flatland-theme farmhouse-theme fancy-battery eziam-theme eyebrowse expand-region exotica-theme evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-easymotion evil-collection evil-cleverparens evil-args evil-anzu eval-sexp-fu espresso-theme emr elisp-slime-nav editorconfig dumb-jump drag-stuff dracula-theme dotenv-mode doom-themes django-theme dired-quick-sort diminish define-word darktooth-theme darkokai-theme darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme column-enforce-mode color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized clues-theme clean-aindent-mode chocolate-theme cherry-blossom-theme centered-cursor-mode busybee-theme bubbleberry-theme birds-of-paradise-plus-theme badwolf-theme auto-highlight-symbol auto-compile apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes aggressive-indent afternoon-theme ace-link ace-jump-helm-line)))
+   '(tern npm-mode nodejs-repl livid-mode skewer-mode js2-refactor multiple-cursors js2-mode js-doc import-js grizzl helm-gtags ggtags counsel-gtags counsel swiper ivy add-node-modules-path key-chord xterm-color vterm treemacs-magit terminal-here smeargle shell-pop seeing-is-believing rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocopfmt rubocop rspec-mode robe rbenv rake orgit-forge orgit org-rich-yank org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download org-contrib org org-cliplink multi-term minitest htmlize helm-org-rifle helm-gitignore helm-git-grep gnuplot gitignore-templates git-timemachine git-messenger git-link git-gutter-fringe fringe-helper git-gutter forge yaml magit ghub closql emacsql-sqlite emacsql treepy magit-section git-commit with-editor transient flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip evil-org eshell-z eshell-prompt-extras esh-help chruby bundler inf-ruby browse-at-remote auto-dictionary ob-elixir flycheck-credo alchemist elixir-mode vmd-mode valign mmm-mode markdown-toc markdown-mode gh-md emoji-cheat-sheet-plus company-emoji company zenburn-theme zen-and-art-theme ws-butler writeroom-mode winum white-sand-theme which-key volatile-highlights vi-tilde-fringe uuidgen use-package undo-tree underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme treemacs-projectile treemacs-persp treemacs-icons-dired treemacs-evil toxi-theme toc-org tao-theme tangotango-theme tango-plus-theme tango-2-theme symon symbol-overlay sunny-day-theme sublime-themes subatomic256-theme subatomic-theme string-inflection string-edit spaceline-all-the-icons spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme seti-theme reverse-theme restart-emacs request rebecca-theme rainbow-delimiters railscasts-theme quickrun purple-haze-theme professional-theme popwin planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme pcre2el password-generator paradox overseer organic-green-theme org-superstar open-junk-file omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme naquadah-theme nameless mustang-theme multi-line monokai-theme monochrome-theme molokai-theme moe-theme modus-vivendi-theme modus-operandi-theme minimal-theme material-theme majapahit-theme madhat2r-theme macrostep lush-theme lorem-ipsum link-hint light-soap-theme kaolin-themes jbeans-theme jazz-theme ir-black-theme inspector inkpot-theme info+ indent-guide hybrid-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation heroku-theme hemisu-theme helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-org helm-mode-manager helm-make helm-ls-git helm-flx helm-descbinds helm-ag hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme google-translate golden-ratio gandalf-theme font-lock+ flycheck-package flycheck-elsa flx-ido flatui-theme flatland-theme farmhouse-theme fancy-battery eziam-theme eyebrowse expand-region exotica-theme evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-easymotion evil-collection evil-cleverparens evil-args evil-anzu eval-sexp-fu espresso-theme emr elisp-slime-nav editorconfig dumb-jump drag-stuff dracula-theme dotenv-mode doom-themes django-theme dired-quick-sort diminish define-word darktooth-theme darkokai-theme darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme column-enforce-mode color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized clues-theme clean-aindent-mode chocolate-theme cherry-blossom-theme centered-cursor-mode busybee-theme bubbleberry-theme birds-of-paradise-plus-theme badwolf-theme auto-highlight-symbol auto-compile apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes aggressive-indent afternoon-theme ace-link ace-jump-helm-line)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
