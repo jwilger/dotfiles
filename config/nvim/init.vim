@@ -300,7 +300,8 @@ nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
 " Show buffer list (also mapped to "<leader>be", but this is easier to type
-map <leader>bb :BufExplorer<cr>
+map <leader>be :BufExplorer<cr>
+map <leader>bb :b#<cr>
 
 " Show yank list
 nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
@@ -518,8 +519,6 @@ imap !!nuuid <Plug>Nuuid
 :noremap <leader>v :vsp<cr> " Quick access to vertical splits
 :noremap <leader>h :split<cr> " Quick access to horizontal splits
 :noremap <leader>w :wincmd w<cr> " Cycle through windows
-
-map <leader>d :NERDTreeToggle<cr>
 
 nmap <leader>gi :MagitOnly<CR>
 nmap <leader>gp :Dispatch git push --quiet<CR>
