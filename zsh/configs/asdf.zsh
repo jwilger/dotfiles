@@ -1,6 +1,6 @@
 autoload bashcompinit
 bashcompinit
 
-export ASDF_DATA_DIR=/usr/local/asdf
-. /usr/local/asdf/asdf.sh
-. /usr/local/asdf/completions/asdf.bash
+export ASDF_DATA_DIR=~/.asdf
+. ~/.asdf/asdf.sh
+. ~/.asdf/completions/asdf.bash
