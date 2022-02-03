@@ -16,3 +16,4 @@ tmp/**/*
 Guardfile
 .vim
 .elixir_ls
+/.hyde.el
