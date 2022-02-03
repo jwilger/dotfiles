@@ -7,7 +7,7 @@
     "coc-elixir": ">=0.7.0",
     "coc-eslint": ">=1.5.2",
     "coc-explorer": ">=0.20.2",
-    "coc-git": ">=2.4.3",
+    "coc-git": ">=2.4.4",
     "coc-github": ">=1.0.1",
     "coc-gitignore": ">=0.0.4",
     "coc-highlight": ">=1.2.8",
