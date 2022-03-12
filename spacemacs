@@ -36,8 +36,10 @@ This function should only modify configuration layer settings."
      yaml
      sql
      (ruby :variables
-           ruby-test-runner "rspec"
-           ruby-backend "lsp")
+           ruby-enable-enh-ruby-mode t
+           ruby-test-runner 'rspec
+           ruby-backend 'lsp)
+     ruby-on-rails
      markdown
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
@@ -655,6 +657,10 @@ before packages are loaded."
             (lambda ()
               (add-hook 'before-save-hook 'elixir-format nil 'make-it-local)))
 
+  (add-hook 'ruby-mode-hook
+            (lambda ()
+              (add-hook 'evil-insert-state-exit-hook 'lsp-format-buffer nil 'make-it-local)))
+
   (add-to-list 'auto-mode-alist '("\\.heex\\'" . web-mode))
   (setq web-mode-engines-alist '(("lsp" . "\\.heex\\'")))
   (defun my-web-mode-hook ()
@@ -742,14 +748,17 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(auth-source-save-behavior nil)
  '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
-   '(yasnippet-snippets yaml-mode xterm-color ws-butler writeroom-mode winum which-key web-mode web-beautify vterm volatile-highlights vi-tilde-fringe uuidgen use-package unicode-fonts undo-tree treemacs-projectile treemacs-persp treemacs-magit treemacs-icons-dired treemacs-evil toc-org terminal-here tagedit symon symbol-overlay string-inflection string-edit sql-indent spaceline-all-the-icons smeargle slim-mode shell-pop seeing-is-believing scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocopfmt rubocop rspec-mode robe restart-emacs request rbenv rake rainbow-delimiters quickrun pug-mode prettier-js popwin password-generator paradox overseer orgit-forge org-superstar org-rich-yank org-projectile org-present org-pomodoro org-mime org-download org-contrib org-cliplink open-junk-file ob-elixir npm-mode nord-theme nodejs-repl nameless multi-term mmm-mode minitest markdown-toc magit-todos macrostep lsp-ui lsp-origami lorem-ipsum livid-mode link-hint ligature json-reformat json-navigator json-mode js2-refactor js-doc inspector info+ indent-guide impatient-mode hybrid-mode hungry-delete highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-org-rifle helm-org helm-mode-manager helm-make helm-lsp helm-ls-git helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag grip-mode google-translate golden-ratio gnuplot gitignore-templates github-search github-clone git-timemachine git-modes git-messenger git-link git-gutter-fringe gh-md fuzzy font-lock+ flyspell-correct-helm flycheck-pos-tip flycheck-package flycheck-elsa flycheck-credo flx-ido fancy-battery eyebrowse exunit expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-org evil-numbers evil-nerd-commenter evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-easymotion evil-collection evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emr emmet-mode elisp-slime-nav editorconfig dumb-jump drag-stuff dotenv-mode direnv dired-quick-sort diminish devdocs define-word dap-mode company-web column-enforce-mode clean-aindent-mode chruby centered-cursor-mode bundler browse-at-remote bpr auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile alchemist aggressive-indent ace-link ace-jump-helm-line ac-ispell))
- '(paradox-github-token t))
+   '(projectile-rails inflections feature-mode yasnippet-snippets yaml-mode xterm-color ws-butler writeroom-mode winum which-key web-mode web-beautify vterm volatile-highlights vi-tilde-fringe uuidgen use-package unicode-fonts undo-tree treemacs-projectile treemacs-persp treemacs-magit treemacs-icons-dired treemacs-evil toc-org terminal-here tagedit symon symbol-overlay string-inflection string-edit sql-indent spaceline-all-the-icons smeargle slim-mode shell-pop seeing-is-believing scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocopfmt rubocop rspec-mode robe restart-emacs request rbenv rake rainbow-delimiters quickrun pug-mode prettier-js popwin password-generator paradox overseer orgit-forge org-superstar org-rich-yank org-projectile org-present org-pomodoro org-mime org-download org-contrib org-cliplink open-junk-file ob-elixir npm-mode nord-theme nodejs-repl nameless multi-term mmm-mode minitest markdown-toc magit-todos macrostep lsp-ui lsp-origami lorem-ipsum livid-mode link-hint ligature json-reformat json-navigator json-mode js2-refactor js-doc inspector info+ indent-guide impatient-mode hybrid-mode hungry-delete highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-org-rifle helm-org helm-mode-manager helm-make helm-lsp helm-ls-git helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag grip-mode google-translate golden-ratio gnuplot gitignore-templates github-search github-clone git-timemachine git-modes git-messenger git-link git-gutter-fringe gh-md fuzzy font-lock+ flyspell-correct-helm flycheck-pos-tip flycheck-package flycheck-elsa flycheck-credo flx-ido fancy-battery eyebrowse exunit expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-org evil-numbers evil-nerd-commenter evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-easymotion evil-collection evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emr emmet-mode elisp-slime-nav editorconfig dumb-jump drag-stuff dotenv-mode direnv dired-quick-sort diminish devdocs define-word dap-mode company-web column-enforce-mode clean-aindent-mode chruby centered-cursor-mode bundler browse-at-remote bpr auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile alchemist aggressive-indent ace-link ace-jump-helm-line ac-ispell))
+ '(paradox-github-token t)
+ '(warning-suppress-types
+   '((comp))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(highlight-parentheses-highlight ((nil (:weight ultra-bold))) t))
 )
