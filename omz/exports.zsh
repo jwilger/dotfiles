@@ -2,7 +2,7 @@
 export HISTSIZE=1000
 export HISTFILESIZE=2000
 export HISTCONTROL=ignoreboth
-export EDITOR=code
+export EDITOR=lvim
 export GREP_COLOR="1;35"
 
 # Pagers
@@ -12,3 +12,6 @@ export AWS_PAGER=
 
 # MySQL
 export MYSQL_PS1='\u@\h \R:\m:\s mysql> '
+
+export PATH=./.git/safe/../../.bundle/bin:$PATH
+export TERM=screen-256color
