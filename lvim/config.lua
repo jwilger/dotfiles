@@ -75,6 +75,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "c",
   "javascript",
   "json",
+  "jsonc",
   "lua",
   "python",
   "typescript",
@@ -166,6 +167,7 @@ lvim.builtin.treesitter.highlight.enable = true
 -- Additional Plugins
 lvim.plugins = {
   { "shaunsingh/nord.nvim" },
+  { "jamestthompson3/nvim-remote-containers" }
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
