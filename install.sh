@@ -11,5 +11,8 @@ export DOTFILES_LOCATION;
 ###
 # Install dependencies
 ###
-./bin/dotfiles install omz
 ./bin/dotfiles install zsh
+./bin/dotfiles install omz
+./bin/dotfiles install asdf
+./bin/dotfiles install tmux
+./bin/dotfiles install lvim
