@@ -12,7 +12,7 @@ case "${command}" in
   "install")
     package="${1}"
     echo "🚀 Installing package: ${package}"
-    (cd "${DOTFILES_LOCATION}/${package}" && ./install.sh)
+    (cd "${DOTFILES_LOCATION}/${package}" && ./install.sh && cd -)
     echo "\n"
     ;;
   *)
