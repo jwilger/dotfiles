@@ -14,4 +14,4 @@ export AWS_PAGER=
 export MYSQL_PS1='\u@\h \R:\m:\s mysql> '
 
 export PATH=./.git/safe/../../.bundle/bin:$PATH
-export TERM=screen-256color
+export TERM=tmux-256color
