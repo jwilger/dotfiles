@@ -10,8 +10,6 @@ sudo apt install -y \
 
 . $HOME/.asdf/asdf.sh
 
-sudo chown -R vscode:vscode /home/vscode
-
 asdf plugin add rust
 asdf install rust 1.67.1
 asdf global rust 1.67.1
