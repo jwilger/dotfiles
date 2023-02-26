@@ -8,8 +8,6 @@ sudo apt install -y \
   libsqlite3-dev \
   liblzma-dev
 
-. $HOME/.asdf/asdf.sh
-
 asdf plugin add rust
 asdf install rust 1.67.1
 asdf global rust 1.67.1
