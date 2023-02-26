@@ -14,3 +14,5 @@ export DOTFILES_LOCATION;
 ./bin/dotfiles install asdf
 ./bin/dotfiles install tmux
 ./bin/dotfiles install lvim
+
+asdf reshim
