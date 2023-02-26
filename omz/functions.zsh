@@ -8,7 +8,7 @@ launch-dc() {
     "-c" "app"
     "-p" "/workspaces"
     "-e" "zsh"
-    "-d" "git@github.com:jwilger/dotfiles"
+    "-d" "jwilger/dotfiles"
   )
 
   local usage=(
