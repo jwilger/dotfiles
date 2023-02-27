@@ -15,3 +15,4 @@ export MYSQL_PS1='\u@\h \R:\m:\s mysql> '
 
 export PATH=./.git/safe/../../.bundle/bin:$PATH
 export TERM=tmux-256color
+export SHELL=/usr/bin/zsh
