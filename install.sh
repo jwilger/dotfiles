@@ -16,3 +16,5 @@ export DOTFILES_LOCATION;
 ./bin/dotfiles install lvim
 
 asdf reshim
+sudo chown -R $USER:$USER .
+sudo chown -R $USER:$USER ~/.config
