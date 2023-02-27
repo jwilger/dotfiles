@@ -8,6 +8,9 @@ an executable
 ]]
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 
+vim.o.sidescrolloff = 20
+vim.o.scrolloff = 20
+
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = true
@@ -19,6 +22,9 @@ lvim.colorscheme = "nord"
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+lvim.keys.normal_mode["j"] = "jzz"
+lvim.keys.normal_mode["k"] = "kzz"
+lvim.keys.normal_mode["G"] = "Gzz"
 lvim.keys.insert_mode["jk"] = "<Esc>"
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
