@@ -116,7 +116,7 @@ lvim.builtin.treesitter.highlight.enable = true
 
 -- ---configure a server manually. !!Requires `:LvimCacheReset` to take effect!!
 -- ---see the full default list `:lua print(vim.inspect(lvim.lsp.automatic_configuration.skipped_servers))`
--- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust-analyzer" })
 -- local opts = {} -- check the lspconfig documentation for a list of all possible options
 -- require("lvim.lsp.manager").setup("pyright", opts)
 
@@ -171,6 +171,7 @@ lvim.builtin.treesitter.highlight.enable = true
 -- }
 
 -- Additional Plugins
+
 lvim.plugins = {
   { "shaunsingh/nord.nvim" },
   { "jamestthompson3/nvim-remote-containers" },
