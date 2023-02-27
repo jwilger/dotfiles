@@ -2,7 +2,8 @@
 
 sudo apt install -y \
   powerline \
-  fonts-powerline
+  fonts-powerline \
+  tmux
 
 rm -rf $HOME/.tmux.conf 
 
