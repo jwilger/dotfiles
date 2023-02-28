@@ -25,7 +25,12 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["j"] = "jzz"
 lvim.keys.normal_mode["k"] = "kzz"
 lvim.keys.normal_mode["G"] = "Gzz"
+lvim.keys.normal_mode["<C-f>"] = "<C-f>zz"
+lvim.keys.normal_mode["<C-b>"] = "<C-b>zz"
+lvim.keys.normal_mode["<C-d>"] = "<C-d>zz"
+lvim.keys.normal_mode["<C-u>"] = "<C-u>zz"
 lvim.keys.insert_mode["jk"] = "<Esc>"
+
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- unmap a default keymapping
@@ -173,7 +178,7 @@ vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust-analyz
 -- Additional Plugins
 
 lvim.plugins = {
-  { "shaunsingh/nord.nvim" },
+  { "jwilger/nord.nvim" },
   { "jamestthompson3/nvim-remote-containers" },
   {
     "simrat39/rust-tools.nvim",
