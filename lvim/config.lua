@@ -10,6 +10,7 @@ an executable
 
 vim.o.sidescrolloff = 20
 vim.o.scrolloff = 20
+vim.o.cc = 80
 
 -- general
 lvim.log.level = "warn"
@@ -29,6 +30,8 @@ lvim.keys.normal_mode["<C-f>"] = "<C-f>zz"
 lvim.keys.normal_mode["<C-b>"] = "<C-b>zz"
 lvim.keys.normal_mode["<C-d>"] = "<C-d>zz"
 lvim.keys.normal_mode["<C-u>"] = "<C-u>zz"
+lvim.keys.normal_mode["<leader>xx"] = "<cmd>TroubleToggle<cr>"
+
 lvim.keys.insert_mode["jk"] = "<Esc>"
 
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
@@ -78,7 +81,7 @@ lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
-lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
+lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
@@ -133,13 +136,20 @@ vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust-analyz
 
 -- -- you can set a custom on_attach function that will be used for all the language servers
 -- -- See <https://github.com/neovim/nvim-lspconfig#keybindings-and-completion>
--- lvim.lsp.on_attach_callback = function(client, bufnr)
---   local function buf_set_option(...)
---     vim.api.nvim_buf_set_option(bufnr, ...)
---   end
---   --Enable completion triggered by <c-x><c-o>
---   buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
--- end
+lvim.lsp.on_attach_callback = function(client, bufnr)
+  local function setup_diags()
+    vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+      vim.lsp.diagnostic.on_publish_diagnostics,
+      {
+        virtual_text = true,
+        signs = true,
+        update_in_insert = false,
+        underline = false,
+      }
+    )
+  end
+  setup_diags()
+end
 
 -- -- set a formatter, this will override the language server formatting capabilities (if it exists)
 -- local formatters = require "lvim.lsp.null-ls.formatters"
@@ -205,16 +215,6 @@ lvim.plugins = {
             highlight = "Comment",
           },
           hover_actions = {
-            --border = {
-            --        { "╭", "FloatBorder" },
-            --        { "─", "FloatBorder" },
-            --        { "╮", "FloatBorder" },
-            --        { "│", "FloatBorder" },
-            --        { "╯", "FloatBorder" },
-            --        { "─", "FloatBorder" },
-            --        { "╰", "FloatBorder" },
-            --        { "│", "FloatBorder" },
-            --},
             auto_focus = true,
           },
         },
@@ -230,14 +230,6 @@ lvim.plugins = {
           },
         },
       }
-      --local extension_path = vim.fn.expand "~/" .. ".vscode/extensions/vadimcn.vscode-lldb-1.7.3/"
-
-      --local codelldb_path = extension_path .. "adapter/codelldb"
-      --local liblldb_path = extension_path .. "lldb/lib/liblldb.dylib"
-
-      --opts.dap = {
-      --        adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
-      --}
       rust_tools.setup(opts)
     end,
     ft = { "rust", "rs" },
@@ -247,7 +239,7 @@ lvim.plugins = {
     requires = "nvim-tree/nvim-web-devicons",
     config = function()
       require("trouble").setup {
-        auto_open = true,
+        auto_open = false,
         auto_close = true
       }
     end
@@ -255,24 +247,6 @@ lvim.plugins = {
 }
 
 -- Lua
-vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>",
-  { silent = true, noremap = true }
-)
-vim.keymap.set("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>",
-  { silent = true, noremap = true }
-)
-vim.keymap.set("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>",
-  { silent = true, noremap = true }
-)
-vim.keymap.set("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>",
-  { silent = true, noremap = true }
-)
-vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",
-  { silent = true, noremap = true }
-)
-vim.keymap.set("n", "gR", "<cmd>TroubleToggle lsp_references<cr>",
-  { silent = true, noremap = true }
-)
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- vim.api.nvim_create_autocmd("BufEnter", {
