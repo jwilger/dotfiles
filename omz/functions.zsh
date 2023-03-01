@@ -6,7 +6,7 @@ launch-dc() {
     "-w" $PWD
     "-u" "vscode"
     "-c" "app"
-    "-p" "/workspaces"
+    "-p" "/workspace"
     "-e" "zsh"
     "-d" "jwilger/dotfiles"
   )
