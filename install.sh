@@ -33,5 +33,6 @@ sudo chown -R $USER:$USER /home/$USER/.tool-versions
 ./bin/dotfiles install tmux
 ./bin/dotfiles install lvim
 
-asdf reshim
+~/.asdf/bin/asdf reshim
+
 sudo chown -R $USER:$USER ~/.config
