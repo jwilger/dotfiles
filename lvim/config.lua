@@ -11,6 +11,9 @@ an executable
 vim.o.sidescrolloff = 20
 vim.o.scrolloff = 20
 vim.o.cc = 80
+vim.o.showtabline = 0
+lvim.builtin.bufferline.active = false
+lvim.builtin.breadcrumbs.active = false
 
 -- general
 lvim.log.level = "warn"
