@@ -31,7 +31,8 @@ sudo chown -R $USER:$USER /home/$USER/.tool-versions
 ./bin/dotfiles install omz
 ./bin/dotfiles install asdf
 ./bin/dotfiles install tmux
-./bin/dotfiles install lvim
+# ./bin/dotfiles install lvim
+./bin/dotfiles install nvim
 
 ~/.asdf/bin/asdf reshim
 
