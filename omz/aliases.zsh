@@ -8,6 +8,10 @@ alias ls='ls -lGh'
 alias envs='env | sort'
 alias envg='env | grep -i'
 
+alias nvim='lvim'
+alias vim='lvim'
+alias vi='lvim'
+
 # Random
 alias guid='uuidgen | tr "[:upper:]" "[:lower:]"'
 alias publicip="dig +short myip.opendns.com @resolver1.opendns.com"
