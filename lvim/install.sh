@@ -12,6 +12,7 @@ sudo apt install -y \
   software-properties-common
 
 sudo add-apt-repository -y ppa:neovim-ppa/unstable
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 55F96FCF8231B6DD
 sudo apt update -y
 sudo apt install -y neovim
 
