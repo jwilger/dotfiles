@@ -8,13 +8,7 @@ sudo apt install -y \
   libffi-dev \
   libreadline-dev \
   libsqlite3-dev \
-  liblzma-dev \
-  software-properties-common
-
-sudo add-apt-repository -y ppa:neovim-ppa/unstable
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 55F96FCF8231B6DD
-sudo apt update -y
-sudo apt install -y neovim
+  liblzma-dev
 
 asdf plugin add rust
 asdf install rust 1.67.1
@@ -25,6 +19,9 @@ asdf global python 3.11.2
 asdf plugin add nodejs
 asdf install nodejs 18.14.2
 asdf global nodejs 18.14.2
+asdf plugin add neovim
+asdf install neovim 0.8.3
+asdf global neovim 0.8.3
 
 asdf reshim
 
