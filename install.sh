@@ -30,9 +30,13 @@ sudo chown -R $USER:$USER /home/$USER/.tool-versions
 ./bin/dotfiles install zsh
 ./bin/dotfiles install omz
 ./bin/dotfiles install asdf
+
+export PATH=~/.asdf/bin:${PATH}
+source ~/.asdf/asdf.sh
+
 ./bin/dotfiles install tmux
 ./bin/dotfiles install lvim
 
-~/.asdf/bin/asdf reshim
+asdf reshim
 
 sudo chown -R $USER:$USER ~/.config
