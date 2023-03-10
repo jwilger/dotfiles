@@ -54,7 +54,7 @@ local opts = {
   root_dir = function(fname)
     local util = require "lspconfig/util"
     return util.root_pattern("assets/tailwind.config.js", "tailwind.config.js", "tailwind.config.cjs", "tailwind.js",
-          "tailwind.cjs")(fname)
+      "tailwind.cjs")(fname)
   end,
   init_options = {
     userLanguages = { heex = "html", elixir = "html" }
@@ -66,7 +66,7 @@ lvim.lsp.on_attach_callback = function(client, bufnr)
     vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
       vim.lsp.diagnostic.on_publish_diagnostics,
       {
-        virtual_text = true,
+        virtual_text = false,
         signs = true,
         update_in_insert = false,
         underline = false,
@@ -76,6 +76,16 @@ lvim.lsp.on_attach_callback = function(client, bufnr)
   setup_diags()
 end
 lvim.plugins = {
+  {
+    "casonadams/simple-diagnostics.nvim",
+    config = function()
+      require("simple-diagnostics").setup({
+        virtual_text = true,
+        message_area = true,
+        signs = true,
+      })
+    end,
+  },
   { "jwilger/nord.nvim" },
   { "jamestthompson3/nvim-remote-containers" },
   {
