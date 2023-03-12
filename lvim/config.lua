@@ -2,6 +2,7 @@ vim.o.sidescrolloff = 20
 vim.o.scrolloff = 20
 vim.o.cc = 80
 vim.o.showtabline = 0
+
 lvim.builtin.bufferline.active = false
 lvim.builtin.breadcrumbs.active = false
 lvim.builtin.lualine.active = true
@@ -24,6 +25,9 @@ lvim.keys.normal_mode["<C-b>"] = "<C-b>zz"
 lvim.keys.normal_mode["<C-d>"] = "<C-d>zz"
 lvim.keys.normal_mode["<C-u>"] = "<C-u>zz"
 lvim.keys.normal_mode["<leader>xx"] = "<cmd>TroubleToggle<cr>"
+lvim.keys.normal_mode["<leader>i"] =
+"<cmd>lua vim.diagnostic.open_float({focusable=true, focus=true, scope=\"cursor\"}, {focusable=true, focus=true, scope=\"cursor\"})<cr>"
+lvim.keys.normal_mode["<leader>v"] = "<cmd>vsplit<cr>"
 lvim.keys.insert_mode["jk"] = "<Esc>"
 lvim.keys.insert_mode["<C-l>"] = "<Esc>A"
 lvim.keys.insert_mode["<C-h>"] = "<Esc>I"
@@ -68,8 +72,8 @@ lvim.lsp.on_attach_callback = function(client, bufnr)
       {
         virtual_text = false,
         signs = true,
-        update_in_insert = false,
-        underline = false,
+        update_in_insert = true,
+        underline = true
       }
     )
   end
@@ -77,13 +81,18 @@ lvim.lsp.on_attach_callback = function(client, bufnr)
 end
 lvim.plugins = {
   {
-    "casonadams/simple-diagnostics.nvim",
+    "github/copilot.vim",
     config = function()
-      require("simple-diagnostics").setup({
-        virtual_text = true,
-        message_area = true,
-        signs = true,
-      })
+      -- copilot assume mapped
+      vim.g.copilot_assume_mapped = true
+      vim.g.copilot_no_tab_map = true
+    end,
+  },
+  {
+    "hrsh7th/cmp-copilot",
+    config = function()
+      lvim.builtin.cmp.formatting.source_names["copilot"] = "( )"
+      table.insert(lvim.builtin.cmp.sources, 2, { name = "copilot" })
     end,
   },
   { "jwilger/nord.nvim" },
