@@ -81,6 +81,14 @@ lvim.lsp.on_attach_callback = function(client, bufnr)
 end
 lvim.plugins = {
   { "beauwilliams/focus.nvim",               config = function() require("focus").setup() end },
+  { "tpope/vim-dispatch" },
+  {
+    'vim-test/vim-test',
+    config = function()
+      vim.cmd('let test#strategy = "dispatch_background"')
+    end
+  },
+
   {
     "github/copilot.vim",
     config = function()
