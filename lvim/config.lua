@@ -80,6 +80,7 @@ lvim.lsp.on_attach_callback = function(client, bufnr)
   setup_diags()
 end
 lvim.plugins = {
+  { "beauwilliams/focus.nvim",               config = function() require("focus").setup() end },
   {
     "github/copilot.vim",
     config = function()
