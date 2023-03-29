@@ -28,6 +28,7 @@ lvim.keys.normal_mode["<leader>xx"] = "<cmd>TroubleToggle<cr>"
 lvim.keys.normal_mode["<leader>i"] =
 "<cmd>lua vim.diagnostic.open_float({focusable=true, focus=true, scope=\"cursor\"}, {focusable=true, focus=true, scope=\"cursor\"})<cr>"
 lvim.keys.normal_mode["<leader>v"] = "<cmd>vsplit<cr>"
+lvim.keys.normal_mode["<leader>ta"] = "<cmd>TestSuite<cr>"
 lvim.keys.insert_mode["jk"] = "<Esc>"
 lvim.keys.insert_mode["<C-l>"] = "<Esc>A"
 lvim.keys.insert_mode["<C-h>"] = "<Esc>I"
@@ -65,7 +66,7 @@ local opts = {
   },
 }
 require("lvim.lsp.manager").setup("tailwindcss", opts)
-lvim.lsp.on_attach_callback = function(client, bufnr)
+lvim.lsp.on_attach_callback = function()
   local function setup_diags()
     vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
       vim.lsp.diagnostic.on_publish_diagnostics,
@@ -80,12 +81,12 @@ lvim.lsp.on_attach_callback = function(client, bufnr)
   setup_diags()
 end
 lvim.plugins = {
-  { "beauwilliams/focus.nvim",               config = function() require("focus").setup() end },
+  { "beauwilliams/focus.nvim", config = function() require("focus").setup() end },
   { "tpope/vim-dispatch" },
   {
     'vim-test/vim-test',
     config = function()
-      vim.cmd('let test#strategy = "dispatch_background"')
+      vim.cmd('let test#strategy = "neovim"')
     end
   },
 
