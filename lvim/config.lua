@@ -29,6 +29,9 @@ lvim.keys.normal_mode["<leader>i"] =
 "<cmd>lua vim.diagnostic.open_float({focusable=true, focus=true, scope=\"cursor\"}, {focusable=true, focus=true, scope=\"cursor\"})<cr>"
 lvim.keys.normal_mode["<leader>v"] = "<cmd>vsplit<cr>"
 lvim.keys.normal_mode["<leader>ta"] = "<cmd>TestSuite<cr>"
+lvim.keys.normal_mode["<leader>tf"] = "<cmd>TestFile<cr>"
+lvim.keys.normal_mode["<leader>tn"] = "<cmd>TestNearest<cr>"
+lvim.keys.normal_mode["<leader>tl"] = "<cmd>TestLast<cr>"
 lvim.keys.insert_mode["jk"] = "<Esc>"
 lvim.keys.insert_mode["<C-l>"] = "<Esc>A"
 lvim.keys.insert_mode["<C-h>"] = "<Esc>I"
@@ -93,9 +96,9 @@ lvim.plugins = {
   {
     "github/copilot.vim",
     config = function()
-      -- copilot assume mapped
-      vim.g.copilot_assume_mapped = true
-      vim.g.copilot_no_tab_map = false
+      -- -- copilot assume mapped
+      -- vim.g.copilot_assume_mapped = true
+      -- vim.g.copilot_no_tab_map = true
     end,
   },
   {
