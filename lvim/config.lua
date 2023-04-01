@@ -2,6 +2,9 @@ vim.o.sidescrolloff = 20
 vim.o.scrolloff = 20
 vim.o.cc = 80
 vim.o.showtabline = 0
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldlevel = 0
 
 lvim.builtin.bufferline.active = false
 lvim.builtin.breadcrumbs.active = false
@@ -40,6 +43,7 @@ lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
+lvim.builtin.nvimtree.setup.diagnostics.show_on_dirs = true
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
   "c",
@@ -92,7 +96,6 @@ lvim.plugins = {
       vim.cmd('let test#strategy = "neovim"')
     end
   },
-
   {
     "github/copilot.vim",
     config = function()
