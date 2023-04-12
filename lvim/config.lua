@@ -44,6 +44,7 @@ lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
 lvim.builtin.nvimtree.setup.diagnostics.show_on_dirs = true
+lvim.builtin.project.patterns = { ".git" }
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
   "c",
