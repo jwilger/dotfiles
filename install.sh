@@ -24,6 +24,9 @@ sudo touch /home/$USER/.tool-versions
 echo "Ensuring $USER owns .tool-versions"
 sudo chown -R $USER:$USER /home/$USER/.tool-versions
 
+# link gitconfig
+ln -sf $DOTFILES_LOCATION/gitconfig /home/$USER/.gitconfig
+
 ###
 # Install dependencies
 ###
