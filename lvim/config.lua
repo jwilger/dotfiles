@@ -1,13 +1,13 @@
 vim.o.sidescrolloff = 20
-vim.o.scrolloff = 20
+vim.o.scrolloff = 40
 vim.o.cc = 80
 vim.o.showtabline = 0
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevel = 99
 
-lvim.builtin.bufferline.active = false
-lvim.builtin.breadcrumbs.active = false
+-- lvim.builtin.bufferline.active = false
+-- lvim.builtin.breadcrumbs.active = false
 lvim.builtin.lualine.active = true
 local components = require "lvim.core.lualine.components"
 lvim.builtin.lualine.sections.lualine_c = {
@@ -20,13 +20,13 @@ lvim.format_on_save.enabled = true
 lvim.colorscheme = "tokyonight-midnight"
 lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
-lvim.keys.normal_mode["j"] = "jzz"
-lvim.keys.normal_mode["k"] = "kzz"
-lvim.keys.normal_mode["G"] = "Gzz"
-lvim.keys.normal_mode["<C-f>"] = "<C-f>zz"
-lvim.keys.normal_mode["<C-b>"] = "<C-b>zz"
-lvim.keys.normal_mode["<C-d>"] = "<C-d>zz"
-lvim.keys.normal_mode["<C-u>"] = "<C-u>zz"
+-- lvim.keys.normal_mode["j"] = "jzz"
+-- lvim.keys.normal_mode["k"] = "kzz"
+-- lvim.keys.normal_mode["G"] = "Gzz"
+-- lvim.keys.normal_mode["<C-f>"] = "<C-f>zz"
+-- lvim.keys.normal_mode["<C-b>"] = "<C-b>zz"
+-- lvim.keys.normal_mode["<C-d>"] = "<C-d>zz"
+-- lvim.keys.normal_mode["<C-u>"] = "<C-u>zz"
 lvim.keys.normal_mode["<leader>xx"] = "<cmd>TroubleToggle<cr>"
 lvim.keys.normal_mode["<leader>i"] =
 "<cmd>lua vim.diagnostic.open_float({focusable=true, focus=true, scope=\"cursor\"}, {focusable=true, focus=true, scope=\"cursor\"})<cr>"
@@ -59,6 +59,8 @@ lvim.builtin.treesitter.ensure_installed = {
   "rust",
   "java",
   "yaml",
+  "elixir",
+  "heex"
 }
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
@@ -74,6 +76,7 @@ local opts = {
   },
 }
 require("lvim.lsp.manager").setup("tailwindcss", opts)
+
 lvim.lsp.on_attach_callback = function()
   local function setup_diags()
     vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
@@ -89,12 +92,14 @@ lvim.lsp.on_attach_callback = function()
   setup_diags()
 end
 lvim.plugins = {
+  { "preservim/vimux" },
   { "beauwilliams/focus.nvim", config = function() require("focus").setup() end },
   { "tpope/vim-dispatch" },
+  { "tpope/vim-surround" },
   {
     'vim-test/vim-test',
     config = function()
-      vim.cmd('let test#strategy = "neovim"')
+      vim.cmd('let test#strategy = "vimux"')
     end
   },
   {

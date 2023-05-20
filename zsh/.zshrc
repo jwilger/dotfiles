@@ -1,7 +1,7 @@
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="clean"
 COMPLETION_WAITING_DOTS="true"
-plugins=(git keychain direnv)
+plugins=(git keychain direnv mix asdf)
 zstyle :omz:plugins:keychain agents gpg,ssh
 source $ZSH/oh-my-zsh.sh
 DISABLE_AUTO_UPDATE=true

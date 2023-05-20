@@ -1,0 +1,7 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = John Wilger
+	email = john@johnwilger.com
+[url "https://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@github.com/"]
+	insteadOf = https://github.com/
