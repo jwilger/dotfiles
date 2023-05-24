@@ -25,6 +25,9 @@ asdf global neovim 0.8.3
 
 asdf reshim
 
-mkdir -p $HOME/.config/lvim
-LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/fc6873809934917b470bff1b072171879899a36b/utils/installer/install.sh) -y --install-dependencies
-ln -sf $DOTFILES_LOCATION/lvim/config.lua $HOME/.config/lvim/config.lua
+mkdir -p $HOME/.config/nvim
+ln -sf $DOTFILES_LOCATION/nvim/after $HOME/.config/nvim/after
+ln -sf $DOTFILES_LOCATION/nvim/lua $HOME/.config/nvim/lua
+ln -sf $DOTFILES_LOCATION/nvim/init.lua $HOME/.config/nvim/init.lua
+
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
