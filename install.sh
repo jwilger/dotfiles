@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env zsh
 
 ###
 # Installation of packages, configurations, and dotfiles.
@@ -30,15 +30,21 @@ ln -sf $DOTFILES_LOCATION/gitconfig /home/$USER/.gitconfig
 ###
 # Install dependencies
 ###
+
+echo "Installing zsh..."
 ./bin/dotfiles install zsh
+echo "Installing omz..."
 ./bin/dotfiles install omz
+echo "Installing asdf..."
 ./bin/dotfiles install asdf
 
-export PATH=~/.asdf/bin:${PATH}
-source ~/.asdf/asdf.sh
+export PATH=/home/$USER/.asdf/bin:${PATH}
+source /home/$USER/.asdf/asdf.sh
 
+echo "Installing tmux..."
 ./bin/dotfiles install tmux
-./bin/dotfiles install lvim
+echo "Installing nvim..."
+./bin/dotfiles install nvim
 
 asdf reshim
 

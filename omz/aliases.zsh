@@ -8,9 +8,8 @@ alias ls='ls -lGh'
 alias envs='env | sort'
 alias envg='env | grep -i'
 
-alias nvim='lvim'
-alias vim='lvim'
-alias vi='lvim'
+alias vim='nvim'
+alias vi='nvim'
 
 # Random
 alias guid='uuidgen | tr "[:upper:]" "[:lower:]"'
