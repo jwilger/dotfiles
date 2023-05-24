@@ -2,7 +2,7 @@
 export HISTSIZE=1000
 export HISTFILESIZE=2000
 export HISTCONTROL=ignoreboth
-export EDITOR=lvim
+export EDITOR=nvim
 export GREP_COLOR="1;35"
 
 # Pagers
