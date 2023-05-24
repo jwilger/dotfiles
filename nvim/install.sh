@@ -26,8 +26,6 @@ asdf global neovim 0.8.3
 asdf reshim
 
 mkdir -p $HOME/.config/nvim
-ln -sf $DOTFILES_LOCATION/nvim/after $HOME/.config/nvim/after
-ln -sf $DOTFILES_LOCATION/nvim/lua $HOME/.config/nvim/lua
-ln -sf $DOTFILES_LOCATION/nvim/init.lua $HOME/.config/nvim/init.lua
+ln -sf $DOTFILES_LOCATION/nvim/after $DOTFILES_LOCATION/nvim/lua $DOTFILES_LOCATION/nvim/init.lua $HOME/.config/nvim/
 
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
