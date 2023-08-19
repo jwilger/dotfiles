@@ -11,4 +11,7 @@ vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "jump to window to the right" })
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "jump to window to the left" })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "jump to window below" })
 
+vim.keymap.set("n", "<leader><Cr>", ":nohlsearch<Cr>", { desc = "Unhighlight last search" })
+
 vim.keymap.set("i", "jk", "<Esc>", { desc = "easier than reaching for the Escape key" })
+vim.keymap.set("i", "jjj", "<Esc>o", { noremap = true })
