@@ -12,3 +12,7 @@ if [[ -f $HOME/.asdf/asdf.sh ]]; then
   . $HOME/.asdf/asdf.sh
 fi
 export PATH=$HOME/.local/bin:$PATH
+
+[ -f "/home/jwilger/.ghcup/env" ] && source "/home/jwilger/.ghcup/env" # ghcup-env
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform
