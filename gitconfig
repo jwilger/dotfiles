@@ -3,7 +3,13 @@
 # Please adapt and uncomment the following lines:
 	name = John Wilger
 	email = john@johnwilger.com
+	; signingkey = 68041B1654114CD4
 [url "https://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@github.com/"]
 	insteadOf = https://github.com/
 [core]
 	excludesfile = /home/jwilger/.gitignore_global
+[init]
+	defaultBranch = main
+[commit]
+	template = /home/jwilger/.gitmessage
+	; gpgsign = true
