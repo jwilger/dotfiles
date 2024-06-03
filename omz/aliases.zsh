@@ -22,3 +22,6 @@ alias asdfj="if [[ -s .tool-versions ]]; then; cat .tool-versions | cut -f 1 -d 
 # tmuxinator
 alias tma='tmux attach'
 alias tm='tmuxinator start'
+
+# GitHub CLI
+alias ghr='gh run watch'
