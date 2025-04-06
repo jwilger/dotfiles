@@ -1,0 +1,25 @@
+gui:
+  expandFocusedSidePanel: true
+  nerdFontsVersion: '3'
+  showRandomTip: false
+  theme:
+    activeBorderColor:
+    - '#b7bdf8'
+    - bold
+    cherryPickedCommitBgColor:
+    - '#363a4f'
+    cherryPickedCommitFgColor:
+    - '#494d64'
+    defaultFgColor:
+    - '#cad3f5'
+    inactiveBorderColor:
+    - '#5b6078'
+    optionsTextColor:
+    - '#f4dbd6'
+    searchingActiveBorderColor:
+    - '#363a4f'
+    - bold
+    selectedLineBgColor:
+    - '#494d64'
+    unstagedChangesColor:
+    - '#ed8796'

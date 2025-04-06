@@ -1,3 +1,36 @@
+[commit]
+	gpgSign = true
+
+[gpg]
+	format = "ssh"
+
+[gpg "ssh"]
+	allowedSignersFile = "/home/jwilger/.config/ssh/allowed_signers"
+	program = "op-ssh-sign"
+
+[init]
+	defaultBranch = "main"
+
+[log]
+	showSignature = true
+
+[merge]
+	conflictstyle = "zdiff3"
+	tool = "nvimdiff"
+
+[pull]
+	ff = "only"
+
+[push]
+	default = "current"
+
+[safe]
+	directory = "/etc/nixos"
+
+[tag]
+	gpgSign = true
+
 [user]
-	email = john@johnwilger.com
-	name = John Wilger
+	email = "john@johnwilger.com"
+	name = "John Wilger"
+	signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGwXlUIgMZDNewfvIyX5Gd1B1dIuLT7lH6N+2+FrSaSU"
